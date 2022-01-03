@@ -396,21 +396,13 @@ country_event = {
         }
         create_alliance = RUS
 
-        RUS_947 = {
+        RUS_940 = {
             remove_core = PLC
             add_core = RUS
             secede_province = RUS
         }
 
-        959 = {
-            remove_core = PLC
-            remove_core = DON
-            add_core = RUS
-            secede_province = RUS
-            set_global_flag = russian_ruthenia
-        }
-
-        RUS_718 = {
+        RUS_959 = {
             remove_core = PLC
             add_core = RUS
             secede_province = RUS

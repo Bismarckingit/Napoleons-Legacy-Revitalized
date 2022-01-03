@@ -5,8 +5,6 @@ country_event = {
     picture = "occupation_of_araucania"
 
     trigger = {
-        OR = {
-        tag = SPA
         tag = CHL
         OR = {
             2332 = { empty = yes }
