@@ -7,6 +7,7 @@ political_decisions = {
                 tag = ARG
                 tag = LPL
                 tag = CHL
+                tag = SPA
             }
 
             OR = {
@@ -134,6 +135,7 @@ political_decisions = {
                 tag = LPL
                 tag = PRG
                 tag = CHL
+                tag = SPA 
             }
             OR = {
                 2362 = { empty = yes }
@@ -150,7 +152,8 @@ political_decisions = {
         }
         allow = {
             war = no
-            OR = {
+            OR =
+                owns = 2337
                 is_greater_power = yes
                 nationalism_n_imperialism = 1
                 year = 1865
