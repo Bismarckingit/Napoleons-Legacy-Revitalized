@@ -5,6 +5,7 @@ political_decisions = {
 	potential = {
 	OR = { AND = { owns = 1132 1132 = { is_core = IRQ } } AND = { owns = 934 1132 = { is_core = IRQ } } } 
 	}
+	tag = ASY
 	allow = { ideological_thought = 1 }
 	effect = { 
 	ASY = { any_owned = { limit = { is_core = IRQ }
