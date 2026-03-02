@@ -379,6 +379,9 @@ political_decisions = {
             set_country_flag = reclaimed_alsace_lorraine
             badboy = 5
             FRA_412 = { add_core = GER }
+			PRU_570 = { add_core = GER }
+			PRU_575 = { add_core = GER }
+			add_accepted_culture = rhenish
             random_country = {
                 limit = {
                     owns = 412
