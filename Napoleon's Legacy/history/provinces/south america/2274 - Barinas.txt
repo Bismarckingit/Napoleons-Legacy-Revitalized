@@ -1,5 +1,5 @@
-owner = VNZ
-controller = VNZ
+owner = GCO
+controller = GCO # Anything typed here will be added to all selected province history files
 add_core = VNZ
 add_core = GCO
 trade_goods = cattle

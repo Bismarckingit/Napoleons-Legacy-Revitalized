@@ -1,5 +1,5 @@
-owner = LPL
-controller = LPL
+owner = SPA
+controller = SPA # Anything typed here will be added to all selected province history files
 add_core = LPL
 add_core = BOL
 trade_goods = rubber

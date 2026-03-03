@@ -1,5 +1,5 @@
-owner = FRA
-controller = FRA
+owner = ALD
+controller = ALD # Anything typed here will be added to all selected province history files
 add_core = ALD
 trade_goods = grain
 life_rating = 35

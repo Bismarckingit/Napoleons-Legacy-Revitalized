@@ -1,5 +1,5 @@
-owner = CYR
-controller = CYR
+owner = TRI
+controller = TRI # Anything typed here will be added to all selected province history files
 add_core = CYR
 trade_goods = fruit
 life_rating = 35

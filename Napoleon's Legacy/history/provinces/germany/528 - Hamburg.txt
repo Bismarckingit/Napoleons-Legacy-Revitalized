@@ -1,6 +1,5 @@
-owner = NET
-controller = NET
-add_core = NET
+owner = HAM
+controller = HAM
 add_core = HAM
 add_core = GER
 trade_goods = fruit

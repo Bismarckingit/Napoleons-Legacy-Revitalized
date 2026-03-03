@@ -1,5 +1,5 @@
-owner = ECU
-controller = ECU
+owner = SPA
+controller = SPA # Anything typed here will be added to all selected province history files
 add_core = ECU
 add_core = GCO
 trade_goods = grain

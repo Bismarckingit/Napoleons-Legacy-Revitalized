@@ -1,5 +1,5 @@
-owner = NEH
-controller = NEH
+owner = FRA
+controller = FRA # Anything typed here will be added to all selected province history files
 add_core = NEH
 add_core = SWI
 trade_goods = coal

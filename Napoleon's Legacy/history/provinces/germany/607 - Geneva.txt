@@ -1,5 +1,5 @@
-owner = SWI
-controller = SWI
+owner = FRA
+controller = FRA # Anything typed here will be added to all selected province history files
 add_core = SWI
 trade_goods = grain
 life_rating = 33

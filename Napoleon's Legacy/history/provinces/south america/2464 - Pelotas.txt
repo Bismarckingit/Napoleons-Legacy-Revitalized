@@ -1,5 +1,5 @@
-owner = REI
-controller = REI
+owner = LPL
+controller = LPL # Anything typed here will be added to all selected province history files
 add_core = REI
 add_core = BRZ
 trade_goods = cattle

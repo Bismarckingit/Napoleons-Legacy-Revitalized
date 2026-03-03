@@ -1,5 +1,5 @@
-owner = BAN
-controller = BAN
+owner = HUN
+controller = HUN # Anything typed here will be added to all selected province history files
 add_core = SER
 add_core = BAN
 add_core = HUN

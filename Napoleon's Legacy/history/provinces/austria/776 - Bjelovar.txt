@@ -1,5 +1,5 @@
-owner = CRO
-controller = CRO
+owner = HUN
+controller = HUN # Anything typed here will be added to all selected province history files
 add_core = CRO
 add_core = HUN
 trade_goods = grain

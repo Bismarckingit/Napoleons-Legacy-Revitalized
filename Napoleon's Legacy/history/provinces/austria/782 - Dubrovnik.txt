@@ -1,7 +1,8 @@
-owner = CRO
-controller = CRO
+owner = HUN
+controller = HUN
 add_core = CRO
 add_core = DLM
 add_core = ILL
+add_core = HUN
 trade_goods = fish
 life_rating = 35
