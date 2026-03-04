@@ -1,4 +1,10 @@
 color = { 125  171  84 }
+absolute_monarchy = { 133 2 131 }
+prussian_constitutionalism = { 133 2 131 }
+hms_government = { 133 2 131 }
+fascist_dictatorship = { 79 0 78 }
+proletarian_dictatorship = { 253 0 78 }
+presidential_dictatorship = { 204 61 204 }
 graphical_culture = ItalianGC
 
 party = {
