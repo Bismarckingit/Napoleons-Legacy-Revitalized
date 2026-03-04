@@ -1,5 +1,5 @@
-owner = DON
-controller = DON
+owner = RUS
+controller = RUS # Anything typed here will be added to all selected province history files
 add_core = RUS
 add_core = AKH
 add_core = DON

@@ -81,6 +81,14 @@ vassal = {
     end_date = 1890.1.1
 }
 
+#Ottoman Empire - Algeria
+vassal = {
+    first = TUR
+    second = ALD
+    start_date = 1835.1.1
+    end_date = 1890.1.1
+}
+
 #Ottoman Empire - Cyrenecia
 vassal = {
     first = TUR

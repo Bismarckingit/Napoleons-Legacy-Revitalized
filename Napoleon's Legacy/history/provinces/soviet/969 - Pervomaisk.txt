@@ -1,5 +1,5 @@
-owner = PLC
-controller = PLC
+owner = DON
+controller = DON # Anything typed here will be added to all selected province history files
 add_core = RUS
 add_core = UKR
 add_core = PLC

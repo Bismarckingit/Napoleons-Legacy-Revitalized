@@ -1,5 +1,5 @@
-owner = CRO
-controller = CRO
+owner = HUN
+controller = HUN
 add_core = CRO
 add_core = ILL
 add_core = MON
