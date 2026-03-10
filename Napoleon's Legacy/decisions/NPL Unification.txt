@@ -60,6 +60,7 @@ political_decisions = {
             prestige = 15
             add_accepted_culture = north_german
             add_accepted_culture = south_german
+			add_accepted_culture = rhenish
             any_country = {
                 limit = {
                     is_culture_group = germanic
@@ -126,7 +127,6 @@ political_decisions = {
             SIC = { all_core = { add_core = ITA } }
             SYC = { all_core = { add_core = ITA } }
             473 = { add_core = ITA }
-
             any_country = {
                 limit = {
                     is_culture_group = italian
@@ -135,6 +135,7 @@ political_decisions = {
                 }
                 country_event = 11101
             }
+			PAP = { country_event = 96173 }
         }
         ai_will_do = {
             factor = 1
@@ -187,6 +188,7 @@ political_decisions = {
                 }
                 country_event = 11101
             }
+			PAP = { country_event = 96173 }
         }
         ai_will_do = {
             factor = 1
@@ -238,6 +240,7 @@ political_decisions = {
                 }
                 country_event = 11101
             }
+			PAP = { country_event = 96173 }
         }
         ai_will_do = {
             factor = 1
@@ -289,6 +292,7 @@ political_decisions = {
                 }
                 country_event = 11101
             }
+			PAP = { country_event = 96173 }
         }
         ai_will_do = {
             factor = 1
@@ -340,6 +344,7 @@ political_decisions = {
                 }
                 country_event = 11101
             }
+			PAP = { country_event = 96173 }
         }
         ai_will_do = {
             factor = 1

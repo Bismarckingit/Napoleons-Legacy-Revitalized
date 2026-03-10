@@ -2533,3 +2533,37 @@ french_exhaustion = {
      war_exhaustion = 1.0
      core_pop_militancy_modifier = 0.03
 }
+#ITALIAN MODIFIERS
+italian_state_formulating = {
+	ruling_party_support = 1
+	pop_militancy_modifier = -0.5
+}
+church_manorialism = {
+	RGO_output = 0.2
+	local_factory_output = -0.2
+	pop_militancy_modifier = 0.01
+	pop_consciousness_modifier = -0.01
+}
+manorialism = {
+	RGO_output = 0.1
+	factory_output = -0.25
+	pop_militancy_modifier = -0.01
+	pop_consciousness_modifier = -0.01
+}
+papal_controversy = {
+	culture_tech_research_bonus = -0.1
+	pop_militancy_modifier = 0.1
+	pop_consciousness_modifier = 0.1
+}
+aristocratic_upper_staff = {
+	army_tech_research_bonus = 0.25
+	mobilisation_size = -1
+	mobilization_impact = -1
+	org_regain = 0.1
+	land_organisation = 0.05
+    land_unit_start_experience = 1
+}
+aristocratic_naval_command = {
+	naval_organisation = 0.2
+	navy_tech_research_bonus = -0.1
+}
