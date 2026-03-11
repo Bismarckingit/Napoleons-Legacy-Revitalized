@@ -1,5 +1,5 @@
-owner = USA
-controller = USA
+owner = LOU
+controller = LOU # Anything typed here will be added to all selected province history files
 add_core = USA
 add_core = LOU
 trade_goods = timber

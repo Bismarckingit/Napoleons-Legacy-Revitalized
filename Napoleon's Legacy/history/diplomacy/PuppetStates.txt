@@ -49,6 +49,13 @@ vassal = {
     start_date = 1822.1.1
     end_date = 1878.1.1
 }
+#Louisiana 
+vassal = {
+    first = CAN
+    second = LOU
+    start_date = 1822.1.1
+    end_date = 1878.1.1
+}
 
 substate = {
     first = CAN
