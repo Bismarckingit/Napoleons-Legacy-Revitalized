@@ -1004,9 +1004,9 @@ country_event = {
 	#YOU ARE THE LAST BASTION OF THE BOURBONS IN EUROPE, BE PROUD OF THAT
     option = {
         name = "EVTOPTA4662043"
-		CAN = {  diplomatic_influence = { who = ITS value = 100 } }
-		AUS = {  diplomatic_influence = { who = ITS value = 200 } }
-		RUS = {  diplomatic_influence = { who = ITS value = 100 } }
+		CAN = {  diplomatic_influence = { who = SYC value = 100 } }
+		AUS = {  diplomatic_influence = { who = SYC value = 200 } }
+		RUS = {  diplomatic_influence = { who = SYC value = 100 } }
 		any_pop = { limit = { has_pop_culture = south_italian } ideology = { value = reactionary factor = 1 } }
 		treasury = 100000
 		any_owned = { limit = { is_core = SYC } fort = 1 }
