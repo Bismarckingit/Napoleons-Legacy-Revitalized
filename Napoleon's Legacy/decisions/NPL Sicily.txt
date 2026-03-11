@@ -18,6 +18,7 @@ political_decisions = {
 		badboy = 5
 		}
 	}
+######ITALY CAN GO FOR TUNISIA EARLY
 	sicilian_tunis = {
 	alert = yes
 	potential = {
@@ -57,6 +58,7 @@ political_decisions = {
 				}
 		}
 	}
+######ITALY CAN GO FOR LIBYA EARLY
 	sicilian_libya = {
 	alert = yes
 	potential = {
@@ -94,6 +96,261 @@ political_decisions = {
 					casus_belli = conquest
 					}
 				}
+		}
+	}
+#SICILIAN DECISIONS TO GO TO WAR WITH SPAIN - DECISION FOR WAR
+	sicilian_spanish_war = {
+	alert = yes
+	potential = {
+		tag = ITS
+		has_country_flag = italian_coalition_ready
+		NOT = { has_country_flag = sicilian_spanish_war }
+		}
+	allow = {
+		is_greater_power = yes
+		all_core = { owned_by = THIS }
+		romanticism = 1
+		idealism = 1
+		functionalism = 1
+		nationalism_n_imperialism = 1
+		NSA = { exists = yes is_vassal = no NOT = { truce_with = THIS } }
+		}
+	effect = {
+		badboy = 5
+		set_country_flag = sicilian_spanish_war
+		add_country_modifier = { temporary_treaty_timer duration = 1825 }
+		casus_belli = { target = NSA type = cut_down_to_size months = 10 }
+		FRA = {
+			diplomatic_influence = {
+				who = NSA
+				value = 400
+				}
+			}
+		diplomatic_influence = {
+			who = NSA
+			value = -400
+			}
+		war = {
+			target = NSA
+			attacker_goal = {
+					casus_belli = cut_down_to_size
+					}
+				}
+		}
+	}
+#SICILIAN SPANISH WAR - ITALIAN VICTORY
+	sicilian_spanish_war_victory = {
+	alert = yes
+	potential = {
+		tag = ITS
+		has_country_flag = sicilian_spanish_war
+		NOT = { has_country_flag = sicilian_spanish_war_end }
+		has_country_modifier = temporary_treaty_timer
+		}
+	allow = {
+		war_with = NSA
+		controls = 487
+		NSA = { war_exhaustion = 70 }
+		war_score = 65
+		}
+	effect = {
+		prestige = 15
+		set_country_flag = sicilian_spanish_war_end
+		end_war = NSA
+		country_event = 4662038
+		}
+	}
+#SICILIAN FRENCH WAR - MAJOR WAR TO DEPOSE NAPOLEON
+	sicilian_french_war = {
+	alert = yes
+	potential = {
+		tag = ITS
+		has_country_flag = italian_coalition_ready
+		NOT = { has_country_flag = sicilian_french_war }
+		}
+	allow = {
+		is_greater_power = yes
+		all_core = { owned_by = THIS }
+		romanticism = 1
+		idealism = 1
+		biologism = 1
+		machine_guns = 1
+		revolution_n_counterrevolution = 1
+		FRA = { exists = yes is_vassal = no NOT = { truce_with = THIS } }
+		BOR = { exists = no }
+		}
+	effect = {
+		badboy = 5
+		set_country_flag = sicilian_french_war
+		add_country_modifier = { temporary_treaty_timer duration = 1825 }
+		casus_belli = { target = FRA type = cut_down_to_size months = 10 }
+		war = {
+			target = FRA
+			attacker_goal = {
+					casus_belli = cut_down_to_size
+					}
+				}
+		}
+	}
+#SICILIAN FRENCH WAR - ITALIAN VICTORY
+	sicilian_french_war_victory = {
+	alert = yes
+	potential = {
+		tag = ITS
+		has_country_flag = sicilian_french_war
+		NOT = { has_country_flag = sicilian_french_war_end }
+		has_country_modifier = temporary_treaty_timer
+		}
+	allow = {
+		war_with = FRA
+		controls = 425
+		FRA = { war_exhaustion = 70 }
+		war_score = 85
+		}
+	effect = {
+		prestige = 15
+		set_country_flag = sicilian_french_war_end
+		end_war = FRA
+		country_event = 4662037
+		}
+	}
+#FRANCIS II STARTS BIG WAR WITH NAPLES WITHOUT REPERCUSSIONS BEYOND DIRECT ALLIANCES
+	sicilian_unity_war = {
+	alert = yes
+	potential = {
+		tag = SYC
+		has_country_flag = francis_ii
+		SIC = { exists = yes }
+		NOT = { has_country_flag = sicilian_unity_war }
+		}
+	allow = {
+		state_n_government = 1
+		army_professionalism = 1
+		}
+	effect = {
+		badboy = 5
+		set_country_flag = sicilian_unity_war
+		war = {
+			target = SIC
+			attacker_goal = {
+					casus_belli = civil_war
+					}
+			defender_goal = {
+					casus_belli = civil_war
+					}
+				}
+		}
+	}
+#INTEGRATING ARAGON - BOURBON UNITY
+	aragon_italy_unity = {
+	alert = yes
+	potential = {
+		tag = ITS
+		ARN = { exists = yes }
+		has_country_flag = aragonese_kingdom
+		has_country_flag = francis_ii
+		}
+	allow = {
+		is_greater_power = yes
+		ARN = { vassal_of = THIS in_sphere = THIS }
+		nationalism_n_imperialism = 1
+		biologism = 1
+		iron_steamers = 1
+		iron_railroad = 1
+		market_regulations = 1
+		}
+	effect = {
+		prestige = 15
+		badboy = 5
+		inherit = ARN
+		add_accepted_culture = catalan
+		}
+	}
+#VASSALIZING SPAIN - BOURBON UNITY
+	vassalize_spain = {
+	alert = yes
+	potential = {
+		tag = ITS
+		is_greater_power = yes
+		SPA = { exists = yes owns = 487 }
+		NSA = { exists = no }
+		SPA = { is_greater_power = no }
+		}
+	allow = {
+		is_greater_power = yes
+		rank = 6
+		SPA = { in_sphere = THIS is_secondary_power = no }
+		revolution_n_counterrevolution = 1
+		biologism = 1
+		market_regulations = 1
+		army_decision_making = 1
+		steel_railroad = 1
+		}
+	effect = {
+		prestige = 15
+		badboy = 5
+		country_event = 4662040
+		}
+	}
+#VASSALIZING FRANCE - HARDEST STEP OF BOURBON UNITY
+	vassalize_france = {
+	alert = yes
+	potential = {
+		tag = ITS
+		is_greater_power = yes
+		BOR = { exists = yes owns = 425 }
+		FRA = { exists = no }
+		BOR = { is_greater_power = no }
+		}
+	allow = {
+		is_greater_power = yes
+		BOR = { in_sphere = THIS }
+		rank = 4
+		integral_rail_system = 1
+		advanced_metallurgy = 1
+		army_risk_management = 1
+		phenomenology_n_hermeneutic = 1
+		social_science = 1
+		economic_responsibility = 1
+		}
+	effect = {
+		prestige = 15
+		badboy = 15
+		country_event = 4662041
+		}
+	}
+#FORMING THE WRE - 1890 MINIMUM (BOURBON LINES ARE CONSOLIDATED)
+	bourbon_eagle = {
+	alert = yes
+	potential = {
+		tag = ITS
+		is_greater_power = yes
+		BOR = { vassal_of = THIS }
+		SPA = { vassal_of = THIS }
+		FRA = { exists = no }
+		SPA = { exists = no }
+		year = 1890
+		}
+	allow = {
+		is_greater_power = yes
+		BOR = { in_sphere = THIS vassal_of = THIS }
+		SPA = { in_sphere = THIS vassal_of = THIS }
+		OR = {
+		PAP = { in_sphere = THIS vassal_of = THIS }
+		owns = 749
+		}
+		rank = 2
+		army_nco_training = 1
+		military_logistics = 1
+		infiltration = 1
+		mass_politics = 1
+		psychoanalysis = 1
+		modern_central_bank_system = 1
+		}
+	effect = {
+		prestige = 15
+		badboy = 25
+		country_event = 4662042
 		}
 	}
 }

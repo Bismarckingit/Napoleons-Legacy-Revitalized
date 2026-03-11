@@ -336,6 +336,7 @@ country_event = {
     trigger = {
         tag = ITS
         war = no
+		NOT = { has_country_flag = maria_theresa_bourbon }
 		has_country_modifier = italian_state_formulating
 		OR = { government = hms_government government = prussian_constitutionalism government = absolute_monarchy }
     }
@@ -505,6 +506,7 @@ country_event = {
     option = {
         name = "EVTOPTA4662025"
 		country_event = 4662026
+		set_country_flag = restoring_manorialism
 		prestige = 5
 		any_pop = { 
 			limit = { pop_type = aristocrats } 
@@ -512,7 +514,7 @@ country_event = {
 			}
 		scaled_militancy = { ideology = liberal factor = 5 } 
 		scaled_militancy = { ideology = anarcho_liberal factor = 5 } 
-		add_country_modifier = { name = manorialism duration = -1 }
+		add_country_modifier = { name = restoring_manorialism duration = 365 }
 		}
 }
 #CONSOLIDATION OF NOBLE PRIVILEGE - MILITARY LEADERSHIP
@@ -526,15 +528,15 @@ country_event = {
     mean_time_to_happen = { days = 1 }
     option = {
         name = "EVTOPTA4662026"
-		country_event = 4662027
+		country_event = 4662028
 		prestige = 5
 		any_pop = { 
-			limit = { pop_type = aristocrats } 
+			limit = { OR = { pop_type = officers pop_type = soldiers } } 
 			ideology = { value = reactionary factor = 1 }
 			}
 		scaled_militancy = { ideology = liberal factor = 5 } 
 		scaled_militancy = { ideology = anarcho_liberal factor = 5 } 
-		add_country_modifier = { name = manorialism duration = -1 }
+		add_country_modifier = { name = nepotistic_upper_staff duration = -1 }
 		}
 }
 #CONSOLIDATION OF NOBLE PRIVILEGE - CEMENTING OF MANORIALISM
@@ -544,7 +546,11 @@ country_event = {
     desc = "EVTDESC4662027"
     picture = "vittoriano"
     fire_only_once = yes
-    is_triggered_only = yes
+    trigger = {
+		tag = ITS
+		has_country_flag = restoring_manorialism
+		NOT = { has_country_modifier = restoring_manorialism }
+		}
     mean_time_to_happen = { days = 1 }
     option = {
         name = "EVTOPTA4662027"
@@ -556,7 +562,8 @@ country_event = {
 			ideology = { value = reactionary factor = 1 }
 			}
 		scaled_militancy = { ideology = liberal factor = 5 } 
-		scaled_militancy = { ideology = anarcho_liberal factor = 5 } 
+		scaled_militancy = { ideology = anarcho_liberal factor = 5 }
+		add_country_modifier = { name = manorialism duration = -1 }		
 		}
 }
 #CONSOLIDATION OF NOBLE PRIVILEGE - DISTRIBUTION OF OLD TITLES - CORES AND PROVINCE MODIFIERS
@@ -570,6 +577,7 @@ country_event = {
     mean_time_to_happen = { days = 1 }
     option = {
         name = "EVTOPTA4662028"
+		add_country_flag = use_for_sicily_cleanup
 		prestige = 5
 		any_pop = { 
 			limit = { pop_type = aristocrats } 
@@ -584,6 +592,10 @@ country_event = {
 		SAR_765 = { add_core = SYC }
 		AUS_729 = { add_core = LOM }
 		AUS_726 = { add_core = LOM }
+		any_owned = { limit = { is_core = PAP } add_province_modifier = { name = church_manorialism duration = -1 } }
+		any_owned = { limit = { is_core = LUC } add_province_modifier = { name = industrial_zone duration = -1 } }
+		any_owned = { limit = { is_core = LOM } add_province_modifier = { name = industrial_zone duration = -1 } }
+		any_owned = { limit = { is_core = SAR } add_province_modifier = { name = mercantile_zone duration = -1 } }
 		}
 }
 #END OF CHURCH AND NOBLE PRIVILEGE IF THE MONARCHY IS ABOLISHED
@@ -594,7 +606,9 @@ country_event = {
     picture = "vittoriano"
     fire_only_once = yes
     trigger = {
-		tag = ITS
+		tag = ITA
+		has_country_modifier = manorialism
+		has_country_flag = use_for_sicily_cleanup
 		NOT = { OR = { government = absolute_monarchy government = prussian_constitutionalism government = hms_government } }
 		}
     mean_time_to_happen = { days = 1 }
@@ -602,7 +616,13 @@ country_event = {
         name = "EVTOPTA4662029"
 		prestige = 5
 		remove_country_modifier = manorialism
-		any_owned = { limit = { is_core = ITS } remove_province_modifier = church_manorialism }
+		remove_country_modifier = aristocratic_general_staff
+		remove_country_modifier = nepotistic_upper_staff
+		remove_country_modifier = aristocratic_naval_command
+		any_owned = { limit = { is_core = ITA } remove_province_modifier = church_manorialism }
+		any_owned = { limit = { is_core = ITA } remove_province_modifier = industrial_zone }
+		any_owned = { limit = { is_core = ITA } remove_province_modifier = mercantile_zone }
+		all_core = { remove_core = LUC remove_core = LOM remove_core = SAR remove_core = VEN remove_core = TUS remove_core = PAP }
 		}
 }
 #DIPLOMATIC STANCE OF SICILIAN ITALY - ANTI-NAPOLEONIC, PRO-ANCIEN REGIME
@@ -639,6 +659,7 @@ country_event = {
     trigger = {
 		tag = ITS
 		is_greater_power = yes
+		PAP = { exists = yes vassal_of = FRA }
 		year = 1860
 		}
     mean_time_to_happen = { days = 1 }
@@ -651,13 +672,17 @@ country_event = {
 		PAP_752 = { remove_core = ITS }
 		751 = { add_core = ITS }
 		752 = { add_core = ITS }
+		PAP = { any_owned = { limit = { is_core = ITS } secede_province = ITS } }
 		FRA = { country_event = 4662032 }
+		country_event = 4662033
 		}
 	option = {
 		name = "EVTOPTB4662031"
 		prestige = -5
 		relation = { who = PAP value = -200 }
-		country_event = 4662033
+		inherit = PAP
+		capital = 749
+		FRA = { PAP_752 = { add_core = FRA } }
 		}
 } 
 #FRANCE CAN PREVENT THE LOSS OF THE PAPACY, BUT MUST SEIZE IT DIRECTLY AND GET PAPAL CONTROVERSY, AND ITS GETS ITS CORES BACK
@@ -682,6 +707,7 @@ country_event = {
 		name = "EVTOPTB4662032"
 		prestige = -5
 		relation = { who = PAP value = -200 }
+		ai_chance = { value = 85 }
 		}
 }
 #IF THE PAPACY IS UNINCORPORATED CHOOSE CAPITAL
@@ -695,32 +721,32 @@ country_event = {
     mean_time_to_happen = { days = 1 }
 	#NAPOLI
     option = {
-        name = "EVTOPTA4662032"
+        name = "EVTOPTA4662033"
 		capital = 754
 		}
 	#SYRACUSE
 	option = {
-		name = "EVTOPTB4662032"
+		name = "EVTOPTB4662033"
 		capital = 763
 		}
 	#FLORENCE
 	option = {
-		name = "EVTOPTC4662032"
+		name = "EVTOPTC4662033"
 		capital = 744
 		}
 	#RAVENNA
 	option = {
-		name = "EVTOPTD4662032"
+		name = "EVTOPTD4662033"
 		capital = 743
 		}
 	#MODENA
 	option = {
-		name = "EVTOPTE4662032"
+		name = "EVTOPTE4662033"
 		capital = 739
 		}
 	#MILAN
 	option = {
-		name = "EVTOPTF4662032"
+		name = "EVTOPTF4662033"
 		capital = 726
 		}
 }
@@ -732,15 +758,19 @@ country_event = {
     picture = "vittoriano"
     fire_only_once = yes
     trigger = {
-		tag = ITS
+		OR = { tag = ITS tag = SYC }
+		has_country_modifier = nepotistic_upper_staff
 		is_greater_power = yes
-		
+		army_professionalism = 1
+		military_staff_system = 1
+		strategic_mobility = 1
 		}
     mean_time_to_happen = { days = 1 }
-	#TAKE THE VASSAL FROM FRANCE - LOSE CORES AND GET PAPAL CONCORDAT
+	#ARISTOCRATIC GENERAL STAFF STRENGTHENS STATS OF ARMY AND RESEARCH BUT ELIMINATES MOBILIZATION
     option = {
         name = "EVTOPTA4662034"
 		prestige = 5
+		remove_country_modifier = nepotistic_upper_staff
 		add_country_modifier = { name = aristocratic_general_staff duration = -1 }
 		}
 	option = {
@@ -756,12 +786,14 @@ country_event = {
     picture = "vittoriano"
     fire_only_once = yes
     trigger = {
-		tag = ITS
+		OR = { tag = ITS tag = SYC }
 		is_greater_power = yes
-		
+		battleship_column_doctrine = 1
+		naval_plans = 1
+		naval_professionalism = 1
 		}
     mean_time_to_happen = { days = 1 }
-	#TAKE THE VASSAL FROM FRANCE - LOSE CORES AND GET PAPAL CONCORDAT
+	#ARISTOCRATIC COMMAND HERE WEAKENS NAVAL RESEARCH BUT PROMOTES ORGANIZATION
     option = {
         name = "EVTOPTA4662035"
 		prestige = 5
@@ -773,14 +805,473 @@ country_event = {
 		}
 }
 #AMBITIONS OF SICILIAN ITALY - RESTORING THE ANCIEN REGIME AT HOME AND ABROAD - SPAIN AND FRANCE ARE PRIMARY TARGETS - AUSTRIAN EXPANSION IS DISCOURAGED
+country_event = {
+    id = 4662036
+    title = "EVTNAME4662036"
+    desc = "EVTDESC4662036"
+    picture = "vittoriano"
+    fire_only_once = yes
+    trigger = {
+		tag = ITS
+		is_greater_power = yes
+		nationalism_n_imperialism = 1
+		all_core = { owned_by = THIS }
+		}
+    mean_time_to_happen = { days = 1 }
+	#WHAT IS ITALY? - OPENS UP THE DECISIONS TO SCRIPT-WAR THE FRENCH AND SPANISH
+    option = {
+        name = "EVTOPTA4662036"
+		set_country_flag = italian_coalition_ready
+		prestige = 5
+		609 = { add_core = THIS }
+		473 = { add_core = THIS }
+		736 = { add_core = THIS }
+		AUS_736 = { add_core = THIS }
+		854 = { add_core = THIS }
+		}
+}
 #ITALIAN CLAIMS ON FRENCH LANDS FOLLOWING REINSTATEMENT OF BOURBONS - NICE AND SAVOY AND RHONE AND ANY TUNISIAN HOLDINGS
+country_event = {
+    id = 4662037
+    title = "EVTNAME4662037"
+    desc = "EVTDESC4662037"
+    picture = "vittoriano"
+    fire_only_once = yes
+    is_triggered_only = yes
+    mean_time_to_happen = { days = 1 }
+	#ERADICATION OF FRENCH EMPIRE - ALL LANDS IN NORTH AFRICA SEIZED - RHONE REGION TAKEN AS WELL - IF SPAIN IS VASSAL THE BOURBON SPANISH ARE RESTORED
+    option = {
+        name = "EVTOPTA4662037"
+		prestige = 50
+		FRA = { change_tag = BOR all_core = { remove_core = FRA add_core = BOR } }
+		BOR = { prestige = -4000 }
+		relation = { who = BOR value = 400 }
+		create_alliance = BOR
+		BOR = { 
+			government = absolute_monarchy 
+			vote_franschise = none_voting
+			public_meetings = no_meeting
+			upper_house_composition = party_appointed
+			any_pop = { limit = { pop_majority_ideology = liberal } reduce_pop = 0.8 }
+			any_pop = { limit = { has_pop_culture = french } ideology = { value = reactionary factor = 1 } }
+			}
+		any_country = { limit = { tag = NSA vassal_of = FRA } change_tag = SPA all_core = { add_core = SPA remove_core = NSA } }
+		465 = { add_core = THIS }
+		466 = { add_core = THIS }
+		454 = { add_core = THIS }
+		469 = { add_core = THIS }
+		470 = { add_core = THIS }
+		471 = { add_core = THIS }
+		472 = { add_core = THIS }
+		BOR = { any_owned = { limit = { is_core = ITS } secede_province = ITS remove_core = BOR } }
+		BOR = { any_owned = { limit = { is_core = CAT } secede_province = ITS remove_core = BOR } }
+		BOR = { any_owned = { limit = { OR = { is_core = TUN is_core = ALD is_core = MOR is_core = EGY is_core = LBY is_core = TRI is_core = CYR } } secede_province = ITS remove_core = BOR } }
+		}
+}
 #ITALIAN CLAIMS ON SPANISH LANDS FOLLOWING REINSTATEMENT OF SPANISH - ARAGON AS AN ITALIAN CROWN AND GIBRALTAR
+country_event = {
+    id = 4662038
+    title = "EVTNAME4662038"
+    desc = "EVTDESC4662038"
+    picture = "vittoriano"
+    fire_only_once = yes
+    is_triggered_only = yes
+    mean_time_to_happen = { days = 1 }
+	#SPAIN IS RELEASED - BUT THE NON-CASTILIAN LANDS ARE STRIPPED AWAY 
+    option = {
+        name = "EVTOPTA4662038"
+		prestige = 50
+		SPA = { inherit = NSA all_core = { remove_core = NSA } }
+		SPA = { 
+			government = absolute_monarchy 
+			vote_franschise = none_voting
+			public_meetings = no_meeting
+			upper_house_composition = party_appointed
+			any_pop = { limit = { pop_majority_ideology = liberal } reduce_pop = 0.8 }
+			any_pop = { limit = { has_pop_culture = french } ideology = { value = reactionary factor = 1 } }
+			}
+		SPA_498 = { add_core = ITS }
+		503 = { add_core = ITS }
+		504 = { add_core = ITS }
+		505 = { add_core = ITS }
+		517 = { add_core = ITS }
+		SPA = { any_owned = { limit = { is_core = ITS } secede_province = ITS remove_core = SPA } }
+		SPA = { any_owned = { limit = { OR = { is_core = TUN is_core = ALD is_core = MOR is_core = EGY is_core = LBY is_core = TRI is_core = CYR } } secede_province = ITS remove_core = BOR } }
+		}
+}
 #ORGANIZATION OF ARAGON - AUTONOMOUS KINGDOM WITHIN ITALY
+country_event = {
+    id = 4662039
+    title = "EVTNAME4662039"
+    desc = "EVTDESC4662039"
+    picture = "vittoriano"
+    fire_only_once = yes
+    trigger = {
+		tag = ITS 
+		CAT = { all_core = { owned_by = THIS } }
+		}
+    mean_time_to_happen = { days = 1 }
+	#ARAGON IS MADE AUTONOMOUS AS AN ITALIAN VASSAL - CAN LATER BE INTEGRATED VIA DECISION
+    option = {
+        name = "EVTOPTA4662039"
+		set_country_flag = aragonese_kingdom
+		prestige = 10
+		badboy = -2
+		CAT = { all_core = { remove_core = ITS add_core = ARN remove_core = CAT } }
+		SPA_492 = { add_core = ARN }
+		release_vassal = ARN
+		}
+}
 #INHERITANCE OF SPANISH BOURBONS AT HIGH ENOUGH TECH AND SPHERE
-#FRANCE CAN BE INCORPORATED IN SELECT CONDITIONS
-#WESTERN ROME CAN BE FORMED IF ALL ABOVE AMBITIONS ARE MET
-#INSERT ROYAL SUCCESSIONS HERE
-
+country_event = {
+    id = 4662040
+    title = "EVTNAME4662040"
+    desc = "EVTDESC4662040"
+    picture = "vittoriano"
+    fire_only_once = yes
+    is_triggered_only = yes
+    mean_time_to_happen = { days = 1 }
+	#SPAIN IS MADE VASSAL OF ITALY - BOURBON ROME CAN ONLY BE FORMED WHEN IT IS NOT MAJOR ANYMORE
+    option = {
+        name = "EVTOPTA4662040"
+		prestige = 50
+		set_country_flag = italian_spain
+		create_vassal = SPA
+		SPA = { prestige = -100000 any_owned = { limit = { is_core = ARN } secede_province = ITS } }
+		}
+}
+#FRANCE CAN BE MADE A VASSAL IN VERY SELECT CONDITIONS
+country_event = {
+    id = 4662041
+    title = "EVTNAME4662041"
+    desc = "EVTDESC4662041"
+    picture = "vittoriano"
+    fire_only_once = yes
+    is_triggered_only = yes
+    mean_time_to_happen = { days = 1 }
+	#FRANCE IS MADE ITALIAN VASSAL AND ITALIAN CONTROL IS EXPANDED INTO SOUTHERN FRANCE - REMINDER TO CREATE A OCCITAN CULTURE
+    option = {
+        name = "EVTOPTA4662041"
+		prestige = 50
+		set_country_flag = italian_france
+		create_vassal = BOR
+		BOR = { prestige = -100000 any_owned = { limit = { is_core = ARN } secede_province = ITS } }
+		}
+}
+#WESTERN ROME CAN BE FORMED IF ALL ABOVE AMBITIONS ARE MET?
+country_event = {
+    id = 4662042
+    title = "EVTNAME4662042"
+    desc = "EVTDESC4662042"
+    picture = "vittoriano"
+    fire_only_once = yes
+    is_triggered_only = yes
+    mean_time_to_happen = { days = 1 }
+	#THIS ROMAN EMPIRE IS A CULTURAL UNION OF ALL LATIN PEOPLES - HERE IT IS ENVISIONED AS AN EXTENSION OF THE BOURBON MONARCHY AND CATHOLICISM - ENDS THE BOURBON CONTENT
+    option = {
+        name = "EVTOPTA4662042"
+		prestige = 100
+		set_country_flag = reactionary_western_rome
+		inherit = BOR
+		inherit = SPA
+		change_tag = WRE
+		all_core = { add_core = WRE remove_core = ITS }
+		ARN = { all_core = { add_core = WRE } }
+		BOR = { all_core = { add_core = WRE } }
+		SPA = { all_core = { add_core = WRE } }
+		add_accepted_culture = french
+		add_accepted_culture = spanish
+		add_accepted_culture = catalan
+		add_accepted_culture = basque
+		add_accepted_culture = franco_iberian
+		add_accepted_culture = wallonian
+		add_accepted_culture = breton
+		add_accepted_culture = picard
+		}
+}
+#THE REIGN OF FERDINAND II - BOLSTERED BY FEARMONGERING OF FRENCH DOMINATION AND FIRM PRO-COALITION STANCE - YOU ALSO TOOK THE TREASURY WITH YOU AND HAVE A VERITABLE FORTRESS
+country_event = {
+    id = 4662043
+    title = "EVTNAME4662043"
+    desc = "EVTDESC4662043"
+    picture = "vittoriano"
+    fire_only_once = yes
+    trigger = {
+		tag = SYC 
+		OR = { government = absolute_monarchy government = hms_government government = prussian_constitutionalism }
+		}
+    mean_time_to_happen = { days = 1 }
+	#YOU ARE THE LAST BASTION OF THE BOURBONS IN EUROPE, BE PROUD OF THAT
+    option = {
+        name = "EVTOPTA4662043"
+		CAN = {  diplomatic_influence = { who = ITS value = 100 } }
+		AUS = {  diplomatic_influence = { who = ITS value = 200 } }
+		RUS = {  diplomatic_influence = { who = ITS value = 100 } }
+		any_pop = { limit = { has_pop_culture = south_italian } ideology = { value = reactionary factor = 1 } }
+		treasury = 100000
+		any_owned = { limit = { is_core = SYC } fort = 1 }
+		small_arms = 500
+		artillery = 100
+		canned_goods = 500
+		ammunition = 1000
+		prestige = 5
+		}
+}
+#COUP ATTEMPT AGAINST THE MONARCH WILL OCCUR IN 1843 - WILL TRY TO MERGE THE KINGDOM WITH NAPLES - MOST LIKELY TO FAIL - WHEN IT FAILS SOME LIBERALS DIE
+country_event = {
+    id = 4662044
+    title = "EVTNAME4662044"
+    desc = "EVTDESC4662044"
+    picture = "vittoriano"
+    fire_only_once = yes
+    trigger = {
+		tag = SYC
+		SIC = { exists = yes }
+		OR = { government = absolute_monarchy government = hms_government government = prussian_constitutionalism }
+		year = 1843
+		month = 4
+		}
+    mean_time_to_happen = { days = 1 }
+	#APRIL COUP FAILS - THE PARANOIA IS JUSTIFIED EVEN MORE
+    option = {
+        name = "EVTOPTA4662044"
+		prestige = 1
+		any_pop = { limit = { pop_majority_ideology = liberal } reduce_pop = 0.95 }
+		any_pop = { limit = { has_pop_culture = south_italian } ideology = { value = reactionary factor = 1 } }
+		add_country_modifier = { name = anti_jacobin_tract duration = 3650 }
+		ai_chance = { factor = 75 }
+		}
+	option = {
+		name = "EVTOPTB4662044"
+		prestige = -1000
+		SIC = { inherit = SYC }
+		ai_chance = { factor = 25 }
+		}
+}
+#RISE OF FRANCIS II - OPENS UP OPPORTUNITY TO FORCE A WAR ON EQUAL TERMS - FRANCIS II IS ALSO A PROPONENT OF PAN-CATHOLICISM/LATINISM AS AN ALTERNATIVE TO NATIONALISM
+country_event = {
+    id = 4662045
+    title = "EVTNAME4662045"
+    desc = "EVTDESC4662045"
+    picture = "vittoriano"
+    fire_only_once = yes
+    trigger = {
+		OR = { tag = SYC tag = ITS }
+		SIC = { exists = yes }
+		OR = { government = absolute_monarchy government = hms_government government = prussian_constitutionalism }
+		year = 1859
+		month = 5
+		}
+    mean_time_to_happen = { days = 1 }
+	#BLOODY FINALLY IF YOU HAVENT DONE IT YET
+    option = {
+        name = "EVTOPTA4662045"
+		set_country_flag = francis_ii
+		prestige = 5
+		}
+}
+#DEATH OF FRANCIS II - OPENS POSSIBILITY FOR CONSTITUTIONAL ITALY - WILL HAPPEN ONLY WHEN ITALY BECAUSE MAGIC LMAO
+country_event = {
+    id = 4662046
+    title = "EVTNAME4662046"
+    desc = "EVTDESC4662046"
+    picture = "vittoriano"
+    fire_only_once = yes
+    trigger = {
+		tag = ITS
+		OR = { government = absolute_monarchy government = hms_government government = prussian_constitutionalism }
+		year = 1895
+		month = 1
+		}
+    mean_time_to_happen = { days = 1 }
+	#PRAGMATIC SANCTION FOR NIECE - GET MARIA THERESA OF BOURBON TWO-SICILIES AND CONSTITUTION
+    option = {
+        name = "EVTOPTA4662046"
+		set_country_flag = maria_theresa_bourbon
+		government = hms_government
+		vote_franschise = wealth_weighted_voting
+		public_meetings = yes_meeting
+		press_rights = free_press
+		political_parties = gerrymandering
+		prestige = 5
+		any_pop = { limit = { has_pop_culture = south_italian } ideology = { value = conservative factor = 0.5 } ideology = { value = liberal factor = 0.5 } }
+		}
+	#REPRESSIONS CONTINUE UNDER ALFONSO BOURBON - NOT MUCH REASON TO ACKNOWLEDGE MONARCHY LATER
+	option = {
+        name = "EVTOPTB4662046"
+		set_country_flag = king_alfonso_bourbon
+		prestige = 5
+		any_pop = { limit = { pop_majority_ideology = liberal } reduce_pop = 0.95 }
+		any_pop = { limit = { has_pop_culture = south_italian } ideology = { value = reactionary factor = 1 } }
+		}
+}
+#CLEANUP FOR IF BOURBON ITALY LOSES ITS MONARCHY - TURN INTO REGULAR ITALY WITH REGULAR BORING ITALY CONTENT
+country_event = {
+    id = 4662047
+    title = "EVTNAME4662047"
+    desc = "EVTDESC4662047"
+    picture = "vittoriano"
+    fire_only_once = yes
+    trigger = {
+		tag = ITS
+		is_vassal = no
+		NOT = { OR = { government = absolute_monarchy government = hms_government government = prussian_constitutionalism } }
+		}
+    mean_time_to_happen = { days = 1 }
+	#BORING NORMAL ITALY TIME
+    option = {
+        name = "EVTOPTA4662047"
+		change_tag = ITA
+		PAP = { all_core = { add_core = ITA } }
+		ITS = { all_core = { add_core = ITA remove_core = ITS } }
+		}
+}
+#CLEANUP FOR IF SICILY LOSES ITS MONARCHY - GET ANNEXED BY MURAT AND BECOME MURAT
+country_event = {
+    id = 4662048
+    title = "EVTNAME4662048"
+    desc = "EVTDESC4662048"
+    picture = "vittoriano"
+    fire_only_once = yes
+    trigger = {
+		tag = SYC
+		NOT = { OR = { government = absolute_monarchy government = hms_government government = prussian_constitutionalism } }
+		is_vassal = no
+		}
+    mean_time_to_happen = { days = 1 }
+	#MURAT TAKES ADVANTAGE
+    option = {
+        name = "EVTOPTA4662048"
+		change_tag = SIC
+		SIC = { inherit = SYC }
+		government = absolute_monarchy
+		vote_franschise = none_voting
+		upper_house_composition = party_appointed
+		press_rights = state_press
+		}
+}
+#CLEANUP TO END SICILIAN-SPANISH WAR
+country_event = {
+    id = 4662049
+    title = "EVTNAME4662049"
+    desc = "EVTDESC4662049"
+    picture = "vittoriano"
+    fire_only_once = yes
+    trigger = {
+		tag = ITS
+		has_country_flag = sicilian_spanish_war
+		NOT = { has_country_modifier = temporary_treaty_timer }
+		}
+    mean_time_to_happen = { days = 1 }
+	#
+    option = {
+        name = "EVTOPTA4662049"
+		prestige = -10
+		end_war = NSA
+		set_country_flag = sicilian_spanish_war_end
+		}
+}
+#CLEANUP TO END SICILIAN-FRENCH WAR
+country_event = {
+    id = 4662050
+    title = "EVTNAME4662050"
+    desc = "EVTDESC4662050"
+    picture = "vittoriano"
+    fire_only_once = yes
+    trigger = {
+		tag = ITS
+		has_country_flag = sicilian_french_war
+		NOT = { has_country_modifier = temporary_treaty_timer }
+		}
+    mean_time_to_happen = { days = 1 }
+	#
+    option = {
+        name = "EVTOPTA4662050"
+		prestige = -50
+		end_war = FRA
+		any_owned = { limit = { is_core = FRA } secede_province = FRA }
+		set_country_flag = sicilian_french_war_end
+		}
+}
+#CATHOLIC IDENTITY OF WRE - LATINIZATION FLAVOR - CATHOLIC SCHOOLING IS THE ONLY SCHOOLING
+country_event = {
+    id = 4662051
+    title = "EVTNAME4662051"
+    desc = "EVTDESC4662051"
+    picture = "vittoriano"
+    fire_only_once = yes
+    trigger = {
+		tag =  WRE
+		OR = { government = absolute_monarchy government = prussian_constitutionalism government = hms_government }
+		has_country_flag = reactionary_western_rome
+		}
+    mean_time_to_happen = { days = 1 }
+	#CATHOLIC CONCORDAT WITH THE POPE - CATHOLIC SCHOOLING
+    option = {
+        name = "EVTOPTA4662051"
+		school_reforms = good_schools
+		add_country_modifier = { name = cultural_renaissance duration = -1 }
+		}
+}
+#PAPACY PROVIDES CROWN OF THE EMPIRE - DEMONSTRATION OF UNITED CATHOLIC WORLD
+country_event = {
+    id = 4662052
+    title = "EVTNAME4662052"
+    desc = "EVTDESC4662052"
+    picture = "vittoriano"
+    fire_only_once = yes
+    trigger = {
+		tag =  WRE
+		year = 1910
+		OR = { government = absolute_monarchy government = prussian_constitutionalism government = hms_government }
+		has_country_flag = reactionary_western_rome
+		}
+    mean_time_to_happen = { days = 1 }
+	#CATHOLIC CONCORDAT WITH THE POPE - THE POPE PROVIDES A CROWN OFF THE PAPAL BUDGET
+    option = {
+        name = "EVTOPTA4662052"
+		prestige = 50
+		}
+}
+#END OF THE REVOLUTION - THE WORLD IS BROUGHT BACK TO A PREREVOLUTIONARY STATE IN ROME
+country_event = {
+    id = 4662053
+    title = "EVTNAME4662053"
+    desc = "EVTDESC4662053"
+    picture = "vittoriano"
+    fire_only_once = yes
+    trigger = {
+		tag =  WRE
+		year = 1915
+		OR = { government = absolute_monarchy government = prussian_constitutionalism government = hms_government }
+		has_country_flag = reactionary_western_rome
+		}
+    mean_time_to_happen = { days = 1 }
+	#WORST ECONOMIC SOCIAL AND POLITICAL REFORMS ARE ALL IMPOSED EXCEPT SCHOOLING AND HEALTHCARE
+    option = {
+        name = "EVTOPTA466205"
+		any_pop = { limit = { pop_majority_ideology = liberal } reduce_pop = 0.95 }
+		any_pop = { limit = { pop_type = farmers } pop_type = serfs }
+		any_pop = { limit = { OR = { has_pop_culture = south_italian has_pop_culture = north_italian has_pop_culture = french has_pop_culture = spanish has_pop_culture = catalan has_pop_culture = breton has_pop_culture = wallonian has_pop_culture = breton } } ideology = { value = reactionary factor = 1 } militancy = -10 consciousness = -10 }
+		health_care = good_health_care
+		pensions = no_pensions
+		unemployment_subsidies = no_subsidies
+		safety_regulations = no_safety
+		work_hours = no_work_hour_limit
+		wage_reform = no_minimum_wage
+		debt_law = serfdom
+		conscription = no_draft
+		political_parties = underground_parties
+		trade_unions = no_trade_unions
+		press_rights = state_press
+		public_meetings = no_meeting
+		upper_house_composition = party_appointed
+		vote_franschise = none_voting
+		slavery = yes_slavery 
+		penal_system = capital_punishment
+		child_labor = child_labor_legal
+		}
+}
 #######NEAPOLITAN ITALY - NATIONALIST EXTREMIST ITALY###########
 #ITALY AS A COOPTING OF NATIONALIST NORMS - ITALY IS WHAT MURAT SAYS IT IS
 #OLD TITLES OF NOBILITY ARE THROWN AWAY - BUT MANY OLD ELITES ARE INCORPORATED

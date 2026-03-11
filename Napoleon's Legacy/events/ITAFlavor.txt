@@ -185,3 +185,18 @@ country_event = {
         749 = { set_province_flag = fine_arts }
     }
 }
+country_event = {
+
+    id = 96173
+    title = "EVTNAME96173" #Altare della patria construction
+    desc = "EVTDESC96173"
+    picture = "vittoriano"
+
+    is_triggered_only = yes
+    option = {
+        name = "EVTOPTA96173"
+        prestige = -15
+        war_exhaustion = 20
+        any_owned = { limit = { is_core = FROM NOT = { OR = { province_id = 749 province_id = 750 } } } secede_province = FROM }
+    }
+}
