@@ -338,7 +338,7 @@ country_event = {
         war = no
 		NOT = { has_country_flag = maria_theresa_bourbon }
 		has_country_modifier = italian_state_formulating
-		OR = { government = hms_government government = prussian_constitutionalism government = absolute_monarchy }
+		OR = { government = hms_government government = prussian_constitutionalism }
     }
 
     mean_time_to_happen = { days = 1 }
