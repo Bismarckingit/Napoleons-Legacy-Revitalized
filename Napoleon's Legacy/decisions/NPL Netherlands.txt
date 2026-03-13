@@ -15,7 +15,7 @@ political_decisions = {
 	effect = {
 		FRA = { country_event = 00012 }
 		set_country_flag = net_independence
-		prestige 15
+		prestige = 15
 	}
 	}
 }

@@ -108,7 +108,7 @@ country_event = {
 
 	option = {
 	name = "EVTOPTA00017"
-	prestige 50
+	prestige = 50
 	AUS = {
 		release_vassal = KOI
 		country_event = 00018
@@ -298,7 +298,6 @@ country_event = {
 		}
 	release_vassal = KOI
 	}
-}
 }
 country_event = {
 	id = 00043

@@ -46,17 +46,13 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		tag = NSA
-		has_global_flag = spain_on_fire		
-	mean_time_to_happen = { 
-		months = 1
-	}
+		has_global_flag = spain_on_fire	
+		}
+	mean_time_to_happen = { months = 1 }
 	option = {
 		name = "EVTOPTA00003"
-		add_country_modifier = {
-		name = spanish_revolution
-		duration = -1
+		add_country_modifier = { name = spanish_revolution duration = -1 }
 		}
-	}
 }
 country_event = {
 	id = 00004

@@ -155,7 +155,7 @@ political_decisions = {
 		SPA_503 = { add_core = ITM }
 		SPA_513 = { add_core = ITM }
 		}
-`	}
+	}
 	koi_irredentia_morocco = {
 		potential = {
 		NOT = { has_country_flag = koi_irredentia_morocco }

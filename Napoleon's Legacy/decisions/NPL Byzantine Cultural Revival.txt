@@ -15,7 +15,7 @@ political_decisions = {
 			badboy = 5
 			prestige = 30
 			set_country_flag = const_purge
-			BYZ = { any_owned = { limit = { OR = { province_id = 860 province_id = 865 province_id = 830 province_id = 858 province_id = 828 province_id = 859 province_id = 861 } }
+			any_owned = { limit = { OR = { province_id = 860 province_id = 865 province_id = 830 province_id = 858 province_id = 828 province_id = 859 province_id = 861 } }
 			any_pop = {
 				limit = { is_culture_group = turko_semitic }
 				reduce_pop = 0.20
@@ -30,7 +30,6 @@ political_decisions = {
 				}
 			}
 		}
-	}
 	}
 	alexiad_resettling = {
 	picture = "population_to_turkey"
@@ -76,6 +75,7 @@ political_decisions = {
 		badboy = -5
 		set_country_flag = eternal_city_rebuild
 		860 = { add_province_modifier = { name = recently_built_city duration = 3650 } 
+			}
 		}
 	}
-}
+}	

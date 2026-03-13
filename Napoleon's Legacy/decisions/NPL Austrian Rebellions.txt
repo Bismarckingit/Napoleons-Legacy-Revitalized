@@ -20,4 +20,5 @@ political_decisions = {
 		defender_goal = { casus_belli = conquest }
 		}
 	}
+	}
 }
