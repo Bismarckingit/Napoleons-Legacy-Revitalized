@@ -1,5 +1,5 @@
-owner = LOU
-controller = LOU # Anything typed here will be added to all selected province history files
+owner = CAN
+controller = CAN # Anything typed here will be added to all selected province history files
 add_core = CAN
 add_core = MTC
 trade_goods = coal
