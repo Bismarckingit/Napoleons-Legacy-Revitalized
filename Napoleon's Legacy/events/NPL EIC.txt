@@ -441,9 +441,9 @@ country_event = {
 
 # EIC Begins to Regrow, starting at Vizapatam
 country_event = {
-    id = 4662017
-    title = "EVTNAME4662017"
-    desc = "EVTDESC4662017"
+    id = 5662017
+    title = "EVTNAME5662017"
+    desc = "EVTDESC5662017"
     picture = "delhi_sultan"
 
     trigger = {
@@ -455,7 +455,7 @@ country_event = {
     fire_only_once = yes
 
     option = {
-        name = "EVTOPTA4662017"
+        name = "EVTOPTA5662017"
         prestige = 5
         relation = {
             who = CAN
@@ -488,7 +488,7 @@ country_event = {
     }
 
     option = {
-        name = "EVTOPTB4662017"
+        name = "EVTOPTB5662017"
         prestige = -5
 
         relation = {
@@ -505,9 +505,9 @@ country_event = {
     }
 }
 country_event = {
-    id = 4662018
-    title = "EVTNAME4662018"
-    desc = "EVTDESC4662018"
+    id = 5662018
+    title = "EVTNAME5662018"
+    desc = "EVTDESC5662018"
     picture = "sepoy"
 
     trigger = {
@@ -520,7 +520,7 @@ country_event = {
     fire_only_once = yes
 
     option = {
-        name = "EVTOPTA4662018"
+        name = "EVTOPTA5662018"
         prestige = 5
         1305 = { secede_province = EIC }
 
@@ -529,15 +529,15 @@ country_event = {
     }
 
     option = {
-        name = "EVTOPTB4662018"
+        name = "EVTOPTB5662018"
         end_war = ORI
         ai_chance = { factor = 0 }
     }
 }
 country_event = {
-    id = 4662019
-    title = "EVTNAME4662019"
-    desc = "EVTDESC4662019"
+    id = 5662019
+    title = "EVTNAME5662019"
+    desc = "EVTDESC5662019"
     picture = "deliberation"
 
     trigger = {
@@ -551,7 +551,7 @@ country_event = {
     fire_only_once = yes
 
     option = {
-        name = "EVTOPTA4662019"
+        name = "EVTOPTA5662019"
         prestige = 2
         badboy = 2
         relation = {
@@ -570,7 +570,7 @@ country_event = {
     }
 
     option = {
-        name = "EVTOPTB4662019"
+        name = "EVTOPTB5662019"
         prestige = -10
         1305 = { secede_province = ORI }
 
@@ -584,9 +584,9 @@ country_event = {
     }
 }
 country_event = {
-    id = 4662020
-    title = "EVTNAME4662020"
-    desc = "EVTDESC4662020"
+    id = 5662020
+    title = "EVTNAME5662020"
+    desc = "EVTDESC5662020"
     picture = "delhi_sultan"
 
     trigger = {
@@ -600,7 +600,7 @@ country_event = {
     fire_only_once = yes
 
     option = {
-        name = "EVTOPTA4662020"
+        name = "EVTOPTA5662020"
         prestige = 5
         badboy = 1
         1279 = { secede_province = EIC }
@@ -614,7 +614,7 @@ country_event = {
     }
 
     option = {
-        name = "EVTOPTB4662020"
+        name = "EVTOPTB5662020"
         prestige = -5
         relation = {
             who = HYD
@@ -626,9 +626,9 @@ country_event = {
 }
 
 country_event = {
-    id = 4662021
-    title = "EVTNAME4662021"
-    desc = "EVTDESC4662021"
+    id = 5662021
+    title = "EVTNAME5662021"
+    desc = "EVTDESC5662021"
     picture = "bagdadrailway"
 
     trigger = {
@@ -644,7 +644,7 @@ country_event = {
     mean_time_to_happen = { days = 5 }
 
     option = {
-        name = "EVTOPTA4662021"
+        name = "EVTOPTA5662021"
         CAN = {
             any_owned = {
                 limit = {
@@ -663,9 +663,9 @@ country_event = {
 }
 
 country_event = {
-    id = 4662022
-    title = "EVTNAME4662022"
-    desc = "EVTDESC4662022"
+    id = 5662022
+    title = "EVTNAME5662022"
+    desc = "EVTDESC5662022"
     picture = "deliberation"
 
     trigger = {
@@ -679,7 +679,7 @@ country_event = {
     mean_time_to_happen = { months = 18 }
 
     option = {
-        name = "EVTOPTA4662022"
+        name = "EVTOPTA5662022"
         badboy = 6
         prestige = 5
         1280 = { secede_province = EIC }
@@ -704,7 +704,7 @@ country_event = {
     }
 
     option = {
-        name = "EVTOPTB4662022"
+        name = "EVTOPTB5662022"
         badboy = 6
         prestige = 5
         1280 = { secede_province = EIC }
@@ -729,15 +729,15 @@ country_event = {
         ai_chance = { factor = 45 }
     }
     option = {
-        name = "EVTOPTC4662022"
+        name = "EVTOPTC5662022"
         ai_chance = { factor = 10 }
     }
 }
 
 country_event = {
-    id = 4662023
-    title = "EVTNAME4662023"
-    desc = "EVTDESC4662023"
+    id = 5662023
+    title = "EVTNAME5662023"
+    desc = "EVTDESC5662023"
     picture = "delhi_sultan"
 
     trigger = {
@@ -755,7 +755,7 @@ country_event = {
     mean_time_to_happen = { months = 10 }
 
     option = {
-        name = "EVTOPTA4662023"
+        name = "EVTOPTA5662023"
         badboy = 5
         prestige = 4
         inherit = ORI
@@ -774,7 +774,7 @@ country_event = {
         }
     }
     option = {
-        name = "EVTOPTC4662022"
+        name = "EVTOPTC5662022"
         prestige = -5
         set_country_flag = possible_reconciliation_hyderabad
         ai_chance = {
