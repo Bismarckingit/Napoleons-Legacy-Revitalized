@@ -94,3 +94,6 @@ upper_house = {
 
 set_country_flag = new_world_nation
 oob = "CAN_oob.txt"
+foreign_investment = {
+        EIC = 100000
+}

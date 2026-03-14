@@ -4,6 +4,11 @@ INC = {
     level = 5
     influence_value = 25
 }
+EIC = {
+	value = 200
+	level = 5
+	influence_value = 25
+}
 
 HUD = {
     value = 200

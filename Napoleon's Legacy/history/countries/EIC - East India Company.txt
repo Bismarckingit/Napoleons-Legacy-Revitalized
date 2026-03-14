@@ -7,7 +7,7 @@ nationalvalue = nv_order
 literacy = 0.5
 non_state_culture_literacy = 0.08
 prestige = 0
-civilized = yes
+civilized = no
 
 # Political reforms
 slavery = no_slavery
@@ -37,6 +37,14 @@ debt_law = serfdom
 penal_system = capital_punishment
 child_labor = child_labor_legal
 citizens_rights = primary_culture_only
+
+#UNCIV Reforms
+foreign_artillery = yes_foreign_artillery
+foreign_weapons = yes_foreign_weapons
+foreign_officers = yes_foreign_officers
+foreign_naval_officers = yes_foreign_naval_officers
+western_shipyards = yes_western_shipyards
+foreign_navies = yes_foreign_navies
 
 ruling_party = ENG_reactionary
 upper_house = {
