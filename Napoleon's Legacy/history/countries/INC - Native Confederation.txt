@@ -33,6 +33,14 @@ child_labor = child_labor_legal
 citizens_rights = primary_culture_only
 border_policy = open_borders
 
+#Unciv Reforms
+foreign_artillery = yes_foreign_artillery
+foreign_weapons = yes_foreign_weapons
+foreign_officers = yes_foreign_officers
+foreign_naval_officers = yes_foreign_naval_officers
+western_shipyards = yes_western_shipyards
+foreign_navies = yes_foreign_navies
+
 ruling_party = CHE_conservative
 upper_house = {
     fascist = 0
