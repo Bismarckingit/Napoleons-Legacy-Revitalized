@@ -934,7 +934,7 @@ potato_blight = {
 
 anti_jacobin_tract = {
     core_pop_consciousness_modifier = -0.25
-    core_pop_militancy_modifier = 0.02
+    core_pop_militancy_modifier = -0.02
     icon = 3
 }
 
@@ -2544,6 +2544,12 @@ church_manorialism = {
 	pop_militancy_modifier = 0.01
 	pop_consciousness_modifier = -0.01
 }
+restoring_manorialism = {
+	RGO_output = -0.1
+	factory_output = -0.25
+	pop_militancy_modifier = 0.01
+	pop_consciousness_modifier = 0.01
+}
 manorialism = {
 	RGO_output = 0.1
 	factory_output = -0.25
@@ -2555,15 +2561,135 @@ papal_controversy = {
 	pop_militancy_modifier = 0.1
 	pop_consciousness_modifier = 0.1
 }
-aristocratic_upper_staff = {
+nepotistic_upper_staff = {
+	mobilisation_size = -1
+	mobilization_impact = -1
+	org_regain = -0.1
+	land_organisation = -0.15
+    land_unit_start_experience = -1	
+}
+aristocratic_general_staff = {
 	army_tech_research_bonus = 0.25
 	mobilisation_size = -1
 	mobilization_impact = -1
 	org_regain = 0.1
-	land_organisation = 0.05
+	land_organisation = 0.25
     land_unit_start_experience = 1
 }
 aristocratic_naval_command = {
 	naval_organisation = 0.2
 	navy_tech_research_bonus = -0.1
+}
+temporary_treaty_timer = {
+}
+cultural_renaissance = {
+	culture_tech_research_bonus = 0.6
+	army_tech_research_bonus = -0.2
+	navy_tech_research_bonus = -0.2
+	industry_tech_research_bonus = -0.2
+	commerce_tech_research_bonus = -0.2
+}
+industrial_zone = {
+	local_factory_input = -0.1
+	local_factory_output = 0.1
+	local_factory_throughput = 0.1
+	local_RGO_output = -0.1
+	local_RGO_throughput = -0.1
+}
+mercantile_zone = {
+	local_artisan_output = 0.1
+	local_factory_output = 0.05
+	local_factory_input = 0.05
+	local_ship_build = -0.1
+}
+#CANADIAN/BRITISH MODIFIERS
+pining_for_home = {
+	tax_efficiency = 0.05
+	factory_output = 0.05
+	factory_throughput = 0.05
+	rgo_output = 0.05
+	ruling_party_support = 1
+	pop_militancy_modifier = -0.05
+	pop_consciousness_modifier = -0.05
+}
+india_problem = {
+	influence_modifier = -0.15
+	diplomatic_points_modifier = -0.2
+	cb_generation_speed_modifier = -0.1
+	tax_efficiency = 0.1
+	factory_output = 0.1
+	tariff_efficiency_modifier = 0.3
+	import_cost = -0.1
+}
+cultuurstelsel = {
+	local_rgo_output = 0.15
+	pop_militancy_modifier = -0.05
+}
+louisiana_contest = {
+	influence_modifier = -0.05
+	cb_generation_speed_modifier = -0.1
+}
+loose_control = {
+	local_rgo_output = -0.5
+	local_artisan_output = -0.5
+	local_factory_input = -0.5
+	local_ship_build = 1
+}
+loose_control_1 = {
+	local_rgo_output = -0.25
+	local_artisan_output = -0.25
+	local_factory_input = -0.25
+	local_ship_build = 0.5
+}
+state_of_emergency_permanent = {
+    war_exhaustion = 0.05
+    global_pop_militancy_modifier = 0.01
+	global_pop_consciousness_modifier = -0.05
+    min_military_spending = 0.25
+    max_social_spending = -0.3
+    min_tariff = 0.25
+    ruling_party_support = -0.15
+	suppression_points_modifier = -0.5
+    icon = 5
+}
+house_of_commons = {
+	ruling_party_support = 0.5
+	global_pop_militancy_modifier = -0.05
+}
+emergency_mobilization = {
+	mobilisation_size = 2
+	mobilisation_economy_impact = -2
+	mobilization_impact = -2
+	tax_efficiency = 0.5
+	administrative_efficiency_modifier = 0.5
+	land_organisation = 1
+	org_regain = 1
+	land_unit_start_experience = 1
+	war_exhaustion = -1
+}
+eic_fiscal_report_timer = {
+}
+canadian_501st = {
+	supply_consumption = 0.1
+	land_organisation = 0.2
+	org_regain = 0.05
+	land_unit_start_experience = 0.1
+}
+native_revolution = {
+	local_RGO_output = -0.15
+	pop_militancy_modifier = 0.05
+}
+lost_identity = {
+	core_pop_militancy_modifier = 0.25
+	core_pop_consciousness_modifier = 0.25 
+}
+america_the_undying = {
+	global_immigrant_attract = 3.0
+	global_population_growth = 0.01
+	tax_efficiency = 0.5
+	administrative_efficiency_modifier = 0.5
+	land_organisation = 1
+	org_regain = 1
+	land_unit_start_experience = 1
+	war_exhaustion = -1
 }
