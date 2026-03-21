@@ -118,7 +118,7 @@ political_decisions = {
 	effect = {
 		badboy = 5
 		set_country_flag = sicilian_spanish_war
-		add_country_modifier = { temporary_treaty_timer duration = 1825 }
+		add_country_modifier = { name = temporary_treaty_timer duration = 1825 }
 		casus_belli = { target = NSA type = cut_down_to_size months = 10 }
 		FRA = {
 			diplomatic_influence = {
@@ -182,7 +182,7 @@ political_decisions = {
 	effect = {
 		badboy = 5
 		set_country_flag = sicilian_french_war
-		add_country_modifier = { temporary_treaty_timer duration = 1825 }
+		add_country_modifier = { name = temporary_treaty_timer duration = 1825 }
 		casus_belli = { target = FRA type = cut_down_to_size months = 10 }
 		war = {
 			target = FRA
