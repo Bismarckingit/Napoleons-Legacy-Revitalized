@@ -660,19 +660,25 @@ country_event = {
 		tag = ITS
 		is_greater_power = yes
 		PAP = { exists = yes vassal_of = FRA }
-		year = 1860
+		year = 1850
 		}
     mean_time_to_happen = { days = 1 }
 	#TAKE THE VASSAL FROM FRANCE - LOSE CORES AND GET PAPAL CONCORDAT
     option = {
         name = "EVTOPTA4662031"
 		prestige = 5
+		capital = 763
 		FRA = { release_vassal = PAP }
 		create_vassal = PAP
+		diplomatic_influence = { who = PAP value = 400 }
+		FRA = { diplomatic_influence = { who = PAP value = -400 } }
 		PAP_752 = { remove_core = ITS }
+		749 = { remove_core = ITS }
 		751 = { add_core = ITS }
 		752 = { add_core = ITS }
-		PAP = { any_owned = { limit = { is_core = ITS } secede_province = ITS } }
+		PAP = { any_owned = { limit = { is_core = ITS NOT = { province_id = 749 } } secede_province = ITS } }
+		PAP = { government = theocracy }
+		any_owned = { limit = { is_core = PAP province_id = 749 } secede_province = PAP }
 		FRA = { country_event = 4662032 }
 		country_event = 4662033
 		}
