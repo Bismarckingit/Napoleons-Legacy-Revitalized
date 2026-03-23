@@ -1,408 +1,205 @@
-country_event = {
-    id = 00012
-    title = "EVTNAME00012"
-    desc =  "EVTDESC00012"
-    picture = "Execution"
-    is_triggered_only = yes
-    fire_only_once = yes
-    option = {
-	name = "EVTOPTA00012"
-	relation = { who = FROM value = 50 }
-	release_vassal = NET
-	prestige = 30
-	ai_chance = { factor = 90 }
-    }
-    option = {
-        name = "EVTOPTB00012"
-	relation = { who = FROM value = -100 }
-	release_vassal = NET
-	prestige = -50
-	badboy = 10
-	casus_belli = {
-	target = NET
-	type = make_puppet
-	months = 10
-	}
-	war = {
-		target = NET
-		attacker_goal = { casus_belli = make_puppet }
-	}
-	ai_chance = { 
-		factor = 10
-	}
-	}
-}
-# French Debuffs
-country_event = {
-	id = 00049
-	title = "EVTNAME00049"
-	desc = "EVTDESC00049"
-	fire_only_once = yes
-	mean_time_to_happen = { days = 5 }
-	trigger = {
-		tag = FRA
-		}	
-	option = {
-	name = "EVTOPTA00049"
-	set_country_flag = french_army_bad
-	add_country_modifier = { name = french_military_bad duration = -1 }
-	}
-}
-country_event = {
-	id = 00050
-	title = "EVTNAME00050"
-	desc = "EVTDESC00050"
-	fire_only_once = yes
-	mean_time_to_happen = { days = 10 }
-	trigger = {
-		tag = FRA
-		}	
-	option = {
-	name = "EVTOPTA00050"
-	set_country_flag = french_economy_bad
-	add_country_modifier = { name = french_economy_bad duration = -1 }
-	}
-}
-country_event = {
-	id = 00051
-	title = "EVTNAME00051"
-	desc = "EVTDESC00051"
-	fire_only_once = yes
-	mean_time_to_happen = { days = 15 }
-	trigger = {
-		tag = FRA
-		}	
-	option = {
-	name = "EVTOPTA00051"
-	set_country_flag = french_exhaustion
-	add_country_modifier = { name = french_exhaustion duration = -1 }
-	}
-}
-#Nationalists Upset
-country_event = {
-	id = 00052
-	title = "EVTNAME00052"
-	desc = "EVTDESC000052"
-	fire_only_once = yes
-	mean_time_to_happen = { days = 20 }
-	trigger = {
-		tag = FRA
-		}
-	option = {
-	name = "EVTOPTA00052"
-	set_country_flag = rhine_agitated
-	any_owned = {
-		limit = { is_core = RHI }
-		add_province_modifier = { name = nationalist_agitation duration = 730 }
-		}
-	}
-}
-country_event = {
-	id = 00053
-	title = "EVTNAME00053"
-	desc = "EVTDESC00053"
-	fire_only_once = yes
-	mean_time_to_happen = { days = 30 }
-	trigger = {
-		tag = FRA 
-		}
-	option = {
-	name = "EVTOPTA00053"
-	set_country_flag = catalonia_agitated
-	any_owned = {
-		limit = { is_core = CAT }
-		add_province_modifier = { name = nationalist_agitation duration = 730 }
-		}
-	}
-}
-country_event = {
-	id = 00054
-	title = "EVTNAME00054"
-	desc = "EVTDESC00054"
-	fire_only_once = yes
-	mean_time_to_happen = { days = 50 }
-	trigger = {
-		tag = FRA
-		}
-	option = {
-	name = "EVTOPTA00054"
-	set_country_flag = flems_agitated
-	any_owned = {
-		limit = { is_core = NET }
-		add_province_modifier = { name = nationalist_agitation duration = 730 }
-		}
-	}
-}
-country_event = {
-	id = 00055
-	title = "EVTNAME00055"
-	desc = "EVTDESC00055"
-	fire_only_once = yes
-	mean_time_to_happen = { days = 20 }
-	trigger = {
-		tag = FRA
-		year = 1843
-		}
-	option = {
-	name = "EVTOPTA00055"
-	set_country_flag = rhenish_rebellion
-	any_owned = {
-		limit = { OR = { is_core = RHI region = FRA_412 province_id = 397 } }
-		secede_province = RHI
-		}
-	RHI = {
-		government = democracy
-		political_reform = mandatory_service
-		political_reform = universal_weighted_voting
-		political_reform = yes_meeting
-		political_reform = gerrymandering
-		leadership = 80
-		treasury = 10000
-		small_arms = 100
-		ammunition = 200
-		canned_food = 200
-		wine = 200
-		liquor = 200
-		any_pop = { militancy = -6 }
-		add_country_modifier = { name = small_country_draft duration = 1825 }
-		}
-	war = {
-		target = RHI
-		attacker_goal = { casus_belli = annex_core_country }
-		defender_goal = { caus_belli = status_quo }
-		}
-	}
-	option = {
-		name = "EVTOPTB00055"
-		set_country_flag = rhenish_rebellion
-	any_owned = {
-		limit = { OR = { is_core = RHI region = FRA_412 province_id = 397 } }
-		secede_province = RHI
-		}
-	RHI = {
-		government = democracy
-		political_reform = mandatory_service
-		political_reform = universal_weighted_voting
-		political_reform = yes_meeting
-		political_reform = gerrymandering
-		leadership = 80
-		treasury = 10000
-		small_arms = 100
-		ammunition = 200
-		canned_food = 200
-		wine = 200
-		liquor = 200
-		any_pop = { militancy = -6 }
-		add_country_modifier = { name = small_country_draft duration = 1825 }
-		}
-	war = {
-		target = RHI
-		attacker_goal = { casus_belli = annex_core_country }
-		defender_goal = { caus_belli = status_quo }
-		}
-	change_tag_no_core_switch = RHI
-	}
-}
-country_event = {
-	id = 00056
-	title = "EVTNAME00056"
-	desc = "EVTDESC00056"
-	fire_only_once = yes
-	mean_time_to_happen = { days = 50 }
-	trigger = {
-		tag = FRA
-		year = 1843
-		}
-	option = {
-	name = "EVTOPTA00056"
-	set_country_flag = catalonian_rebellion
-	any_owned = {
-		limit = { is_core = CAT }
-		secede_province = CAT
-		}
-	CAT = {
-		government = democracy
-		political_reform = mandatory_service
-		political_reform = universal_weighted_voting
-		political_reform = yes_meeting
-		political_reform = gerrymandering
-		leadership = 80
-		treasury = 10000
-		small_arms = 100
-		ammunition = 200
-		canned_food = 200
-		wine = 200
-		liquor = 200
-		any_pop = { militancy = -6 }
-		add_country_modifier = { name = small_country_draft duration = 1825 }
-		}
-	war = {
-		target = CAT
-		attacker_goal = { casus_belli = annex_core_country }
-		defender_goal = { caus_belli = status_quo }
-		}
-	}
-	option = {
-		name = "EVTOPTB00056"
-		set_country_flag = catalonian_rebellion
-	any_owned = {
-		limit = { is_core = CAT }
-		secede_province = CAT
-		}
-	CAT = {
-		government = democracy
-		political_reform = mandatory_service
-		political_reform = universal_weighted_voting
-		political_reform = yes_meeting
-		political_reform = gerrymandering
-		leadership = 80
-		treasury = 10000
-		small_arms = 100
-		ammunition = 200
-		canned_food = 200
-		wine = 200
-		liquor = 200
-		any_pop = { militancy = -6 }
-		add_country_modifier = { name = small_country_draft duration = 1825 }
-		}
-	war = {
-		target = CAT
-		attacker_goal = { casus_belli = annex_core_country }
-		defender_goal = { caus_belli = status_quo }
-		}
-	change_tag_no_core_switch = CAT
-	}
-}
-country_event = {
-	id = 00057
-	title = "EVTNAME00057"
-	desc = "EVTDESC00057"
-	fire_only_once = yes
-	is_triggered_only = yes
-	option = {
-	name = "EVTOPTA00057"
-	war = {
-		target = SAR
-		attacker_goal = { casus_belli = annex_core_country }
-		defender_goal = { casus_belli = status_quo }
-		}
-	}
-	option = {
-	name = "EVTOPTB00057"
-	prestige = -50
-	}
-}
-# Reduction of Swiss lands
-country_event = {
-    id = 7880765
-    title = "EVTNAME7880765"
-    desc = "EVTDESC7880765"
-    picture = "switzerland"
-
-    is_triggered_only = yes
-    fire_only_once = yes
-
-    # Drop Lausanne and Lugano (if Italian neighbor), remove cores, and add German cores.
-    option = {
-        name = "EVT7880765OPTA"
-
-        relation = { who = FROM value = 50 }
-
-        SWI_607 = {
-            remove_core = THIS
-            secede_province = FROM
+political_decisions = {
+    integrate_neuchatel_france = {
+        picture = declare_republic_of_neuchatel
+        potential = {
+            tag = FRA
+            exists = NEH
+            is_our_vassal = NEH
+            state_n_government = 1
         }
 
-        random_country = {
-            limit = {
-                owns = 726
-                NOT = { owns = 2568 }
-                OR = {
-                    primary_culture = north_italian
-                    accepted_culture = north_italian
+        allow = {
+            war = no
+            NEH = { war = no }
+        }
+
+        effect = {
+            badboy = 5
+            inherit = NEH
+            608 = { add_core = FRA }
+            set_country_flag = neuchatel_integrated
+        }
+
+        ai_will_do = {
+            factor = 1
+
+            modifier = {
+                factor = 0
+                badboy = 18
+            }
+        }
+    }
+
+    claim_geneva = {
+        picture = geneva
+
+        potential = {
+            OR = {
+                tag = FRA
+                tag = BOR
+            }
+            has_country_flag = neuchatel_integrated
+            NOT = { has_country_flag = geneva_claimed }
+        }
+
+        allow = {
+            NOT = { exists = NEH }
+            nationalism_n_imperialism = 1
+        }
+
+        effect = {
+            set_country_flag = geneva_claimed
+            badboy = 4
+
+            SWI_607 = { add_core = THIS }
+            random_country = {
+                limit = {
+                    NOT = { primary_culture = french }
+                    any_owned_province = {
+                        region = SWI_607
+                    }
+                }
+
+                relation = { who = THIS value = -100 }
+                country_event = 7880765
+            }
+
+        }
+
+        ai_will_do = {
+            factor = 1
+
+            modifier = {
+                factor = 0
+                badboy = 20
+            }
+        }
+    }
+
+    move_home_BOR = {
+        picture = move_home
+        potential = {
+            tag = BOR
+            owns = 425
+            NOT = {
+                has_country_flag = returned_home
+            }
+        }
+
+        allow = {
+            owns = 425
+        }
+
+        effect = {
+            capital = 425
+            prestige = 20
+            set_country_flag = returned_home
+            war_exhaustion = -25
+            any_owned = {
+                remove_core = FRA
+            }
+        }
+
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    french_invasion = {
+         potential = {
+            tag = FRA
+            NOT = { has_country_flag = egypt_invaded }
+            EGY = { civilized = no }
+            NOT = { government = democracy }
+            revolution_n_counterrevolution = 1
+        }
+
+        allow = {
+            war = no
+        }
+
+        effect = {
+            prestige = 10
+            badboy = 6
+            casus_belli = {
+                target = EGY
+                type = establish_protectorate_casus_belli
+                months = 1
+            }
+
+            war = {
+                target = EGY
+                attacker_goal = {
+                    casus_belli = establish_protectorate_casus_belli
+                }
+
+                defender_goal = {
+                    casus_belli = status_quo
                 }
             }
 
-            country_event = 7880766
+            set_country_flag = egypt_invaded
         }
 
-        SWI_603 = { add_core = GER }
-
-        ai_chance = {
-            factor = 90
+        ai_will_do = {
+            factor = 1
             modifier = {
                 factor = 0
-                is_greater_power = yes
+                war_exhaustion = 1
             }
 
             modifier = {
-                factor = 1.2
-                in_sphere = FROM
+                factor = 0
+                badboy = 15
             }
         }
     }
-
-    # Don't drop claims, German cores not added.
-    option = {
-        name = "EVT7880765OPTB"
-        prestige = 10
-
-        relation = { who = FROM value = -100 }
-
-        ai_chance = {
-            factor = 10
-        }
-    }
-}
-
-# Italian neighbor is offered Lugano
-country_event = {
-    id = 7880766
-    title = "EVTNAME7880766"
-    desc = "EVTDESC7880766"
-    picture = "switzerland"
-
-    is_triggered_only = yes
-    fire_only_once = yes
-
-    # Take it
-    option = {
-        name = "EVT7880766OPTA"
-        prestige = 3
-
-        relation = { who = FROM value = -100 }
-        2568 = { remove_core = SWI }
-        2568 = { secede_province = THIS add_core = THIS }
-
-        ai_chance = {
-            factor = 95
-
-            modifier = {
-                factor = 0.85
-                relation = { who = FROM value = 100 }
-            }
-
-            modifier = {
-                factor = 0.7
-                alliance_with = FROM
-            }
-        }
-    }
-
-    # Don't take it
-    option = {
-        name = "EVT7880766OPTB"
-        badboy = -2
-
-        relation = { who = FROM value = 100 }
-
-        ai_chance = {
-            factor = 5
-
-            modifier = {
-                factor = 10
-                badboy = 24
-            }
-        }
-    }
+	fix_army = {
+		potential = {
+			tag = FRA
+			has_country_flag = french_army_bad
+			NOT = { has_country_flag = fixed_army }
+			}
+		allow = {
+			army_professionalism = 1
+			prestige = 150
+			at_war = no
+			}
+		effect = {
+			remove_country_modifier = french_military_bad
+			set_country_flag = fixed_army
+			}
+		}
+	fix_economy = {
+		potential = {
+			tag = FRA
+			has_country_flag = french_economy_bad
+			NOT = { has_country_flag = fixed_economy }
+			}
+		allow = {
+			interchangeable_parts = 1
+			money = 100000
+			}
+		effect = {
+			money = -100000
+			remove_country_modifier = french_economy_bad
+			set_country_flag = fixed_economy
+			}
+		}
+	fix_exhaustion = {
+		potential = {
+			tag = FRA
+			has_country_flag = french_exhaustion
+			NOT = { has_country_flag = fixed_exhaustion }
+			}
+		allow = {
+			year = 1850
+			prestige = 500
+			}
+		effect = {
+			remove_country_modifier = french_exhaustion
+			set_country_flag = fixed_exhaustion
+			prestige = 100
+			}
+		}
 }
