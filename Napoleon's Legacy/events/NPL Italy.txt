@@ -944,7 +944,8 @@ country_event = {
 		prestige = 50
 		set_country_flag = italian_spain
 		create_vassal = SPA
-		SPA = { prestige = -100000 any_owned = { limit = { is_core = ARN } secede_province = ITS } }
+		SPA = { prestige = -100000 any_owned = { limit = { is_core = ARN } secede_province = ITS remove_core = SPA } }
+		ARN = { all_core = { remove_core = SPA } }
 		}
 }
 #FRANCE CAN BE MADE A VASSAL IN VERY SELECT CONDITIONS
