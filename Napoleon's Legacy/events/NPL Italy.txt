@@ -896,14 +896,14 @@ country_event = {
 			any_pop = { limit = { pop_majority_ideology = liberal } reduce_pop = 0.8 }
 			any_pop = { limit = { has_pop_culture = french } ideology = { value = reactionary factor = 1 } }
 			}
-		SPA_498 = { add_core = ITS }
-		503 = { add_core = ITS }
-		504 = { add_core = ITS }
-		505 = { add_core = ITS }
-		517 = { add_core = ITS }
-		SPA = { any_owned = { limit = { is_core = ITS } secede_province = ITS remove_core = SPA } }
+		SPA_498 = { add_core = ARN }
+		503 = { add_core = ARN }
+		504 = { add_core = ARN }
+		505 = { add_core = ARN }
+		517 = { add_core = ARN }
+		SPA = { any_owned = { limit = { is_core = ARN } secede_province = ITS } }
 		SPA = { all_core = { limit = { is_core = ARN } remove_core = SPA } }
-		SPA = { any_owned = { limit = { OR = { is_core = TUN is_core = ALD is_core = MOR is_core = EGY is_core = LBY is_core = TRI is_core = CYR } } secede_province = ITS remove_core = BOR } }
+		SPA = { any_owned = { limit = { OR = { is_core = TUN is_core = ALD is_core = MOR is_core = EGY is_core = LBY is_core = TRI is_core = CYR } } secede_province = ITS remove_core = SPA } }
 		}
 }
 #ORGANIZATION OF ARAGON - AUTONOMOUS KINGDOM WITHIN ITALY
