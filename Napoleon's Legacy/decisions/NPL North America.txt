@@ -1,2 +1,304 @@
 political_decisions = {
+	return_to_south_africa = {
+	alert = yes
+	potential = {
+		tag = CAN
+		war = no
+		NOT = { has_country_flag = return_to_south_africa }
+		OR = { is_greater_power = yes is_secondary_power = yes }
+		OR = {
+		NOT = { year = 1860 }
+		SAF = { exists = no }
+		}
+		}
+	allow = {
+		OR = {
+			AND = {
+				state_n_government = 1
+				naval_plans = 1
+				}
+			SAF = { in_sphere = THIS }
+			}
+		}
+	effect = {
+		SAF = { all_core = { add_core = CAN } }
+		XHO = { all_core = { add_core = CAN } }
+		any_country = { limit = { in_sphere = THIS tag = SAF } change_tag = D01 }
+		inherit = D01
+		set_country_flag = return_to_south_africa
+		prestige = 15
+		badboy = 5
+		}
+	}
+	end_native_autonomy = {
+	alert = yes
+	potential = {
+		tag = CAN
+		war = no
+		NOT = { has_country_flag = end_native_autonomy }
+		OR = { is_greater_power = yes is_secondary_power = yes }
+		INC = { vassal_of = THIS }
+		}
+	allow = {
+		is_greater_power = yes
+		INC = { in_sphere = THIS civilized = no }
+		strategic_mobility = 1
+		early_railroad = 1
+		money = 100000
+		}
+	effect = {
+		set_country_flag = end_native_autonomy
+		prestige = 10
+		badboy = 5
+		INC = { all_core = { add_core = THIS } country_event = 66650 }
+		}
+	}
+	british_civil_war = {
+	alert = yes
+	potential = {
+		tag = CAN
+		OR = { government = hms_government government = democracy }
+		NOT = { has_country_flag = british_civil_war }
+		BRI = { exists = yes }
+		is_greater_power = yes
+		war = no
+		year = 1870
+		}
+	allow = {
+		is_greater_power = yes
+		analytic_philosophy = 1
+		revolution_n_counterrevolution = 1
+		social_science = 1
+		money = 1000000
+		}
+	effect = {
+		set_country_flag = british_civil_war
+		set_country_flag = promised_scottish_autonomy
+		badboy = 7.5
+		treasury = -500000
+		BRI = { country_event = 66654 }
+		}
+	}
+	form_canadian_501st = {
+	alert = yes
+	potential = {
+		tag = CAN
+		OR = { government = hms_government government = absolute_monarchy government = prussian_constitutionalism }
+		NOT = { has_country_flag = form_canadian_501st }
+		}
+	allow = {
+		breech_loaded_rifles = 1
+		army_decision_making = 1
+		point_defense_system = 1
+		naval_statistics = 1
+		money = 500000
+		}
+	effect = {
+		set_country_flag = form_canadian_501st
+		prestige = 5
+		treasury = -250000
+		country_event = 66662 
+		}
+	}
+	the_irish_dominion = {
+	alert = yes
+	potential = {
+		tag = CAN
+		war = no
+		NOT = { has_country_flag = the_irish_dominion }
+		OR = { is_greater_power = yes is_secondary_power = yes }
+		IRE = { exists = yes }
+		}
+	allow = {
+		is_greater_power = yes
+		IRE = { in_sphere = THIS }
+		state_n_government = 1
+		steamers = 1
+		}
+	effect = {
+		set_country_flag = the_irish_dominion
+		prestige = 10
+		IRE = { country_event = 66659 }
+		}
+	}
+	incorporation_of_louisiana = {
+	alert = yes
+	potential = {
+		tag = CAN
+		war = no
+		OR = {
+		capital = 57
+		capital = 300
+		has_country_flag = united_britain
+		}
+		NOT = { has_country_flag = incorporation_of_louisiana }
+		OR = { is_greater_power = yes is_secondary_power = yes }
+		LOU = { exists = yes vassal_of = THIS }
+		}
+	allow = {
+		is_greater_power = yes
+		LOU = { in_sphere = THIS }
+		state_n_government = 1
+		iron_railroad = 1
+		medicine = 1
+		}
+	effect = {
+		set_country_flag = incorporation_of_louisiana
+		LOU = { all_core = { add_core = CAN } }
+		prestige = 10
+		LOU = { country_event = 66659 }
+		}
+	}
+	dominion_new_england = {
+	alert = yes
+	potential = {
+		tag = CAN
+		war = no
+		OR = {
+		capital = 57
+		capital = 300
+		has_country_flag = united_britain
+		}
+		NOT = { has_country_flag = dominion_new_england }
+		OR = { is_greater_power = yes is_secondary_power = yes }
+		NEN = { exists = yes is_greater_power = no NOT = { vassal_of = THIS } }
+		}
+	allow = {
+		is_greater_power = yes
+		NEN = { in_sphere = THIS }
+		business_regulations = 1
+		iron_railroad = 1
+		state_n_government = 1
+		compound_steam_engines = 1
+		}
+	effect = {
+		set_country_flag = dominion_new_england
+		prestige = 10
+		badboy = 5
+		NEN = { country_event = 66671 }
+		}
+	}
+	annex_dominion_new_england = {
+	alert = yes
+	potential = {
+		tag = CAN
+		war = no
+		OR = {
+		capital = 57
+		capital = 300
+		has_country_flag = united_britain
+		}
+		NOT = { has_country_flag = annex_dominion_new_england }
+		OR = { is_greater_power = yes is_secondary_power = yes }
+		NEN = { exists = yes vassal_of = THIS }
+		}
+	allow = {
+		is_greater_power = yes
+		NEN = { in_sphere = THIS vassal_of = THIS }
+		market_regulations = 1
+		steel_railroad = 1
+		nationalism_n_imperialism = 1
+		scientific_management = 1
+		}
+	effect = {
+		set_country_flag = annex_dominion_new_england
+		prestige = 10
+		badboy = 5
+		NEN = { all_core = { add_core = CAN } country_event = 66674 }
+		}
+	}
+	incorporate_yankees = {
+	alert = yes
+	potential = {
+		tag = CAN
+		has_country_flag = yankees_complacent
+		war = no
+		NEN = { exists = no }
+		owns = 232
+		OR = {
+		capital = 57
+		capital = 300
+		has_country_flag = united_britain
+		}
+		NOT = { has_country_flag = incorporate_yankees }
+		}
+	allow = {
+		is_greater_power = yes
+		NEN = { all_core = { owned_by = THIS } }
+		revolution_n_counterrevolution = 1
+		experimental_psychology = 1
+		social_science = 1
+		political_reform = hms_government
+		political_reform = all_voting_pops
+		political_reform = universal_voting
+		}
+	effect = {
+		set_country_flag = incorporate_yankees
+		prestige = 10
+		country_event = 66680
+		}
+	}
+	retake_america = {
+	alert = yes
+	potential = {
+		tag = CAN
+		war = no
+		NEN = { exists = no }
+		INC = { exists = no }
+		LOU = { exists = no }
+		owns = 232
+		owns = 139
+		owns = 163
+		OR = {
+		capital = 57
+		capital = 300
+		has_country_flag = united_britain
+		}
+		NOT = { has_country_flag = retake_america }
+		NOT = { USA = { vassal_of = THIS } }
+		}
+	allow = {
+		is_greater_power = yes
+		NEN = { all_core = { owned_by = THIS } }
+		revolution_n_counterrevolution = 1
+		steel_breech_loaded_artillery = 1
+		military_logistics = 1
+		army_risk_management = 1
+		}
+	effect = {
+		set_country_flag = retake_america
+		badboy = 10
+		prestige = 10
+		country_event = 66681
+		}
+	}
+	incorporate_americans = {
+	alert = yes
+	potential = {
+		tag = CAN
+		has_country_flag = yankees_complacent
+		war = no
+		NEN = { exists = no }
+		owns = 232
+		OR = {
+		capital = 57
+		capital = 300
+		has_country_flag = united_britain
+		}
+		NOT = { has_country_flag = incorporate_americans }
+		}
+	allow = {
+		is_greater_power = yes
+		NEN = { all_core = { owned_by = THIS } }
+		USA = { all_core = { owned_by = THIS } }
+		has_country_flag = british_america
+		mass_politics = 1
+		}
+	effect = {
+		set_country_flag = incorporate_americans
+		set_country_flag = incorporate_yankees
+		prestige = 25
+		country_event = 66684
+		}
+	}
 }

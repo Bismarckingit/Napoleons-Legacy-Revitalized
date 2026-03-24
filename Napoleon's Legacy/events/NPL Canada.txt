@@ -3,43 +3,1224 @@
 ##################################################
 ##############NARRATIVE EVENTS####################
 #STARTING POSITION - LOSS OF BRITAIN
-#STARTING POSITION - VICTORY IN AMERICA - BATTLE OF NEW ORLEANS
-#STARTING POSITION - VICTORY IN AMERICA - NATIVE AMERICAN UNION
-#STARTING POSITION - LOSS OF PRINCESS VICTORIA
-#STARTING POSITION - EMERGENCY POWERS UNDER WILLIAM IV - BRITAIN IS AN ABSOLUTE MONARCHY IN ALL BUT NAME
-#STARTING POSITION - EAST INDIES AND AUSTRALIA
-#STARTING POSITION - INDIA - ALSO EXPLAINS HOW EIC WORKS
-#STARTING POSITION - BOURBON LOUISIANA
+country_event = {
+    id = 66632
+    title = "EVTNAME66632"
+    desc = "EVTDESC66632"
+    picture = "meeting"
+	fire_only_once = yes
+	mean_time_to_happen = { days = 1 }
+    trigger = {
+		tag = CAN
+		}
+#THE MODIFIER DICTATES HOW LONG YOU HAVE TO RETAKE THE ISLES BEFORE INCORPORATION BECOMES DIFFICULT
+    option = {
+        name = "EVTOPTA66632"
+		prestige = -5
+		add_country_modifier = { name = pining_for_home duration = 5475 }
+		relation = { who = BRI value = -400 }
+		country_event = 66633
+    }
 
+}
+#STARTING POSITION - VICTORY IN AMERICA - BATTLE OF NEW ORLEANS
+country_event = {
+    id = 66633
+    title = "EVTNAME66633"
+    desc = "EVTDESC66633"
+    picture = "meeting"
+	fire_only_once = yes
+    is_triggered_only = yes
+#THE US IS A MAJOR ENEMY OF CANADA, AND LOUISIANA WILL BE A PROBLEM IN THE FUTURE
+    option = {
+        name = "EVTOPTA66633"
+		prestige = 5
+		relation = { who = USA value = -400 }
+		relation = { who = LOU value = 200 }
+		relation = { who = NEN value = 100 }
+		country_event = 66634
+    }
+
+}
+#STARTING POSITION - VICTORY IN AMERICA - NATIVE AMERICAN UNION
+country_event = {
+    id = 66634
+    title = "EVTNAME66634"
+    desc = "EVTDESC66634"
+    picture = "meeting"
+	fire_only_once = yes
+    is_triggered_only = yes
+#THE NATIVE AMERICAN UNION WILL BE A PROGRESSING ISSUE AS ITS POPULATION RECOVERS
+    option = {
+        name = "EVTOPTA66634"
+		prestige = 5
+		relation = { who = USA value = -400 }
+		relation = { who = NEN value = -100 }
+		relation = { who = LOU value = -100 }
+		relation = { who = INC value = 200 }
+		country_event = 66635
+    }
+
+}
+#STARTING POSITION - LOSS OF PRINCESS VICTORIA
+country_event = {
+    id = 66635
+    title = "EVTNAME66635"
+    desc = "EVTDESC66635"
+    picture = "meeting"
+	fire_only_once = yes
+    is_triggered_only = yes
+#PRINCESS VICTORIA - NOW CITIZEN VICTORIA - REPRESENTS A COMPREHENSIVE THREAT TO BRITISH LEGITIMACY
+    option = {
+        name = "EVTOPTA66635"
+		prestige = 5
+		relation = { who = BRI value = -400 }
+			any_pop = { 
+			limit = { has_pop_culture = anglo_canadian } 
+			ideology = { value = liberal factor = 0.1 }
+			}
+		scaled_militancy = { ideology = liberal factor = 5 } 
+		country_event = 66636
+    }
+
+}
+#STARTING POSITION - EMERGENCY POWERS UNDER WILLIAM IV - BRITAIN IS AN ABSOLUTE MONARCHY IN ALL BUT NAME
+country_event = {
+    id = 66636
+    title = "EVTNAME66636"
+    desc = "EVTDESC66636"
+    picture = "meeting"
+	fire_only_once = yes
+    is_triggered_only = yes
+#EMERGENCY POWERS WILL LAST UNTIL THE NEW MONARCH TAKES THE THRONE...UNLESS THE NEW MONARCH DECIDES NOT TO GIVE UP POWER
+    option = {
+        name = "EVTOPTA66636"
+		prestige = -5
+			any_pop = { 
+			limit = { has_pop_culture = anglo_canadian } 
+			ideology = { value = reactionary factor = 0.1 }
+			}
+		scaled_militancy = { ideology = liberal factor = 3 } 
+		add_country_modifier = { name = state_of_emergency_modifier duration = -1 }
+		country_event = 66637
+    }
+
+}
+#STARTING POSITION - EAST INDIES AND AUSTRALIA
+country_event = {
+    id = 66637
+    title = "EVTNAME66637"
+    desc = "EVTDESC66637"
+    picture = "meeting"
+	fire_only_once = yes
+    is_triggered_only = yes
+#AUSTRALIA IS THE OTHER MAIN PROVINCE YOULL GET TO CHOOSE WHILE INDONESIA OPERATES UNDER DE FACTO DUTCH AUTHORITY IN THE EIC
+    option = {
+        name = "EVTOPTA66637"
+		prestige = 5 
+		any_owned = { limit = { is_core = AST } add_province_modifier = { name = loose_control duration = -1 } }
+		country_event = 66638
+    }
+}
+#STARTING POSITION - INDIA - ALSO EXPLAINS HOW EIC WORKS
+country_event = {
+    id = 66638
+    title = "EVTNAME66638"
+    desc = "EVTDESC66638"
+    picture = "meeting"
+	fire_only_once = yes
+    is_triggered_only = yes
+#INDIA CAUSES PROBLEMS DIPLOMATICALLY AND IS QUESTIONABLE IN ITS LOYALTY BUT PROVIDES EXCELLENT ECONOMIC BUFFS
+    option = {
+        name = "EVTOPTA66638"
+		prestige = 5 
+		add_country_modifier = { name = india_problem duration = -1 }
+		add_country_modifier = { name = eic_fiscal_report_timer duration = 365 }
+		country_event = 66639
+    }
+}
+#STARTING POSITION - BOURBON LOUISIANA
+country_event = {
+    id = 66639
+    title = "EVTNAME66639"
+    desc = "EVTDESC66639"
+    picture = "meeting"
+	fire_only_once = yes
+    is_triggered_only = yes
+#THE BOURBONS ARE IN LOUISIANA BUT HAVE LITTLE TO NO REAL AUTHORITY - THE LOUISIANA TERRITORY IS CONTENTIOUS BETWEEN THE BRITISH AND US
+    option = {
+        name = "EVTOPTA66639"
+		prestige = 5 
+		add_country_modifier = { name = louisiana_contest duration = -1 }
+    }
+}
 #################SETUP EVENTS#####################
 #WILLIAM IV DIES 1839 - THE CROWN PASSES TO HIS BROTHER ERNEST AUGUSTUS VIA WILL - HE DEMANDS IMPOSITION OF SALIC LAW IN FEAR OF VICTORIA'S REVOLUTIONARY LEANINGS
+country_event = {
+    id = 66640
+    title = "EVTNAME66640"
+    desc = "EVTDESC66640"
+    picture = "meeting"
+	fire_only_once = yes
+	mean_time_to_happen = { days = 1 }
+    trigger = {
+		tag = CAN
+		OR = { government = absolute_monarchy government = hms_government government = prussian_constitutionalism }
+		year = 1839
+		month = 9
+		}
+#CITIZEN VICTORIA WILL REMEMBER THAT
+    option = {
+        name = "EVTOPTA66640"
+		scaled_militancy = { ideology = liberal factor = 3 } 
+		any_pop = { 
+			limit = { OR = { has_pop_culture = anglo_canadian pop_type = aristocrats } } 
+			ideology = { value = reactionary factor = 0.2 }
+			}
+    }
+
+}
 #ERNEST AUGUSTUS CORONATION ABOUT A MONTH LATER
-#ERNEST AUGUSTUS HAS TO CHOOSE THE CAPITAL OF THE REALM - AUSTRALIA OR CANADA - THE OTHER ONE GETS BAD MODIFIERS FOR PRODUCTION UNTIL BETTER NAVAL TRANSPORTATION
-#1843 [INSERT DECISION FROM BRITISH UNION TO SEND HER HOME] VICTORIA COMES HOME TO ROOST, A CONSTITUTIONAL CRISIS IS SET OFF AS SHE ENFLAMES TENSIONS OVER ABROGATED CONSTITUTION
+country_event = {
+    id = 66641
+    title = "EVTNAME66641"
+    desc = "EVTDESC66641"
+    picture = "meeting"
+	fire_only_once = yes
+	mean_time_to_happen = { days = 1 }
+    trigger = {
+		tag = CAN
+		OR = { government = absolute_monarchy government = hms_government government = prussian_constitutionalism }
+		year = 1839
+		month = 10
+		}
+#CITIZEN VICTORIA WILL REMEMBER THAT (SHE ANGY)
+    option = {
+        name = "EVTOPTA66641"
+		prestige = 10
+		scaled_militancy = { ideology = liberal factor = 3 } 
+		any_pop = { 
+			limit = { OR = { has_pop_culture = anglo_canadian pop_type = aristocrats } } 
+			ideology = { value = reactionary factor = 0.05 }
+			}
+		country_event = 66642
+    }
+}
+#ERNEST AUGUSTUS HAS TO CHOOSE THE SEAT OF HIS COURT - AUSTRALIA OR CANADA - THE OTHER ONE GETS BAD MODIFIERS FOR PRODUCTION UNTIL BETTER NAVAL TRANSPORTATION
+country_event = {
+    id = 66642
+    title = "EVTNAME66642"
+    desc = "EVTDESC66642"
+    picture = "meeting"
+	fire_only_once = yes
+    is_triggered_only = yes
+#THE CAPITAL CHOICE WILL INFORM WHICH PATH OF FLAVOR YOU GET
+#CAPITAL IN OTTOWA - ATLANTIC FLAVOR
+    option = {
+        name = "EVTOPTA66642"
+		capital = 57
+		prestige = 5 
+    }
+#CAPITAL IN SYDNEY - ASIATIC FLAVOR
+    option = {
+        name = "EVTOPTB66642"
+		prestige = 5 
+		capital = 2468
+		any_owned = { limit = { is_core = CAN } add_province_modifier = { name = loose_control duration = -1 } }
+		any_owned = { limit = { is_core = AST } remove_province_modifier = loose_control }
+    }
+}
+#1843 VICTORIA COMES HOME TO ROOST, A CONSTITUTIONAL CRISIS IS SET OFF AS SHE ENFLAMES TENSIONS OVER ABROGATED CONSTITUTION
+country_event = {
+    id = 66643
+    title = "EVTNAME66643"
+    desc = "EVTDESC66643"
+    picture = "meeting"
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		has_country_modifier = state_of_emergency_modifier
+		year = 1843
+		month = 3
+		OR = { government = absolute_monarchy government = prussian_constitutionalism government = hms_government }
+		}
+#REMIND ME TO MAKE A PARALLEL EVENT IN BRITAIN PROPER
+    option = {
+        name = "EVTOPTA66643"
+		set_country_flag = victoria_returned
+		add_country_modifier = { name = global_liberal_agitation duration = 1460 }
+    }
+}
 #1847 AFTER 4 YEARS OF TENSIONS, THE FATE OF THE EMERGENCY POWERS IS DECIDED - CHOOSE TYPE OF MONARCHY
-
+country_event = {
+    id = 66644
+    title = "EVTNAME66644"
+    desc = "EVTDESC66644"
+    picture = "meeting"
+	fire_only_once = yes
+    trigger = {
+		tag = CAN
+		has_country_modifier = state_of_emergency_modifier
+		OR = { government = absolute_monarchy government = prussian_constitutionalism government = hms_government }
+		year = 1847
+		month = 4
+		}
+#THE FATE OF EMERGENCY POWERS IS DECIDED HERE
+#OPTION A - THE EMERGENCY POWERS BECOME PERMANENT - VERY RARE CHOICE - EVEN THE ARISTOCRACY IS IFFY ON THIS CHANGE
+    option = {
+        name = "EVTOPTA66644"
+		remove_country_modifier = state_of_emergency_modifier
+		add_country_modifier = { name = state_of_emergency_permanent duration = -1 }
+		add_country_modifier = { name = springtime_of_nations duration = 1825 }
+		any_pop = { limit = { pop_type = aristocrats } ideology = { value = reactionary factor = 0.15 } }
+		any_pop = { limit = { pop_type = capitalists } ideology = { value = liberal factor = 0.8 } }
+		any_pop = { limit = { pop_type = bureaucrats } ideology = { value = liberal factor = 0.8 } }
+		any_pop = { limit = { pop_type = craftsmen } ideology = { value = liberal factor = 1 } }
+		scaled_militancy = { ideology = liberal factor = 10 }
+		government = absolute_monarchy
+		ruling_party_ideology = reactionary
+		vote_franschise = none_voting
+		upper_house_composition = party_appointed
+		press_rights = state_press
+		political_parties = underground_parties
+		conscription = mandatory_service
+		citizens_rights = primary_culture_only
+		ai_chance = { value = 10 }
+    }
+#OPTION B - THE EMERGENCY POWERS ARE ENDED BUT THE FRANCHISE IS NOT OPENED ANY FURTHER - THE MIDDLE AND UPPER CLASSES ARE REASONABLY PLACATED
+	option = {
+		name = "EVTOPTB66644"
+		remove_country_modifier = state_of_emergency_modifier
+		add_country_modifier = { name = springtime_of_nations duration = 912 }
+		any_pop = { limit = { pop_type = aristocrats } ideology = { value = reactionary factor = 0.8 } }
+		any_pop = { limit = { pop_type = capitalists } ideology = { value = conservative factor = 0.15 } }
+		any_pop = { limit = { pop_type = bureaucrats } ideology = { value = conservative factor = 0.15 } }
+		any_pop = { limit = { pop_type = craftsmen } ideology = { value = liberal factor = 0.25 } }
+		scaled_militancy = { ideology = liberal factor = 5 }
+		public_meetings = yes_meeting
+		press_rights = free_press
+		political_parties = gerrymandering
+		conscription = two_year_draft
+		citizens_rights = culture_voting_only
+		}
+#OPTION C - THE EMERGENCY POWERS ARE SCRAPPED, FRANCHISE OPENED, HOUSE OF COMMONS RESTORED
+	option = {
+		name = "EVTOPTC66644"
+		remove_country_modifier = state_of_emergency_modifier
+		any_pop = { limit = { pop_type = aristocrats } ideology = { value = reactionary factor = 1 } }
+		any_pop = { limit = { pop_type = capitalists } ideology = { value = reactionary factor = 0.8 } }
+		any_pop = { limit = { pop_type = bureaucrats } ideology = { value = conservative factor = 0.8 } }
+		any_pop = { limit = { pop_type = craftsmen } ideology = { value = conservative factor = 0.25 } }
+		scaled_militancy = { ideology = liberal factor = -5 }
+		government = hms_government
+		vote_franschise = universal_weighted_voting
+		upper_house_composition = state_equal_weight
+		public_meetings = yes_meeting
+		trade_unions = non_socialist
+		press_rights = free_press
+		political_parties = non_secret_ballots
+		conscription = no_draft
+		citizens_rights = culture_voting_only
+		}
+}
+#RESTORATION OF THE HOUSE OF COMMONS IF/WHEN THE REGIME BECOMES FULLY CONSTITUTIONAL - NORMALIZATION OF BRITISH POLITICS
+country_event = {
+    id = 66645
+    title = "EVTNAME66645"
+    desc = "EVTDESC66645"
+    picture = "meeting"
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		has_country_modifier = state_of_emergency_modifier
+		government = hms_government
+		year = 1848
+		month = 5
+		}
+#THE HOUSE OF COMMONS IS JUST HERE FOR NARRATIVE REASONS BUT IT DOES OFFER MORE STABILITY TO POLITICS
+    option = {
+        name = "EVTOPTA66645"
+		add_country_modifier = { name = house_of_commons duration = -1 }
+    }
+}
 ############UNIVERSAL FLAVOR FOR BOTH#############
-#THE WAR FOR SOUTH AFRICA - SET OFF BY DECISION
-#INTEGRATION OF THE NATIVES IN NORTH AMERICA
-#EVENT TO GIVE EIC LAND EVERY TIME NEW INDIAN LAND INCORPORATED
-#RECONQUEST OF BRITAIN - REVOLUTION N COUNTERREVOLUTION CAN FORCE A CIVIL WAR TO COINCIDE WITH INVASION
+#THE WAR FOR SOUTH AFRICA - SET OFF BY DECISION - ONCE SOUTH AFRICA IS CLAIMED THE EVENT IS HAD AND LAND GOES TO EIC
+country_event = {
+    id = 66646
+    title = "EVTNAME66646"
+    desc = "EVTDESC66646"
+    picture = "meeting"
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		OR = { government = hms_government government = prussian_constitutionalism government = absolute_monarchy }
+		owns = 2087
+		NOT = { year = 1860 }
+		EIC = { exists = yes }
+		}
+#THE RECAPTURE OF SOUTH AFRICA IS IMPORTANT TO FIXING THE DISPARITY BETWEEN THE AUSTRALIANS AND CANADIANS
+    option = {
+        name = "EVTOPTA66646"
+		prestige = 10
+		set_country_flag = took_south_africa
+		SAF = { all_core = { add_core = EIC remove_core = THIS } primary_culture = anglo_canadian add_accepted_culture = boer }
+		EIC = { inherit = SAF add_accepted_culture = boer }
+		any_owned = { limit = { is_core = EIC } secede_province = EIC }
+		any_owned = { limit = { has_province_modifier = loose_control_1 } remove_province_modifier = loose_control_1 }
+		any_owned = { limit = { has_province_modifier = loose_control } remove_province_modifier = loose_control add_province_modifier = { name = loose_control_1 duration = -1 } }
+    }
+}
+#IF SOUTH AFRICA REMAINS INDEPENDENT UNTIL 1860 INTERNATIONAL RECOGNITION AND TRADE TIES KILL THIS OPPORTUNITY
+country_event = {
+    id = 66647
+    title = "EVTNAME66647"
+    desc = "EVTDESC66647"
+    picture = "meeting"
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		SAF = { exists = yes }
+		OR = { government = hms_government government = prussian_constitutionalism government = absolute_monarchy }
+		year = 1860
+		NOT = { has_country_flag = took_south_africa }
+		NOT = { owns = 2087 }
+		NOT = { EIC = { owns = 2087 } }
+		}
+#THE OPPORTUNITY IS LOST - DIPLOMATIC RELATIONS ARE FORCED TO NORMALIZE
+    option = {
+        name = "EVTOPTA66647"
+		prestige = -10
+		SAF = { all_core = { remove_core = THIS } add_accepted_culture = anglo_canadian }
+		relation = { who = SAF value = 100 }
+    }
+}
+#NAVAL TECH LEVEL 1 TO REMOVE DEBUFF
+country_event = {
+    id = 66648
+    title = "EVTNAME66648"
+    desc = "EVTDESC66648"
+    picture = "meeting"
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		raider_group_doctrine = 1
+		iron_steamers = 1
+		OR = {
+		any_owned = { has_province_modifier = loose_control }
+		any_owned = { has_province_modifier = loose_control_1 }
+		}
+		}
+#
+    option = {
+        name = "EVTOPTA66648"
+		prestige = 5
+		any_owned = { limit = { has_province_modifier = loose_control_1 } remove_province_modifier = loose_control_1 }
+		any_owned = { limit = { has_province_modifier = loose_control } remove_province_modifier = loose_control add_province_modifier = { name = loose_control_1 duration = -1 } }
+    }
+}
+#ECONOMIC TECH TO REMOVE DEBUFF
+country_event = {
+    id = 66649
+    title = "EVTNAME66649"
+    desc = "EVTDESC66649"
+    picture = "meeting"
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		OR = {
+		AND = {
+		market_regulations = 1
+		central_bank_money_bill_printing = 1
+		}
+		owns = 1755
+		}
+		OR = {
+		any_owned = { has_province_modifier = loose_control }
+		any_owned = { has_province_modifier = loose_control_1 }
+		}
+		}
+    option = {
+        name = "EVTOPTA66649"
+		prestige = 5
+		any_owned = { limit = { has_province_modifier = loose_control_1 } remove_province_modifier = loose_control_1 }
+		any_owned = { limit = { has_province_modifier = loose_control } remove_province_modifier = loose_control add_province_modifier = { name = loose_control_1 duration = -1 } }
+    }
+}
+#INTEGRATION OF THE NATIVES IN NORTH AMERICA - INDIAN EVENT
+country_event = {
+    id = 66650
+    title = "EVTNAME66650"
+    desc = "EVTDESC66650"
+    picture = "meeting"
+	fire_only_once = yes
+	is_triggered_only = yes
+#TO WAR
+    option = {
+        name = "EVTOPTA66650"
+		prestige = 5
+		add_country_modifier = { name = emergency_mobilization duration = 3650 }
+		CAN = { country_event = 66651 release_vassal = INC }
+		ai_chance = { value = 0.9 }
+    }
+	option = {
+		name = "EVTOPTB66650"
+		CAN = { country_event = 66652 }
+		ai_chance = { value = 0.1 }
+	}
+}
+#INTEGRATION OF THE NATIVES IN NORTH AMERICA - CANADIAN RESPONSE WHEN THEY INEVITABLY SAY NO - EVEN IF NATIVES WIN WHICH THEY SHOULDNT THE GAME IS SET
+country_event = {
+    id = 66651
+    title = "EVTNAME66651"
+    desc = "EVTDESC66651"
+    picture = "meeting"
+	fire_only_once = yes
+	is_triggered_only = yes
+    option = {
+        name = "EVTOPTA66651"
+		prestige = 5
+		casus_belli = { target = INC type = conquest months = 1 }
+		war = {
+			target = INC 
+			attacker_goal = { casus_belli = conquest }
+			}
+		}
+}
+#INTEGRATION OF THE NATIVES IN NORTH AMERICA - WHAT DO YOU MEAN THEY SAID YES
+country_event = {
+    id = 66652
+    title = "EVTNAME66652"
+    desc = "EVTDESC66652"
+    picture = "meeting"
+	fire_only_once = yes
+	is_triggered_only = yes
+    option = {
+        name = "EVTOPTA66652"
+		prestige = 5
+		badboy = -2
+		treasury = -100000
+		inherit = INC
+		any_pop = { 
+			limit = { OR = { has_pop_culture = native_american_minor has_pop_culture = dakota } } 
+			militancy = 10
+			}
+		any_owned = { limit = { is_core = INC } add_province_modifier = { name = native_revolution duration = 3650 } }
+		}
+}
+#EVENT TO GIVE EIC LAND EVERY TIME NEW INDIAN LAND INCORPORATED - YEARLY TIMER THAT COMES WITH MORE MONEY
+country_event = {
+    id = 66653
+    title = "EVTNAME66653"
+    desc = "EVTDESC66653"
+    picture = "meeting"
+	mean_time_to_happen = { days = 1 }
+	trigger = {
+		tag = CAN
+		EIC = { exists = yes vassal_of = THIS }
+		NOT = { has_country_flag = reigned_in_eic } 
+		NOT = { has_country_modifier = eic_fiscal_report_timer }
+		}
+    option = {
+        name = "EVTOPTA66653"
+		prestige = 5
+		treasury = 50000
+		any_owned = { limit = { OR = { is_core = BIH is_core = BNG is_core = ASM is_core = ORI is_core = HYD is_core = MYS is_core = TRA is_core = NAG is_core = BAS is_core = BER is_core = IND is_core = BHO is_core = BUN is_core = AWA is_core = KUT is_core = SIN is_core = MUG is_core = SIK is_core = PNJ is_core = SHI is_core = KAL is_core = MAK is_core = AFG is_core = CRL is_core = BHP is_core = NEP is_core = BHU is_core = SIK is_core = BUR is_core = SIA is_core = PRK is_core = SLG is_core = PHG is_core = JOH is_core = DJA is_core = KLM is_core = BRU is_core = SUL is_core = KTI is_core = PNK is_core = BAL is_core = PHL is_core = DAI is_core = CHK is_core = LUA is_core = CAM is_core = TAI is_core = OMA is_core = NYE is_core = FDL is_core = KTH is_core = MHR is_core = LHJ is_core = SAK is_core = MAD is_core = ATJ is_core = SLW is_core = BAL is_core = TMR is_core = MAL } } secede_province = EIC }
+		}
+}
+#RECONQUEST OF BRITAIN - REVOLUTION N COUNTERREVOLUTION CAN FORCE A CIVIL WAR TO COINCIDE WITH INVASION - BRITISH CIVIL WAR WILL HAVE SCOTLAND BREAK AWAY
+country_event = {
+    id = 66654
+    title = "EVTNAME66654"
+    desc = "EVTDESC66654"
+    picture = "meeting"
+	mean_time_to_happen = { days = 1 }
+	is_triggered_only = yes
+    option = {
+        name = "EVTOPTA66654"
+		prestige = -25
+		badboy = -10
+		any_owned = { limit = { is_core = SCO } secede_province = CAN }
+		war = {
+			target = CAN
+			attacker_goal = { casus_belli = civil_war }
+			defender_goal = { casus_belli = civil_war }
+			}
+		}
+}
 #1851 AUGUSTUS DIES TO BE REPLACED WITH GEORGE IV OF BRITAIN AND GEORGE V OF HANOVER
+country_event = {
+    id = 66655
+    title = "EVTNAME66655"
+    desc = "EVTDESC66655"
+    picture = "meeting"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		OR = { government = hms_government government = prussian_constitutionalism government = absolute_monarchy } 
+		year = 1851
+		month = 11
+		NOT = { year = 1855 }
+		}
+    option = {
+        name = "EVTOPTA66655"
+		prestige = 5
+		}
+}
 #1878 GEORGE IV DIES TO BE REPLACED WITH ERNEST AUGUSTUS II
-#IF THE MONARCHY ENDS IT SHATTERS
+country_event = {
+    id = 66656
+    title = "EVTNAME66656"
+    desc = "EVTDESC66656"
+    picture = "meeting"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		OR = { government = hms_government government = prussian_constitutionalism government = absolute_monarchy } 
+		year = 1878
+		month = 6
+		NOT = { year = 1885 }
+		}
+    option = {
+        name = "EVTOPTA66656"
+		prestige = 5
+		}
+}
+#IF THE MONARCHY ENDS BEFORE 1860 THE REGIME IS ANNEXED BY BRITAIN 
+country_event = {
+    id = 66657
+    title = "EVTNAME66657"
+    desc = "EVTDESC66657"
+    picture = "meeting"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		NOT = { OR = { government = hms_government government = prussian_constitutionalism government = absolute_monarchy } }
+		BRI = { exists = yes }
+		NOT = { year = 1860 }
+		}
+    option = {
+        name = "EVTOPTA66657"
+		prestige = -50
+		BRI = { inherit = CAN }
+		}
+}
 #SPHERING A MINOR ENGLAND CAN ANNEX IT
-#IF IRELAND IS PLACED UNDER SPHERE IT CAN BE INCORPORATED AS A DOMINION AT THE COST OF LOSING ALL CORES
-#END OF DEBUFFS IN OTHER REALM WITH GOOD TECH AND SOUTH AFRICA OR SUEZ
-
+country_event = {
+    id = 66658
+    title = "EVTNAME66658"
+    desc = "EVTDESC66658"
+    picture = "meeting"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		OR = { government = hms_government government = prussian_constitutionalism government = absolute_monarchy } 
+		BRI = { exists = yes in_sphere = THIS }
+		state_n_government = 1
+		NOT = { year = 1851 }
+		}
+#A NATIONAL RECONCILIATION BY PEACE RATHER THAN WAR IS GREATLY PRESTIGIOUS
+    option = {
+        name = "EVTOPTA66658"
+		prestige = 50
+		inherit = BRI
+		}
+}
+#IRISH DEMAND TO BECOME DOMINION - EVENT FOR IRELAND
+country_event = {
+    id = 66659
+    title = "EVTNAME66659"
+    desc = "EVTDESC66659"
+    picture = "meeting"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+#ACCEPTING WILL REMOVE CANADIAN CORES AND TURN IT INTO A DOMINION
+    option = {
+        name = "EVTOPTA66659"
+		prestige = -50
+		government = hms_government
+		all_core = { remove_core = CAN }
+		CAN = { create_vassal = IRE country_event = 66661}
+		BRI = { diplomatic_influence = { who = IRE value = -400 } }
+		ai_chance = { value = 0.6 }
+		}
+#REFUSING WILL OPEN UP A WAR - AND SINCE THE CANADIANS SPHERED YOU THEY HEAD OFF A BRITISH INTERVENTION
+option = {
+        name = "EVTOPTB66659"
+		prestige = 5
+		CAN = { country_event = 66660}
+		BRI = { diplomatic_influence = { who = IRE value = -400 } }
+		CAN = { diplomatic_influence = { who = IRE value = -400 } }
+		ai_chance = { value = 0.4 }
+		}
+}
+#IRISH RESPONSE - REFUSE
+country_event = {
+    id = 66660
+    title = "EVTNAME66660"
+    desc = "EVTDESC66660"
+    picture = "meeting"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+#WAR WITH IRELAND
+    option = {
+        name = "EVTOPTA66660"
+		casus_belli = { target = IRE type = conquest months = 1 }
+		war = {
+			target = IRE
+			attacker_goal = { casus_belli = conquest  }
+			}
+		}
+}
+#IRISH RESPONSE - ACCEPT
+country_event = {
+    id = 66661
+    title = "EVTNAME66661"
+    desc = "EVTDESC66661"
+    picture = "meeting"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+#IRISH DOMINION IS ONE STEP CLOSER TO RETAKING ISLES
+    option = {
+        name = "EVTOPTA66661"
+		prestige = 25
+		}
+}
+#CREATE THE CANADIAN 501ST MARINES - PROFESSIONAL ARMY AND IN-JOKE
+country_event = {
+    id = 66662
+    title = "EVTNAME66662"
+    desc = "EVTDESC66662"
+    picture = "british_victory_france"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+#DEPLOYING TO LONDONSTAN
+    option = {
+        name = "EVTOPTA66662"
+		prestige = 10
+		add_country_modifier = { name = canadian_501st duration = -1 }
+		}
+}
 ###########CANADIAN FLAVOR###########
-#LOUISIANA CAN BE INCORPORATED WITH GOOD RAILWAYS AND MEDICINE
-#CONFLICT OVER NEW ENGLAND - WITH GOOD ARMY AND STATE/GOV NEW ENGLAND CAN BE SUBJUGATED
-#IF NEW ENGLAND IS SPHERED IT CAN ALSO BE ANNEXED - DECISION
+#LOUISIANA CAN BE INCORPORATED WITH GOOD RAILWAYS AND MEDICINE - THE FRENCH LOUISIANANS WILL GET AN EVENT
+country_event = {
+    id = 66663
+    title = "EVTNAME66663"
+    desc = "EVTDESC66663"
+    picture = "british_victory_france"
+	fire_only_once = yes
+	is_triggered_only = yes
+#REFUSE
+    option = {
+        name = "EVTOPTA66663"
+		prestige = 10
+		CAN = { release_vassal = LOU country_event = 66664 }
+		ai_chance = { value = 0 }
+		}
+#ACCEPT
+option = {
+        name = "EVTOPTB66663"
+		prestige = -100
+		CAN = { inherit = LOU country_event = 66666}
+		ai_chance = { value = 1 }
+		}
+}
+#IF LOUISIANA REFUSES A SCRAMBLE WAR WITH THE US EMERGES
+country_event = {
+    id = 66664
+    title = "EVTNAME66664"
+    desc = "EVTDESC66664"
+    picture = "british_victory_france"
+	fire_only_once = yes
+	is_triggered_only = yes
+#YOUD BETTER WIN QUICKLY
+    option = {
+        name = "EVTOPTA66664"
+		prestige = 10
+		casus_belli = { target = LOU type = conquest months = 1 }
+		war = {
+			target = LOU
+			attacker_goal = { casus_belli = conquest }
+			}
+		USA = { country_event = 66665 }
+		}
+}
+#IF LOUISIANA REFUSES THEN AN EVENT IS SENT TO THE US TO DECLARE WAR ON LOUISIANA
+country_event = {
+    id = 66665
+    title = "EVTNAME66665"
+    desc = "EVTDESC66665"
+    picture = "british_victory_france"
+	fire_only_once = yes
+	is_triggered_only = yes
+#NOW IS OUR CHANCE
+    option = {
+        name = "EVTOPTA66665"
+		prestige = 10
+		casus_belli = { target = LOU type = conquest months = 1 }
+		war = {
+			target = LOU
+			attacker_goal = { casus_belli = conquest }
+			}
+		}
+}
+#IF LOUISIANA ACCEPTS THEN CANADA GETS AN EVENT
+country_event = {
+    id = 66666
+    title = "EVTNAME66666"
+    desc = "EVTDESC66666"
+    picture = "british_victory_france"
+	fire_only_once = yes
+	is_triggered_only = yes
+#DECLARING LOUISIANA AS OFFICIALLY BRITISH IS NOT VERY AMERICA-FRIENDLY
+    option = {
+        name = "EVTOPTA66666"
+		prestige = 10
+		badboy = 2
+		USA = { country_event = 66667 }
+		}
+}
+#US EVENT TO DECLARE WAR IF CANADA GETS LOUISIANA FOR FREE
+country_event = {
+    id = 66667
+    title = "EVTNAME66667"
+    desc = "EVTDESC66667"
+    picture = "british_victory_france"
+	fire_only_once = yes
+	is_triggered_only = yes
+#DECLARING LOUISIANA AS OFFICIALLY BRITISH IS NOT VERY AMERICA-FRIENDLY
+    option = {
+        name = "EVTOPTA66667"
+		war = {
+			target = LOU
+			attacker_goal = { casus_belli = acquire_all_cores }
+			}
+		ai_chance = { value = 0.7 }
+		}
+	option = {
+		name = "EVTOPTB66667"
+		prestige = -50
+		badboy = -20
+		ai_chance = { value = 0.3 }
+		}
+}
+#IF CANADA LOSES NEW ORLEANS TO THE US THEN THE REST OF LOUISIANA IS LOST AND THE BORDER IS SET AT THE PARALLEL
+country_event = {
+    id = 66668
+    title = "EVTNAME66668"
+    desc = "EVTDESC66668"
+    picture = "british_victory_france"
+	fire_only_once = yes
+	mean_time_to_happen = { days = 10 }
+	trigger = {
+		tag = CAN
+		USA = { owns = 139 }
+		war = no
+		LOU = { exists = no }
+		NOT = { has_country_flag = louisiana_british }
+		}
+#THIS IS THE END OF BRITISH AMBITIONS IN AMERICA, AND IT IS RELEGATED TO SECONDARY POWER STATUS NEXT TO AMERICA - BETTER LUCK NEXT TIME
+    option = {
+        name = "EVTOPTA66668"
+		prestige = -25
+		LOU = { all_core = { remove_core = CAN secede_province = USA } }
+		}
+}
+#IF CANADA HOLDS LOUISIANA AT PEACE THEN AMERICAN CLAIMS ARE ELIMINATED
+country_event = {
+    id = 66669
+    title = "EVTNAME66669"
+    desc = "EVTDESC66669"
+    picture = "british_victory_france"
+	fire_only_once = yes
+	mean_time_to_happen = { days = 10 }
+	trigger = {
+		tag = CAN
+		owns = 139
+		war = no
+		LOU = { exists = no }
+		}
+#AMERICA IS RELEGATED TO A BRITISH PROXY NOW AND CAN BE DISMEMBERED AT WILL
+    option = {
+        name = "EVTOPTA66669"
+		prestige = 25
+		LOU = { all_core = { remove_core = USA add_core = CAN remove_core = LOU } }
+		USA = { country_event = 66670 }
+		}
+}
+#AMERICAN EVENT ABOUT LOST CLAIMS
+country_event = {
+    id = 66670
+    title = "EVTNAME66670"
+    desc = "EVTDESC66670"
+    picture = "british_victory_france"
+	fire_only_once = yes
+	mean_time_to_happen = { days = 10 }
+	is_triggered_only = yes
+#THE AMERICAN PEOPLE ARE NOT HAPPY, BOB, NOT HAPPY AT ALL
+    option = {
+        name = "EVTOPTA66670"
+		prestige = -25
+		LOU = { all_core = { remove_core = USA  secede_province = CAN } }
+		any_pop = { 
+			limit = { OR = { has_pop_culture = yankee has_pop_culture = dixie } } 
+			ideology = { value = reactionary factor = 0.8 }
+			militancy = 10
+			}
+		add_country_modifier = { name = lost_identity duration = 3650 }
+		}
+}
+#CONFLICT OVER NEW ENGLAND - WITH GOOD ARMY A SPHERE AND GOOD MARKET TECHS NEW ENGLAND CAN BE SUBJUGATED - EVENT FOR NEW ENGLAND
+country_event = {
+    id = 66671
+    title = "EVTNAME66671"
+    desc = "EVTDESC66671"
+    picture = "british_victory_france"
+	fire_only_once = yes
+	mean_time_to_happen = { days = 10 }
+	is_triggered_only = yes
+#THE AMERICAN PEOPLE ARE NOT HAPPY, BOB, NOT HAPPY AT ALL
+    option = {
+        name = "EVTOPTA66671"
+		prestige = -100
+		any_pop = { 
+			limit = { OR = { has_pop_culture = yankee has_pop_culture = dixie } } 
+			ideology = { value = liberal factor = 1 }
+			militancy = 10
+			}
+		add_country_modifier = { name = lost_identity duration = 3650 }
+		CAN = { country_event = 66672 }
+		ai_chance = { value = 0.8 }
+		}
+#OPTION B - CANADA GETS TO INVADE
+option = {
+        name = "EVTOPTB66671"
+		prestige = 5
+		CAN = { country_event = 66673 }
+		add_country_modifier = { name = emergency_mobilization duration = 365 }
+		ai_chance = { value = 0.2 }
+		}
+}
+#CANADIAN RESPONSE - YES
+country_event = {
+    id = 66672
+    title = "EVTNAME66672"
+    desc = "EVTDESC66672"
+    picture = "british_victory_france"
+	fire_only_once = yes
+	mean_time_to_happen = { days = 10 }
+	is_triggered_only = yes
+#YOULL GET YOUR PUPPET DOMINION
+    option = {
+        name = "EVTOPTA66672"
+		prestige = 25
+		create_vassal = NEN
+		NEN = { government = hms_government }
+		relation = { who = USA value = -400 }
+		}
+}
+#CANADIAN RESPONSE - TIME TO KILL
+country_event = {
+    id = 66673
+    title = "EVTNAME66673"
+    desc = "EVTDESC66673"
+    picture = "british_victory_france"
+	fire_only_once = yes
+	mean_time_to_happen = { days = 10 }
+	is_triggered_only = yes
+#WAR WILL BE TO ANNEX
+    option = {
+        name = "EVTOPTA66673"
+		badboy = 5
+		NEN = { all_core = { add_core = CAN } }
+		war = {
+			target = NEN
+			attacker_goal = { casus_belli = acquire_all_cores }
+			}
+		ai_chance = { value = 1 }
+		}
+#GIVE UP ON THE AMERICAN PROJECT
+	option = {
+		name = "EVTOPTB66673"
+		badboy = -5
+		prestige = -25
+		ai_chance = { value = 0 }
+		}
+}
+#IF NEW ENGLAND IS PUPPETED IT CAN BE ANNEXED WITH NAT-IMP - NEW ENGLAND EVENT
+country_event = {
+    id = 66674
+    title = "EVTNAME66674"
+    desc = "EVTDESC66674"
+    picture = "british_victory_france"
+	fire_only_once = yes
+	mean_time_to_happen = { days = 10 }
+	is_triggered_only = yes
+#THE AMERICAN PEOPLE ARE NOT HAPPY, BOB, NOT HAPPY AT ALL
+    option = {
+        name = "EVTOPTA66674"
+		prestige = -100
+		any_pop = { 
+			limit = { OR = { has_pop_culture = yankee has_pop_culture = dixie } } 
+			ideology = { value = liberal factor = 1 }
+			militancy = 10
+			}
+		CAN = { country_event = 66675 }
+		ai_chance = { value = 0.8 }
+		}
+#OPTION B - CANADA GETS TO INVADE
+option = {
+        name = "EVTOPTB66674"
+		prestige = 5
+		CAN = { country_event = 66676 }
+		government = democracy
+		CAN = { release_vassal = NEN }
+		add_country_modifier = { name = emergency_mobilization duration = 365 }
+		ai_chance = { value = 0.2 }
+		}
+}
+#NEW ENGLAND RESPONSE - YES
+country_event = {
+    id = 66675
+    title = "EVTNAME66675"
+    desc = "EVTDESC66675"
+    picture = "british_victory_france"
+	fire_only_once = yes
+	mean_time_to_happen = { days = 10 }
+	is_triggered_only = yes
+#YOU GET TO ANNEX THE AMERICANS, BUT THEY ARE VERY UNHAPPY
+    option = {
+        name = "EVTOPTA66675"
+		prestige = 25
+		inherit = NEN
+		NEN = { all_core = { add_core = THIS } }
+		relation = { who = USA value = -400 }
+		}
+}
+#NEW ENGLAND RESPONSE - NO, TIME TO KILL
+country_event = {
+    id = 66676
+    title = "EVTNAME66676"
+    desc = "EVTDESC66676"
+    picture = "british_victory_france"
+	fire_only_once = yes
+	mean_time_to_happen = { days = 10 }
+	is_triggered_only = yes
+#WAR WILL BE TO ANNEX
+    option = {
+        name = "EVTOPTA66676"
+		NEN = { all_core = { add_core = CAN } }
+		war = {
+			target = NEN
+			attacker_goal = { casus_belli = acquire_all_cores }
+			}
+		ai_chance = { value = 1 }
+		}
+#GIVE UP ON THE AMERICAN PROJECT
+	option = {
+		name = "EVTOPTB66676"
+		badboy = -5
+		prestige = -25
+		ai_chance = { value = 0 }
+		NEN = { all_core = { remove_core = THIS } }
+		}
+}
 #ANNEXATION OF NEW ENGLAND OPENS UP PATRIOT FRONT
-#DO AWAY WITH PATRIOTS VIA DECISION
-#NATIONALISM N IMPERIALISM CAN INCORPORATE YANKEES IF SLAVERY IS ABOLISHED AND THE REALM IS CONSTITUTIONAL
-#FINAL WAR WITH THE CSA CAN BE ENACTED AFTER LOUISIANA, NEW ENGLAND, NATIVES ALL ANNEXED
-#IF ALL OF NORTH AMERICA IS SUBJUGATED, REMOVE PRIOR NATIONAL CORES AND GET ALL ACCEPTED CULTURES - REVOLUTION N COUNTERREVOLUTION
-
+country_event = {
+    id = 66677
+    title = "EVTNAME66677"
+    desc = "EVTDESC66677"
+    picture = "british_victory_france"
+	fire_only_once = yes
+	mean_time_to_happen = { days = 1 }
+	trigger = {
+		tag = CAN
+		NEN = { exists = no all_core = { limit = { NOT = { is_core = USA } } owned_by = THIS } }
+		owns = 232
+		}
+#THEY WILL BE A PROBLEM INDEFINITELY UNTIL THEY CAN BE PUT DOWN
+    option = {
+        name = "EVTOPTA66677"
+		set_country_flag = sons_of_liberty
+		any_owned = { limit = { is_core = NEN } add_province_modifier = { name = sons_of_liberty duration = -1 } }
+		USA = { country_event = 66678 }
+		}
+}
+#ANNEXATION OF NEW ENGLAND ALSO REINVIGORATES AMERICAN CLAIMS ON NEW ENGLAND AND BRINGS ABOUT A NEW PATRIOT REVOLUTION
+country_event = {
+    id = 66678
+    title = "EVTNAME66678"
+    desc = "EVTDESC66678"
+    picture = "british_victory_france"
+	fire_only_once = yes
+	mean_time_to_happen = { days = 1 }
+	is_triggered_only = yes
+#THE AMERICAN CLAIMS WILL MAKE NEW ENGLAND A CONTINUING WARZONE - THE NEW ENGLAND PATRIOTS THAT FLEE ESTABLISH THEMSELVES IN THE SOUTH
+    option = {
+        name = "EVTOPTA66678"
+		prestige = 5
+		NEN = { all_core = { add_core = USA } }
+		add_country_modifier = { name = america_the_undying duration = 3650 }
+		government = democracy
+		add_accepted_culture = yankee
+		child_labor = child_labor_illegal 
+		school_reforms = good_schools
+		health_care = good_health_care
+		vote_franschise = universal_voting
+		slavery = no_slavery
+		upper_house_composition = state_equal_weight
+		press_rights = free_press
+		trade_unions = all_trade_unions
+		political_parties = secret_ballots
+		conscription = no_draft
+		citizens_rights = all_voting_pops
+		debt_law = bankruptcy
+		border_policy = open_borders
+		}
+    option = {
+        name = "EVTOPTB66678"
+		prestige = 5
+		NEN = { all_core = { add_core = USA } }
+		add_country_modifier = { name = america_the_undying duration = 3650 }
+		}
+}
+#DO AWAY WITH PATRIOTS ONCE GOOD ENOUGH MILITARY-LOGISTICAL TECH IS ESTABLISHED
+country_event = {
+    id = 66679
+    title = "EVTNAME66679"
+    desc = "EVTDESC66679"
+    picture = "british_victory_france"
+	fire_only_once = yes
+	mean_time_to_happen = { days = 1 }
+	trigger = {
+		tag = CAN
+		NEN = { exists = no all_core = { limit = { NOT = { is_core = USA } } owned_by = THIS } }
+		has_country_flag = sons_of_liberty
+		owns = 232
+		deep_defense_system = 1
+		machine_guns = 1
+		}
+#THEY HAVE BEEN PUT DOWN AND CAN NOW BE INTEGRATED PROPERLY
+    option = {
+        name = "EVTOPTA66679"
+		set_country_flag = yankees_complacent
+		prestige = 10
+		any_pop = { limit = { has_pop_culture = yankee } ideology = { value = conservative factor = 1 } militancy = -10 consciousness = -10 }
+		any_owned = { limit = { is_core = NEN } remove_province_modifier = sons_of_liberty }
+		}
+}
+#GOOD LOGISTICAL PROPAGANDA AND MERCANTILE TECHS CAN INCORPORATE YANKEES IF SLAVERY IS ABOLISHED AND THE REALM IS CONSTITUTIONAL
+country_event = {
+    id = 66680
+    title = "EVTNAME66680"
+    desc = "EVTDESC66680"
+    picture = "british_victory_france"
+	fire_only_once = yes
+	mean_time_to_happen = { days = 1 }
+	is_triggered_only = yes
+#WE ARE ALL ENGLISHMEN ARE WE NOT
+    option = {
+        name = "EVTOPTA66680"
+		prestige = 10
+		add_accepted_culture = yankee
+		}
+}
+#FINAL WAR WITH THE CSA CAN BE ENACTED AFTER LOUISIANA, NEW ENGLAND, NATIVES ALL ANNEXED - REV-COUNTERREV AND GOOD ARMY
+country_event = {
+    id = 66681
+    title = "EVTNAME66681"
+    desc = "EVTDESC66681"
+    picture = "british_victory_france"
+	fire_only_once = yes
+	mean_time_to_happen = { days = 1 }
+	is_triggered_only = yes
+#THE WAR WILL DICTATE IF THE AMERICAN UNION CAN BE ESTABLISHED
+    option = {
+        name = "EVTOPTA66681"
+		prestige = 10
+		casus_belli = { target = USA type = conquest months = 10 }
+		USA = { country_event = 66682 }
+		war = { 
+			target = USA
+			attacker_goal = { casus_belli = conquest }
+			defender_goal = { casus_belli = acquire_all_cores }
+			}
+		}
+}
+#AMERICAN EVENT FOR THE FINAL WAR OF THEIR AGE
+country_event = {
+    id = 66682
+    title = "EVTNAME66682"
+    desc = "EVTDESC66682"
+    picture = "british_victory_france"
+	fire_only_once = yes
+	mean_time_to_happen = { days = 1 }
+	is_triggered_only = yes
+#THE AMERICANS WILL GET ALOT OF BUFFS AND GET THE FULL CORES OF BIBLICALLY ACCURATE AMERICA
+    option = {
+        name = "EVTOPTA66682"
+		CAN = { all_core = { add_core = USA } }
+		LOU = { all_core = { add_core = USA } }
+		NEN = { all_core = { add_core = USA } }
+		TEX = { all_core = { add_core = USA } }
+		add_country_modifier = { name = emergency_mobilization duration = 3650 } 
+		}
+}
+#VICTORY IN THE WAR WITH AMERICA
+country_event = {
+    id = 66683
+    title = "EVTNAME66683"
+    desc = "EVTDESC66683"
+    picture = "british_victory_france"
+	fire_only_once = yes
+	mean_time_to_happen = { days = 1 }
+	trigger = {
+		tag = CAN
+		USA = { exists = no }
+		NEN = { exists = no }
+		has_country_flag = retake_america
+		owns = 60
+		}
+#THE COLONIES ARE ALL ONE NOW
+    option = {
+        name = "EVTOPTA66683"
+		set_country_flag = british_america
+		prestige = 100
+		USA = { all_core = { add_core = CAN } }
+		add_accepted_culture = afro_american
+		}
+}
+#IF ALL OF NORTH AMERICA IS SUBJUGATED, REMOVE PRIOR NATIONAL CORES AND GET ALL ACCEPTED CULTURES - MASS POLITICS
+country_event = {
+    id = 66684
+    title = "EVTNAME66684"
+    desc = "EVTDESC66684"
+    picture = "british_victory_france"
+	fire_only_once = yes
+	mean_time_to_happen = { days = 1 }
+	is_triggered_only = yes
+#THE COLONIES ARE ALL LOYAL NOW - AN ENDSTATE HAS BEEN REACHED
+    option = {
+        name = "EVTOPTA66684"
+		set_country_flag = british_america
+		prestige = 15
+		USA = { all_core = { add_core = CAN remove_core = USA } }
+		NEN = { all_core = { add_core = CAN remove_core = NEN } }
+		LOU = { all_core = { add_core = CAN remove_core = LOU } }
+		add_accepted_culture = afro_american
+		add_accepted_culture = yankee
+		add_accepted_culture = dixie
+		}
+}
+#FAILSAFE EVENT FOR IF NEW ENGLAND MADE PUPPET OUT OF ORDER
+#FAILSAFE EVENT FOR IF USA MADE PUPPET OUT OF ORDER
 ###########AUSTRALIAN FLAVOR############
 #INDONESIA AND MALAYSIA CAN BE RAPIDLY CONSOLIDATED WITH NATIONALISM/IMPERIALISM - DECISION
 #PHILIPPINES CAN BE ANNEXED WITH GOOD BOATS AND STATE/GOV - DECISION
@@ -53,194 +1234,74 @@
 
 ###########RETURN TO THE ISLES#############
 #IF DONE BEFORE 1851 - BRILLIANT RECONQUEST AND A BUNCH OF PRESTIGE - NO TECH REQUIREMENT TO INCORPORATE
-#IF DONE AFTER STILL GOOD PRESTIGE BUT NOT AS MUCH - BRITISH PEOPLE WILL REQUIRE CULTURE TECH TO INCORPORATE
-#INCORPORATION OF ENGLISH CULTURE
-#INSTANT REVOCATION OF LOGISTICAL DEBUFF FROM ALL LANDS
-#AFTER THE ENGLISH CULTURE IS INCORPORATED, THE CAPITAL CAN BE MOVED BACK TO LONDON
+#THE CAPITAL MOVED BACK TO LONDON 
+#THE TRIUMPHANT PROCESSION OF ERNEST AUGUSTUS
+#THE UNION JACK OVER LONDON
+#THE FAILED PROMISE - WHEN THE MODIFIER TO RETURN HOME ENDS, THE BRITISH CULTURE WILL BE LOST AS ACCEPTED
+#IF DONE AFTER STILL GOOD PRESTIGE BUT NOT AS MUCH - BRITISH PEOPLE WILL STRUGGLE TO BE INCORPORATED
+#THE LESS TRIUMPHANT PROCESSION OF GEORGE IV - THERE ARE FEW TO NO ROYALISTS PRESENT IN BRITAIN - ABNORMALLY QUIET
+#THE CAPITAL IS NOT MOVED BACK FOR FEAR OF RETALIATION
+#THE EMPIRE RESTORED? 
+#INSTANT REVOCATION OF LOGISTICAL DEBUFF FROM ALL LANDS AND ALL EXPANSIONIST FLAVOR IS NOW AVAILABLE
 #COALITION OPPORTUNITY AGAINST FRANCE OPENED
 #IMPACT OF COALITION WAR IF WON - FRANCE IS DEMOLISHED AND ENGLAND GETS SOME COASTAL LANDS
 #CONTESTING THE LANDS OF HANOVER?
 #ABSOLUTE MONARCHY ONLY - CLAIMS ON FRANCE
 #ABSOLUTE MONARCHY ONLY - THE DUAL MONARCHY RETURNS??????
-country_event = {
-    id = 66550
-    title = "EVTNAME66550"
-    desc = "EVTDESC66550"
-    picture = "meeting"
 
-    is_triggered_only = yes
+###########FIRST POLITICAL ERA - THE RULE OF EXILES - 1836-1851##############
+#PROMINENT DONATIONS OF MONEY AND MATERIAL FROM HOUSE OF LORDS IN 1841
+#INSURRECTION ACT OF 1838 - PASSED DURING STATE OF EMERGENCY
+#AUSTRALIAN SETTLEMENT ACT OF 1848
+#REVOCATION OF VICTORIA'S ENNOBLED STATUS IN 1848
+#JAILING OF PROMINENT PAN-AMERICAN ACTIVIST IN 1839
 
-    option = {
-        name = "EVTOPTA66550"
-        CAN = { country_event = 66551 }
-        ai_chance = {
-            factor = 90
-        }
-    }
+###########SECOND POLITICAL ERA - DEBATE AS TO CANADIAN AND AUSTRALIAN IDENTITY - 1851-1872############
+#EXPLORATION OF THE YUKON - SMALL AMOUNT OF RESEARCH AND PRESTIGE - 1856
+#CREATION OF A "BRITISH" NATIONAL SYMBOL - THE MOOSE - 1859
+#CALLS FOR AUSTRALIAN DOMINIONHOOD - 1860
+#"ARE THE BRITISH ISLES BRITISH?" - INCENDIARY PAPER - ONLY IF THE ISLES HAVE NOT BEEN TAKEN - 1862
+#FIRST THEORETICAL PAPER AS TO PAN-AMERICANISM - RECEIVES ONLY A LITTLE ATTENTION, WRITTEN BY PROMINENT LIBERAL - 1861
 
-    option = {
-        name = "EVTOPTB66550"
-        CAN = { country_event = 66552 }
-        ai_chance = {
-            factor = 10
-        }
-    }
-}
+###########ALTERNATE SECOND ERA UPON SUCCESSFUL CONQUEST - THE NATIONAL RECONCILIATION - 1851-1872############
+#RESTORATION OF BRITISH PRIMACY - IMMEDIATELY
+#ABSOLUTE MONARCH IS NOT ACCEPTABLE TO THE BRITISH PEOPLE WHO REMEMBER REVOLUTION - ABSOLUTE MONARCHY ONLY - 1851
+#RESTITUTION OF THE HOUSE OF LORDS' NOBLE HOLDINGS - 1853
+#THE AMNESTY ACT OF 1855
+#VICTORIA'S ADVOCATES - 1851-1858 MILITANCY
+#THE EXILE OF CITIZEN VICTORIA - 1858
+#THE NEW ACT OF UNION OF ENGLAND AND SCOTLAND - 1866
+#GO BACK ON IRISH AUTONOMY? - ONLY IF DOMINIONHOOD WAS GRANTED - 1865
+#THE RESTORATION OF THE PARLIAMENT BUILDING - 1860
+#A NEW PAX BRITANNIA - #1 GP
+#RENEWED SENSE OF PAN-ENGLISH IDENTITY ACROSS THE EMPIRE
+#THE HAVEN FOR THE WORLD'S BLIGHTED - IMMIGRATION BUFFS
 
-country_event = {
-    id = 66551
-    title = "EVTNAME66551"
-    desc = "EVTDESC66551"
-    picture = "administration"
+###########THIRD POLITICAL ERA - THE NATIONAL RENDING - 1872-1900###############
+#THE KING OF CANADA AND AUSTRALIA - 1873 - ONLY NO CONQUEST
+#PAN-AMERICANISM IN THE CANADIAN WORLD - 1880 - IF CONQUERING AMERICA
+#THE SUNSET EMPIRE OF THE WEST - 1876
+#AUSTRALIAN MANIFEST DESTINY - 1880 - IF CONQUERING PACIFIC
+#A UNION OF DOMINIONS - 1885
+#TO BE ENGLISH IS TO BE CANADIAN - 1883
+#TO BE ENGLISH IS TO BE AUSTRALIAN - 1885
+#THE LAW OF EXILE? - 1872
+#OPENING ACCEPTANCE TO BRITISH MIGRANTS? - 1875
+#IS IRELAND WORTH WAR? - 1878
+#INFORMAL RECOGNITION OF THE BRITISH UNION  - 1877
+#FORMAL RECOGNITION OF THE BRITISH UNION??? - 1880 - WILL REVOKE CORES - TO REFUSE WILL GARNER MILITANCY
+#NORMALIZATION OF RELATIONS WITH THE BRITISH UNION - 1885
+#A NEW CONSTITUTIONAL PUSH - ABSOLUTE MONARCHY OR PRUSSIAN - 1885
+#THE CONVENTION OF 1890 - CONSTITUTIONAL DEMAND
+#DAWNING OF QUEBECOIS NATIONALISM - 1875
 
-    is_triggered_only = yes
-
-    option = {
-        name = "EVTOPTA66551"
-        FRA = { country_event = 66553 }
-        relation = {
-            who = FRA
-            value = 75
-        }
-
-        ai_chance = {
-            factor = 45
-        }
-    }
-
-    option = {
-        name = "EVTOPTB66551"
-        FRA = { country_event = 66554 }
-        ai_chance = {
-                factor = 55
-        }
-    }
-}
-
-country_event = {
-    id = 66552
-    title = "EVTNAME66552"
-    desc = "EVTDESC66552"
-    picture = "meeting3"
-
-    is_triggered_only = yes
-
-    option = {
-        name = "EVTOPTA66552"
-        relation = {
-            who = FRA
-            value = -50
-        }
-    }
-}
-
-country_event = {
-    id = 66553
-    title = "EVTNAME66553"
-    desc = "EVTDESC66553"
-    picture = "Travel"
-
-    is_triggered_only = yes
-
-    option = {
-        name = "EVTOPTA66553"
-        CAN = {
-            2230 = {
-                secede_province = FRA
-                remove_core = CAN
-            }
-            2228 = {
-                secede_province = FRA
-                remove_core = CAN
-            }
-            77 = {
-                secede_province = FRA
-                remove_core = CAN
-                add_core = FRA
-            }
-        }
-        relation = {
-            who = CAN
-            value = 150
-        }
-    }
-}
-
-country_event = {
-    id = 66554
-    title = "EVTNAME66554"
-    desc = "EVTDESC66554"
-    picture = "slavepower"
-
-    is_triggered_only = yes
-
-    option = {
-        name = "EVTOPTA66554"
-        money = 100000
-
-        2230 = { remove_core = FRA add_core = CAN }
-        2228 = { remove_core = FRA add_core = CAN }
-        77 = { remove_core = FRA add_core = CAN }
-
-        relation = {
-            who = CAN
-            value = 50
-        }
-
-        CAN = { country_event = 66556 }
-
-        ai_chance = {
-            factor = 45
-        }
-    }
-
-    option = {
-        name = "EVTOPTB66554"
-        relation = {
-            who = CAN
-            value = -50
-        }
-
-        CAN = { country_event = 66557 }
-
-        ai_chance = {
-            factor = 55
-        }
-    }
-}
-
-country_event = {
-    id = 66556
-    title = "EVTNAME66556"
-    desc = "EVTDESC66556"
-    picture = "Sturt"
-
-    is_triggered_only = yes
-
-    option = {
-        name = "EVTOPTA66556"
-        prestige = 5
-        money = -100000
-        relation = {
-            who = FRA
-            value = 20
-        }
-    }
-}
-
-country_event = {
-    id = 66557
-    title = "EVTNAME66557"
-    desc = "EVTDESC66557"
-    picture = "finepeople"
-
-    is_triggered_only = yes
-
-    option = {
-        name = "EVTOPTA66557"
-        relation = {
-            who = FRA
-            value = -50
-        }
-    }
-}
+###########ALTERNATE THIRD POLITICAL ERA - THE BRITISH WITHOUT BRITAIN - 1872-1900#############
+#AFTER A LONG QUIET THE NATIONALISM GETS TOO MUCH TO BEAR
+#THE FOREIGNER-KING - 1873
+#THE MANCHESTER INDEPENDENCE RIOTS - IF CULTURE NOT ACCEPTED - 1878
+#THE SCOTTISH PROMISE - IF PROMISED AUTONOMY, YOUD BETTER GIVE IT
+#SCOTTISH NATIONAL AWAKENING - WILL HAPPEN REGARDLESS OF AUTONOMY FROM ABOVE
+#THE REPUBLICAN BANNER RAISED OVER PARLIAMENT DURING CESSION - 1885
+#VICTORIA'S ADVOCATES - PERMANENT MODIFIER TO MAKE IT SUCK
+#A BRITAIN UNRECOGNIZABLE - 1899
+#SHOULD BRITAIN REMAIN IN THE UNION? - 1900
