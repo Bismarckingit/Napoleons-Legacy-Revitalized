@@ -745,6 +745,7 @@ country_event = {
         name = "EVTOPTA66664"
 		prestige = 10
 		casus_belli = { target = LOU type = conquest months = 1 }
+		remove_country_modifier = louisiana_contest 
 		war = {
 			target = LOU
 			attacker_goal = { casus_belli = conquest }
@@ -765,6 +766,7 @@ country_event = {
         name = "EVTOPTA66665"
 		prestige = 10
 		casus_belli = { target = LOU type = conquest months = 1 }
+		remove_country_modifier = louisiana_contest 
 		war = {
 			target = LOU
 			attacker_goal = { casus_belli = conquest }
@@ -785,6 +787,7 @@ country_event = {
 		prestige = 10
 		badboy = 2
 		USA = { country_event = 66667 }
+		remove_country_modifier = louisiana_contest 
 		}
 }
 #US EVENT TO DECLARE WAR IF CANADA GETS LOUISIANA FOR FREE

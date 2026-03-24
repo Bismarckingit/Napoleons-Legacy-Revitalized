@@ -144,6 +144,7 @@ political_decisions = {
 		}
 	effect = {
 		set_country_flag = incorporation_of_louisiana
+		remove_country_modifier = louisiana_contest 
 		LOU = { all_core = { add_core = CAN } }
 		prestige = 10
 		LOU = { country_event = 66659 }
