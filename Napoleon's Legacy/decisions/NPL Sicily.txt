@@ -272,7 +272,9 @@ political_decisions = {
 	potential = {
 		tag = ITS
 		is_greater_power = yes
+		NOT = { has_country_flag = vassalize_spain }
 		SPA = { exists = yes owns = 487 }
+		SPA = { NOT = { vassal_of = THIS } }
 		NSA = { exists = no }
 		SPA = { is_greater_power = no }
 		}
@@ -287,6 +289,7 @@ political_decisions = {
 		steel_railroad = 1
 		}
 	effect = {
+		set_country_flag = vassalize_spain
 		prestige = 15
 		badboy = 5
 		country_event = 4662040
@@ -299,6 +302,8 @@ political_decisions = {
 		tag = ITS
 		is_greater_power = yes
 		BOR = { exists = yes owns = 425 }
+		NOT = { BOR = { vassal_of = THIS } }
+		NOT = { has_country_flag = vassalize_france }
 		FRA = { exists = no }
 		BOR = { is_greater_power = no }
 		}
@@ -314,6 +319,7 @@ political_decisions = {
 		economic_responsibility = 1
 		}
 	effect = {
+		set_country_flag = vassalize_france
 		prestige = 15
 		badboy = 15
 		country_event = 4662041
