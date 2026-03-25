@@ -271,6 +271,7 @@ political_decisions = {
 	alert = yes
 	potential = {
 		tag = ITS
+		has_country_flag = aragonese_kingdom
 		is_greater_power = yes
 		NOT = { has_country_flag = vassalize_spain }
 		SPA = { exists = yes owns = 487 }
@@ -282,6 +283,7 @@ political_decisions = {
 		is_greater_power = yes
 		rank = 6
 		SPA = { in_sphere = THIS is_secondary_power = no }
+		ARN = { exists = no }
 		revolution_n_counterrevolution = 1
 		biologism = 1
 		market_regulations = 1
