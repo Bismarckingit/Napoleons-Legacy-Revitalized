@@ -302,4 +302,35 @@ political_decisions = {
 		country_event = 66684
 		}
 	}
+	annex_dominion_usa = {
+	alert = yes
+	potential = {
+		tag = CAN
+		war = no
+		OR = {
+		capital = 57
+		capital = 300
+		has_country_flag = united_britain
+		}
+		NOT = { has_country_flag = annex_dominion_usa }
+		OR = { is_greater_power = yes is_secondary_power = yes }
+		USA = { exists = yes vassal_of = THIS }
+		has_country_flag = dominion_usa
+		}
+	allow = {
+		is_greater_power = yes
+		USA = { in_sphere = THIS vassal_of = THIS }
+		revolution_n_counterrevolution = 1
+		steel_breech_loaded_artillery = 1
+		military_logistics = 1
+		army_risk_management = 1
+		}
+	effect = {
+		set_country_flag = annex_dominion_usa
+		prestige = 10
+		badboy = 5
+		USA = { all_core = { add_core = CAN } }
+		inherit = USA
+		}
+	}
 }

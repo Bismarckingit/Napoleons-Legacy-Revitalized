@@ -1223,7 +1223,49 @@ country_event = {
 		}
 }
 #FAILSAFE EVENT FOR IF NEW ENGLAND MADE PUPPET OUT OF ORDER
+country_event = {
+    id = 66685
+    title = "EVTNAME66685"
+    desc = "EVTDESC66685"
+    picture = "british_victory_france"
+	fire_only_once = yes
+	mean_time_to_happen = { days = 1 }
+	trigger = {
+		tag = CAN
+		NEN = { vassal_of = THIS }
+		NOT = { has_country_flag = dominion_new_england }
+		}
+#THE COLONIES ARE ALL LOYAL NOW - AN ENDSTATE HAS BEEN REACHED
+    option = {
+        name = "EVTOPTA66685"
+		set_country_flag = dominion_new_england
+		NEN = { government = hms_government prestige = -1000000 }
+		prestige = 20
+		}
+}
 #FAILSAFE EVENT FOR IF USA MADE PUPPET OUT OF ORDER
+country_event = {
+    id = 66686
+    title = "EVTNAME66686"
+    desc = "EVTDESC66686"
+    picture = "british_victory_france"
+	fire_only_once = yes
+	mean_time_to_happen = { days = 1 }
+	trigger = {
+		tag = CAN
+		USA = { vassal_of = THIS }
+		NOT = { has_country_flag = dominion_new_england }
+		}
+#THE USA CAN BE ANNEXED DIFFERENTLY NOW
+    option = {
+        name = "EVTOPTA66686"
+		set_country_flag = dominion_usa
+		USA = { government = hms_government prestige = -1000000 }
+		inherit = LOU
+		country_event = 66669
+		prestige = 20
+		}
+}
 ###########AUSTRALIAN FLAVOR############
 #INDONESIA AND MALAYSIA CAN BE RAPIDLY CONSOLIDATED WITH NATIONALISM/IMPERIALISM - DECISION
 #PHILIPPINES CAN BE ANNEXED WITH GOOD BOATS AND STATE/GOV - DECISION
