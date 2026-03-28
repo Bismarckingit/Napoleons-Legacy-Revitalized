@@ -4,6 +4,7 @@ political_decisions = {
 	potential = {
 		tag = CAN
 		war = no
+		is_vassal = no
 		NOT = { has_country_flag = return_to_south_africa }
 		OR = { is_greater_power = yes is_secondary_power = yes }
 		OR = {
@@ -34,6 +35,7 @@ political_decisions = {
 	alert = yes
 	potential = {
 		tag = CAN
+		is_vassal = no
 		war = no
 		NOT = { has_country_flag = end_native_autonomy }
 		OR = { is_greater_power = yes is_secondary_power = yes }
@@ -57,6 +59,7 @@ political_decisions = {
 	alert = yes
 	potential = {
 		tag = CAN
+		is_vassal = no
 		OR = { government = hms_government government = democracy }
 		NOT = { has_country_flag = british_civil_war }
 		BRI = { exists = yes }
@@ -83,6 +86,7 @@ political_decisions = {
 	alert = yes
 	potential = {
 		tag = CAN
+		is_vassal = no
 		OR = { government = hms_government government = absolute_monarchy government = prussian_constitutionalism }
 		NOT = { has_country_flag = form_canadian_501st }
 		}
@@ -105,6 +109,7 @@ political_decisions = {
 	potential = {
 		tag = CAN
 		war = no
+		is_vassal = no
 		NOT = { has_country_flag = the_irish_dominion }
 		OR = { is_greater_power = yes is_secondary_power = yes }
 		IRE = { exists = yes }
@@ -126,6 +131,7 @@ political_decisions = {
 	potential = {
 		tag = CAN
 		war = no
+		is_vassal = no
 		OR = {
 		capital = 57
 		capital = 300
@@ -155,6 +161,7 @@ political_decisions = {
 	potential = {
 		tag = CAN
 		war = no
+		is_vassal = no
 		OR = {
 		capital = 57
 		capital = 300
@@ -184,6 +191,7 @@ political_decisions = {
 	potential = {
 		tag = CAN
 		war = no
+		is_vassal = no
 		OR = {
 		capital = 57
 		capital = 300
@@ -213,6 +221,7 @@ political_decisions = {
 	potential = {
 		tag = CAN
 		has_country_flag = yankees_complacent
+		is_vassal = no
 		war = no
 		NEN = { exists = no }
 		owns = 232
@@ -244,6 +253,7 @@ political_decisions = {
 	potential = {
 		tag = CAN
 		war = no
+		is_vassal = no
 		NEN = { exists = no }
 		INC = { exists = no }
 		LOU = { exists = no }
@@ -278,6 +288,7 @@ political_decisions = {
 	potential = {
 		tag = CAN
 		has_country_flag = yankees_complacent
+		is_vassal = no
 		war = no
 		NEN = { exists = no }
 		owns = 232
@@ -307,6 +318,7 @@ political_decisions = {
 	potential = {
 		tag = CAN
 		war = no
+		is_vassal = no
 		OR = {
 		capital = 57
 		capital = 300
@@ -333,4 +345,91 @@ political_decisions = {
 		inherit = USA
 		}
 	}
+	consolidate_indonesia_malaya = {
+	alert = yes
+	potential = {
+		tag = CAN
+		war = no
+		is_vassal = no
+		OR = {
+		capital = 2468
+		capital = 300
+		has_country_flag = united_britain
+		}
+		NOT = { has_country_flag = consolidate_indonesia_malaya }
+		OR = { is_greater_power = yes is_secondary_power = yes }
+		}
+	allow = {
+		is_greater_power = yes
+		nationalism_n_imperialism = 1
+		medicine = 1
+		military_logistics = 1
+		iron_steamers = 1
+		}
+	effect = {
+		set_country_flag = consolidate_indonesia_malaya
+		country_event = 66688
+		prestige = 10
+		badboy = 5
+		any_country = { limit = { OR = { tag = ATJ tag = SAK tag = DJA tag = JAV tag = PNK tag = BRU tag = SUL tag = KLM tag = KTI tag = SLW tag = BAL tag = TMR tag = MAL tag = JOH tag = SLG tag = PHG tag = PRK } in_sphere = THIS } country_event = 66687 }
+		}
+	}
+	scramble_for_philippines_can = {
+		alert = yes
+	potential = {
+		tag = CAN
+		war = no
+		OR = {
+		capital = 2468
+		capital = 300
+		has_country_flag = united_britain
+		}
+		NOT = { has_country_flag = scramble_for_philippines_can }
+		is_vassal = no
+		OR = { is_greater_power = yes is_secondary_power = yes }
+		}
+	allow = {
+		is_greater_power = yes
+		state_n_government = 1
+		medicine = 1
+		naval_plans = 1
+		PHL = { in_sphere = THIS OR = { is_vassal = no vassal_of = THIS } }
+		}
+	effect = {
+		set_country_flag = scramble_for_philippines_can
+		country_event = 66689
+		prestige = 10
+		badboy = 5
+		inherit = PHL
+		}
+	}
+	indochinese_conquest = {
+	alert = yes
+	potential = {
+		tag = CAN
+		war = no
+		is_vassal = no
+		OR = {
+		capital = 2468
+		capital = 300
+		has_country_flag = united_britain
+		}
+		NOT = { has_country_flag = indochinese_conquest }
+		OR = { is_greater_power = yes is_secondary_power = yes }
+		}
+	allow = {
+		is_greater_power = yes
+		naval_risk_management = 1
+		electricity = 1
+		blue_and_brown_water_schools = 1
+		steel_steamers = 1
+		}
+	effect = {
+		set_country_flag = indochinese_conquest
+		country_event = 66692
+		prestige = 10
+		badboy = 5
+		any_country = { limit = { OR = { tag = DAI tag = CHK tag = LUA tag = CAM tag = YNN } in_sphere = THIS } country_event = 66687 }
+		}
+	}	
 }

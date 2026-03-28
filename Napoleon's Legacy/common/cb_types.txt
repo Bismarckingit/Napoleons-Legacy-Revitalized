@@ -588,6 +588,70 @@ colonial_reconquest_cb = {
 		    tag = PRG
                 }
             }
+			AND = { 
+				THIS = {
+					tag = CAN
+					has_country_flag = consolidate_indonesia_malaya
+					}
+				OR = {
+					tag = ATJ 
+					tag = SAK 
+					tag = DJA 
+					tag = JAV 
+					tag = PNK 
+					tag = BRU 
+					tag = SUL 
+					tag = KLM 
+					tag = KTI 
+					tag = SLW 
+					tag = BAL 
+					tag = TMR 
+					tag = MAL 
+					tag = JOH 
+					tag = SLG 
+					tag = PHG 
+					tag = PRK
+					}
+				}
+			AND = { 
+				THIS = {
+					tag = CAN
+					has_country_flag = indochinese_conquest
+					}
+				OR = {
+					tag = DAI
+					tag = CHK
+					tag = LUA
+					tag = CAM
+					tag = YNN
+					}
+				}
+			AND = { 
+				THIS = {
+					tag = CAN
+					has_country_flag = indian_wars
+					}
+				OR = {
+					tag = MYS 
+					tag = TRA 
+					tag = BER 
+					tag = IND 
+					tag = BHO 
+					tag = NAG 
+					tag = BAS 
+					tag = ORI 
+					tag = BUN 
+					tag = MUG 
+					tag = KUT 
+					tag = SIN 
+					tag = MAK 
+					tag = KAL 
+					tag = BHP 
+					tag = PNJ 
+					tag = SHI 
+					tag = AWA
+					}
+				}
             AND = {
                 THIS = {
                     tag = NET

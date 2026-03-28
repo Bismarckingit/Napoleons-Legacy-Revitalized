@@ -524,6 +524,8 @@ country_event = {
         name = "EVTOPTA66653"
 		prestige = 5
 		treasury = 50000
+		add_country_modifier = { name = eic_fiscal_report_timer duration = 365 }
+		any_country = { limit = { in_sphere = THIS civilized = no OR = { tag = MYS tag = TRA tag = BER tag = IND tag = BHO tag = NAG tag = BAS tag = ORI tag = BUN tag = MUG tag = KUT tag = SIN tag = MAK tag = KAL tag = BHP tag = PNJ tag = SHI tag = AWA } } any_owned = { secede_province = EIC } }
 		any_owned = { limit = { OR = { is_core = BIH is_core = BNG is_core = ASM is_core = ORI is_core = HYD is_core = MYS is_core = TRA is_core = NAG is_core = BAS is_core = BER is_core = IND is_core = BHO is_core = BUN is_core = AWA is_core = KUT is_core = SIN is_core = MUG is_core = SIK is_core = PNJ is_core = SHI is_core = KAL is_core = MAK is_core = AFG is_core = CRL is_core = BHP is_core = NEP is_core = BHU is_core = SIK is_core = BUR is_core = SIA is_core = PRK is_core = SLG is_core = PHG is_core = JOH is_core = DJA is_core = KLM is_core = BRU is_core = SUL is_core = KTI is_core = PNK is_core = BAL is_core = PHL is_core = DAI is_core = CHK is_core = LUA is_core = CAM is_core = TAI is_core = OMA is_core = NYE is_core = FDL is_core = KTH is_core = MHR is_core = LHJ is_core = SAK is_core = MAD is_core = ATJ is_core = SLW is_core = BAL is_core = TMR is_core = MAL } } secede_province = EIC }
 		}
 }
@@ -728,7 +730,7 @@ country_event = {
 option = {
         name = "EVTOPTB66663"
 		prestige = -100
-		CAN = { inherit = LOU country_event = 66666}
+		CAN = { inherit = LOU country_event = 66666 }
 		ai_chance = { value = 1 }
 		}
 }
@@ -785,6 +787,7 @@ country_event = {
     option = {
         name = "EVTOPTA66666"
 		prestige = 10
+		inherit = LOU
 		badboy = 2
 		USA = { country_event = 66667 }
 		remove_country_modifier = louisiana_contest 
@@ -945,7 +948,7 @@ country_event = {
 		NEN = { all_core = { add_core = CAN } }
 		war = {
 			target = NEN
-			attacker_goal = { casus_belli = acquire_all_cores }
+			attacker_goal = { casus_belli = annex_core_country }
 			}
 		ai_chance = { value = 1 }
 		}
@@ -1045,7 +1048,8 @@ country_event = {
 	mean_time_to_happen = { days = 1 }
 	trigger = {
 		tag = CAN
-		NEN = { exists = no all_core = { limit = { NOT = { is_core = USA } } owned_by = THIS } }
+		NEN = { exists = no }
+		NEN = { all_core = { owned_by = CAN } }
 		owns = 232
 		}
 #THEY WILL BE A PROBLEM INDEFINITELY UNTIL THEY CAN BE PUT DOWN
@@ -1267,12 +1271,178 @@ country_event = {
 		}
 }
 ###########AUSTRALIAN FLAVOR############
-#INDONESIA AND MALAYSIA CAN BE RAPIDLY CONSOLIDATED WITH NATIONALISM/IMPERIALISM - DECISION
-#PHILIPPINES CAN BE ANNEXED WITH GOOD BOATS AND STATE/GOV - DECISION
+#INDONESIA AND MALAYSIA CAN BE RAPIDLY CONSOLIDATED WITH NATIONALISM/IMPERIALISM - DECISION EVENT FOR THE COLONIES
+country_event = {
+    id = 66687
+    title = "EVTNAME66687"
+    desc = "EVTDESC66687"
+    picture = "british_victory_france"
+	fire_only_once = yes
+	mean_time_to_happen = { days = 1 }
+	is_triggered_only = yes
+#THE COLONIES ARE INSTA-ANNEXED
+    option = {
+        name = "EVTOPTA66687"
+		CAN = { inherit = THIS prestige = 2 }
+		ai_chance = { value = 1 }
+		}
+#FOR PLAYER TO RESIST
+	option = {
+		name = "EVTOPTB66687"
+		CAN = { diplomatic_influence = { who = THIS value = -600 } }
+		CAN = { relation = { who = THIS value = -600 } }
+		}
+}
+#ANNEXATION OF INDONESIA AND MALAYA EVENT TO BETTER DESCRIBE LORE WISE
+country_event = {
+    id = 66688
+    title = "EVTNAME66688"
+    desc = "EVTDESC66688"
+    picture = "british_victory_france"
+	fire_only_once = yes
+	mean_time_to_happen = { days = 1 }
+	is_triggered_only = yes
+#THE COLONIES ARE INSTA-ANNEXED AND THE OTHERS ARE ON A SORT OF FAIR TARGET LIST
+    option = {
+        name = "EVTOPTA66688"
+		prestige = 5
+		}
+}
+#PHILIPPINES CAN BE ANNEXED WITH GOOD BOATS AND STATE/GOV - A CANADIAN EVENT DICTATING THAT THEY WON THE CONTEST - SPAIN IS NOT HAPPY
+country_event = {
+    id = 66689
+    title = "EVTNAME66689"
+    desc = "EVTDESC66689"
+    picture = "british_victory_france"
+	fire_only_once = yes
+	mean_time_to_happen = { days = 1 }
+	is_triggered_only = yes
+#OPTION A ANNEXES AND OPTION B GIVES WAR GOAL
+    option = {
+        name = "EVTOPTA66689"
+		prestige = 5
+		relation = { who = SPA value = -100 }
+		diplomatic_influence = { who = SPA value = -100 }
+		}
+}
 #BURMA TREATY IF SPHERED WITH GOOD LOGISTICAL TECH
+country_event = {
+    id = 66690
+    title = "EVTNAME66690"
+    desc = "EVTDESC66690"
+    picture = "british_victory_france"
+	fire_only_once = yes
+	mean_time_to_happen = { days = 1 }
+	trigger = {
+		tag = CAN
+		OR = {
+		capital = 2468
+		capital = 300
+		has_country_flag = united_britain
+		}
+		organic_chemistry = 1
+		iron_railroad = 1
+		iron_steamers = 1
+		BUR = { in_sphere = THIS civilized = no }
+		}
+#OPTION A ANNEXES AND OPTION B GIVES WAR GOAL
+    option = {
+        name = "EVTOPTA66690"
+		prestige = 5
+		any_country = { limit = { tag = EIC exists = yes } inherit = BUR }
+		inherit = BUR
+		}
+}
 #WAR WITH CHINA OVER FORMOSA WITH GOOD ENOUGH BOTES
-#CONQUEST OF INDOCHINA CAN BE ENACTED WITH ORGANIC CHEMISTRY AND GOOD MARKET TECH
+country_event = {
+    id = 66691
+    title = "EVTNAME66691"
+    desc = "EVTDESC66691"
+    picture = "british_victory_france"
+	fire_only_once = yes
+	mean_time_to_happen = { days = 1 }
+	trigger = {
+		tag = CAN
+		NOT = { truce_with = QNG }
+		QNG = { exists = yes }
+		NOT = { year = 1880 }
+		OR = {
+		capital = 2468
+		capital = 300
+		has_country_flag = united_britain
+		}
+		naval_statistics = 1
+		naval_decision_making = 1
+		iron_steamers = 1
+		}
+#OPTION A GOES TO WAR WITH CHINA FOR A COALING STATION IN FORMOSA
+    option = {
+        name = "EVTOPTA66691"
+		prestige = 5
+		casus_belli = { target = QNG type = demand_concession_casus_belli months = 12 }
+		war = {
+			target = QNG
+			attacker_goal = { casus_belli = demand_concession_casus_belli state_province_id = 2681 }
+			}
+		}
+#OPTION B GOES TO WAR WITH THE PUNITIVE CB
+option = {
+        name = "EVTOPTB66691"
+		prestige = 5
+		casus_belli = { target = QNG type = treaty_port_casus_belli months = 12 }
+		war = {
+			target = QNG
+			attacker_goal = { casus_belli = treaty_port_casus_belli }
+			}
+		}
+#OPTION C GETS A DECENT TRADE BONUS
+option = {
+        name = "EVTOPTC66691"
+		prestige = 5
+		add_country_modifier = { name = beneficial_chinese_trade duration = 365 }
+		}
+}
+#CONQUEST OF INDOCHINA CAN BE ENACTED WITH GOOD NAVAL AND INDUSTRIAL TECH
+country_event = {
+    id = 66692
+    title = "EVTNAME66692"
+    desc = "EVTDESC66692"
+    picture = "british_victory_france"
+	fire_only_once = yes
+	mean_time_to_happen = { days = 1 }
+	is_triggered_only = yes
+#THE COLONIAL MINISTRY IS AMBITIOUS
+    option = {
+        name = "EVTOPTA66692"
+		prestige = 5
+		}
+}
 #GOOD MARKET TECH OPENS UP WARGOALS ON INDIA BY EVENT
+country_event = {
+    id = 66693
+    title = "EVTNAME66693"
+    desc = "EVTDESC66693"
+    picture = "british_victory_france"
+	fire_only_once = yes
+	mean_time_to_happen = { days = 1 }
+	trigger = {
+		tag = CAN
+		NOT = { truce_with = QNG }
+		QNG = { exists = yes }
+		NOT = { year = 1880 }
+		OR = {
+		capital = 2468
+		capital = 300
+		has_country_flag = united_britain
+		}
+		market_regulations = 1
+		stock_exchange = 1
+	}
+	option = {
+		name = "EVTOPTA66693"
+		set_country_flag = indian_wars
+		}
+}
 #THE JAPANESE GAMBIT - VERY GOOD ARMY TECH AND NAVY TECH CAN OPEN GAMBIT TO TAKE LAND FROM JAPANESE
 #INDIA IS EASIER TO REIGN IN 
 #THAILAND CAN BE MADE PROTECTORATE
@@ -1282,11 +1452,13 @@ country_event = {
 #THE CAPITAL MOVED BACK TO LONDON 
 #THE TRIUMPHANT PROCESSION OF ERNEST AUGUSTUS
 #THE UNION JACK OVER LONDON
+##########LATE RETURN TO THE ISLES###########
 #THE FAILED PROMISE - WHEN THE MODIFIER TO RETURN HOME ENDS, THE BRITISH CULTURE WILL BE LOST AS ACCEPTED
 #IF DONE AFTER STILL GOOD PRESTIGE BUT NOT AS MUCH - BRITISH PEOPLE WILL STRUGGLE TO BE INCORPORATED
 #THE LESS TRIUMPHANT PROCESSION OF GEORGE IV - THERE ARE FEW TO NO ROYALISTS PRESENT IN BRITAIN - ABNORMALLY QUIET
 #THE CAPITAL IS NOT MOVED BACK FOR FEAR OF RETALIATION
 #THE EMPIRE RESTORED? 
+##########THE BRITISH EMPIRE AND THE WORLD
 #INSTANT REVOCATION OF LOGISTICAL DEBUFF FROM ALL LANDS AND ALL EXPANSIONIST FLAVOR IS NOW AVAILABLE
 #COALITION OPPORTUNITY AGAINST FRANCE OPENED
 #IMPACT OF COALITION WAR IF WON - FRANCE IS DEMOLISHED AND ENGLAND GETS SOME COASTAL LANDS
@@ -1309,7 +1481,7 @@ country_event = {
 #FIRST THEORETICAL PAPER AS TO PAN-AMERICANISM - RECEIVES ONLY A LITTLE ATTENTION, WRITTEN BY PROMINENT LIBERAL - 1861
 
 ###########ALTERNATE SECOND ERA UPON SUCCESSFUL CONQUEST - THE NATIONAL RECONCILIATION - 1851-1872############
-#RESTORATION OF BRITISH PRIMACY - IMMEDIATELY
+#RESTORATION OF BRITISH CULTURAL PRIMACY - IMMEDIATELY
 #ABSOLUTE MONARCH IS NOT ACCEPTABLE TO THE BRITISH PEOPLE WHO REMEMBER REVOLUTION - ABSOLUTE MONARCHY ONLY - 1851
 #RESTITUTION OF THE HOUSE OF LORDS' NOBLE HOLDINGS - 1853
 #THE AMNESTY ACT OF 1855
@@ -1340,8 +1512,8 @@ country_event = {
 #THE CONVENTION OF 1890 - CONSTITUTIONAL DEMAND
 #DAWNING OF QUEBECOIS NATIONALISM - 1875
 
-###########ALTERNATE THIRD POLITICAL ERA - THE BRITISH WITHOUT BRITAIN - 1872-1900#############
-#AFTER A LONG QUIET THE NATIONALISM GETS TOO MUCH TO BEAR
+###########ALTERNATE THIRD POLITICAL ERA - THE BRITISH WITHOUT BRITAIN WITH A LATE RETURN - 1872-1900#############
+#AFTER A LONG QUIET THE NATIONALISM GETS TOO MUCH TO BEAR - 1872
 #THE FOREIGNER-KING - 1873
 #THE MANCHESTER INDEPENDENCE RIOTS - IF CULTURE NOT ACCEPTED - 1878
 #THE SCOTTISH PROMISE - IF PROMISED AUTONOMY, YOUD BETTER GIVE IT
@@ -1350,3 +1522,13 @@ country_event = {
 #VICTORIA'S ADVOCATES - PERMANENT MODIFIER TO MAKE IT SUCK
 #A BRITAIN UNRECOGNIZABLE - 1899
 #SHOULD BRITAIN REMAIN IN THE UNION? - 1900
+#SECOND BRITISH REVOLUTION - 1915 IF WAR EXHAUSTION
+
+###########SECOND ALTERNATE THIRD POLITICAL ERA - PAX BRITANNIA WITH AN EARLY RETURN - 1872 -###################
+#CULTURAL SHUNNING OF REPUBLICANISM - 1872
+#LANCASTER CENTER - 1881
+#THE HANOVERIAN SILVER AGE - 1890
+#IMPERIAL FEDERAL SENTIMENTS - 1895
+#WE ARE ALL TRULY BRITISH - 1900 REMOVAL OF SCOTTISH CORES
+#VICTORIA RECORDED AS A NATIONAL TRAITOR - 1905
+#THE FEDERAL PROPOSAL PASSES - 1915 DISSOLUTION OF ALL NATIONAL CORES UNDER UNION
