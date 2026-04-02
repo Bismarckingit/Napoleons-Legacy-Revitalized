@@ -356,7 +356,7 @@ country_event = {
 		OR = { government = hms_government government = prussian_constitutionalism government = absolute_monarchy }
 		owns = 2087
 		NOT = { year = 1860 }
-		EIC = { exists = yes }
+		EIC = { exists = yes vassal_of = THIS }
 		}
 #THE RECAPTURE OF SOUTH AFRICA IS IMPORTANT TO FIXING THE DISPARITY BETWEEN THE AUSTRALIANS AND CANADIANS
     option = {
@@ -364,8 +364,11 @@ country_event = {
 		prestige = 10
 		set_country_flag = took_south_africa
 		SAF = { all_core = { add_core = EIC remove_core = THIS } primary_culture = anglo_canadian add_accepted_culture = boer }
-		EIC = { inherit = SAF add_accepted_culture = boer }
-		any_owned = { limit = { is_core = EIC } secede_province = EIC }
+		SAF = { civilized = no }
+		release_vassal = SAF
+		any_country = { limit = { tag = EIC vassal_of = CAN } inherit = SAF add_accepted_culture = boer }
+		inherit = SAF
+		any_owned = { limit = { is_core = SAF } add_core = CAN }
 		any_owned = { limit = { has_province_modifier = loose_control_1 } remove_province_modifier = loose_control_1 }
 		any_owned = { limit = { has_province_modifier = loose_control } remove_province_modifier = loose_control add_province_modifier = { name = loose_control_1 duration = -1 } }
     }
@@ -1239,7 +1242,7 @@ country_event = {
 		NEN = { vassal_of = THIS }
 		NOT = { has_country_flag = dominion_new_england }
 		}
-#THE COLONIES ARE ALL LOYAL NOW - AN ENDSTATE HAS BEEN REACHED
+#NEW ENGLAND PUPPET
     option = {
         name = "EVTOPTA66685"
 		set_country_flag = dominion_new_england
@@ -1317,12 +1320,21 @@ country_event = {
 	fire_only_once = yes
 	mean_time_to_happen = { days = 1 }
 	is_triggered_only = yes
-#OPTION A ANNEXES AND OPTION B GIVES WAR GOAL
+#OPTION A KEEPS THE PHILIPPINES
     option = {
         name = "EVTOPTA66689"
 		prestige = 5
 		relation = { who = SPA value = -100 }
 		diplomatic_influence = { who = SPA value = -100 }
+		}
+#OPTION B HANDS THEM BACK TO SPAIN 
+	option = {
+		name = "EVTOPTB66689"
+		prestige = 10
+		badboy = -5
+		any_owned = { limit = { is_core = PHL } secede_province = SPA }
+		relation = { who = SPA value = 400 }
+		diplomatic_influence = { who = SPA value = 400 }
 		}
 }
 #BURMA TREATY IF SPHERED WITH GOOD LOGISTICAL TECH
@@ -1444,9 +1456,131 @@ country_event = {
 		}
 }
 #THE JAPANESE GAMBIT - VERY GOOD ARMY TECH AND NAVY TECH CAN OPEN GAMBIT TO TAKE LAND FROM JAPANESE
-#INDIA IS EASIER TO REIGN IN 
+country_event = {
+    id = 66694
+    title = "EVTNAME66694"
+    desc = "EVTDESC66694"
+    picture = "british_victory_france"
+	fire_only_once = yes
+	mean_time_to_happen = { days = 1 }
+	is_triggered_only = yes
+	option = {
+		name = "EVTOPTA66694"
+		JAP = { all_core = { add_core = CAN } }
+		TKG = { all_core = { add_core = CAN } }
+		}
+}
+#AFTER THE JAPANESE GAMBIT - WELCOME DOMINION OF JAPAN
+country_event = {
+    id = 66695
+    title = "EVTNAME66695"
+    desc = "EVTDESC66695"
+    picture = "british_victory_france"
+	fire_only_once = yes
+	mean_time_to_happen = { days = 1 }
+	trigger = {
+		tag = CAN
+		owns = 1649
+		owns = 1657
+		TKG = { exists = no }
+		JAP = { exists = no }
+		}
+	option = {
+		name = "EVTOPTA66695"
+		set_country_flag = japanese_gambit
+		JAP = { all_core = { add_core = TKG } }
+		release_vassal = TKG
+		TKG = { all_core = { remove_core = CAN } }
+		TKG = { add_country_modifier = { name = resource_colony duration = -1 } }
+		TKG = { government = hms_government prestige = -10000 }
+		}
+}
+#IF ANY COUNTRY IS NO LONGER A COLONIAL VASSAL THEN THE RESOURCE COLONY MODIFIER IS GONE
+country_event = {
+    id = 66696
+    title = "EVTNAME66696"
+    desc = "EVTDESC66696"
+    picture = "british_victory_france"
+	mean_time_to_happen = { days = 1 }
+	trigger = {
+		is_vassal = no
+		has_country_modifier = resource_colony
+		}
+	option = {
+		name = "EVTOPTA66696"
+		remove_country_modifier = resource_colony
+		}
+}
+#INSTANT REIGN IN OF INDIA IF BRITAIN RESTORED
+country_event = {
+    id = 66697
+    title = "EVTNAME66697"
+    desc = "EVTDESC66697"
+    picture = "british_victory_france"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		owns = 300
+		capital = 300
+		NOT = { has_country_flag = reigned_in_eic }
+		EIC = { vassal_of = THIS }
+		}
+	option = {
+		name = "EVTOPTA66697"
+		prestige = 15
+		country_event = 66698
+		}
+}
+#EVENT FOR REIGN IN FOR OTHER DECISIONS
+country_event = {
+    id = 66698
+    title = "EVTNAME66698"
+    desc = "EVTDESC66698"
+    picture = "british_victory_france"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+#KEEP THE EIC AROUND - PERMANENT EIC PRESENCE 
+	option = {
+		name = "EVTOPTA66698"
+		prestige = 10
+		}
+#PUT AN END TO THE EIC
+	option = {
+		name = "EVTOPTB66698"
+		EIC = { civilized = no }
+		inherit = EIC
+		remove_country_modifier = india_problem
+		any_owned = { limit = { is_core = SAF } remove_core = EIC add_core = CAN }
+		}
+}
 #THAILAND CAN BE MADE PROTECTORATE
-
+country_event = {
+    id = 66699
+    title = "EVTNAME66699"
+    desc = "EVTDESC66699"
+    picture = "british_victory_france"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		SIA = { in_sphere = THIS civilized = no is_ai = yes }
+		NOT = { badboy = 20 }
+		naval_risk_management = 1
+		electricity = 1
+		}
+	option = {
+		name = "EVTOPTA66699"
+		prestige = 10
+		badboy = 6
+		inherit = SIA
+		}
+	option = {
+		name = "EVTOPTB66699"
+		badboy = -3
+		}
+}
 ###########RETURN TO THE ISLES#############
 #IF DONE BEFORE 1851 - BRILLIANT RECONQUEST AND A BUNCH OF PRESTIGE - NO TECH REQUIREMENT TO INCORPORATE
 #THE CAPITAL MOVED BACK TO LONDON 

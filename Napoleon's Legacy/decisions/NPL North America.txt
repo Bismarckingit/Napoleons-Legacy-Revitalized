@@ -431,5 +431,38 @@ political_decisions = {
 		badboy = 5
 		any_country = { limit = { OR = { tag = DAI tag = CHK tag = LUA tag = CAM tag = YNN } in_sphere = THIS } country_event = 66687 }
 		}
-	}	
+	}
+	japanese_gambit = {
+		alert = yes
+	potential = {
+		tag = CAN
+		year = 1880
+		war = no
+		is_vassal = no
+		OR = {
+		capital = 2468
+		capital = 300
+		has_country_flag = united_britain
+		}
+		NOT = { has_country_flag = japanese_gambit }
+		NOT = { truce_with = JAP }
+		NOT = { truce_with = TKG }
+		OR = { is_greater_power = yes is_secondary_power = yes }
+		}
+	allow = {
+		is_greater_power = yes
+		advanced_naval_design = 1
+		high_sea_battle_fleet = 1
+		army_nco_training = 1
+		infiltration = 1
+		}
+	effect = {
+		set_country_flag = japanese_gambit
+		country_event = 66694
+		prestige = 10
+		badboy = 20
+		}
+	}
+#LONGER TERM REIGN IN OF INDIA IF CANADIAN
+#SHORTER TERM IF AUSTRALIAN
 }
