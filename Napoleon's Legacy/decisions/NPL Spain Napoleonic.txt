@@ -149,6 +149,7 @@ political_decisions = {
 	potential = {
 		tag = NSA
 		has_global_flag = the_loyal_queen
+		NOT = { has_country_flag = queen_of_basque }
 		}
 	allow = {
 		nationalism_n_imperialism = 1
@@ -166,6 +167,7 @@ political_decisions = {
 	potential = {
 		tag = NSA
 		has_global_flag = the_loyal_queen
+		NOT = { has_country_flag = queen_of_catalonia }
 		}
 	allow = {
 		nationalism_n_imperialism = 1
@@ -183,6 +185,7 @@ political_decisions = {
 	potential = {
 		tag = NSA
 		has_global_flag = the_loyal_queen
+		NOT = { has_country_flag = queen_of_spain }
 		}
 	allow = {
 		nationalism_n_imperialism = 1
