@@ -1583,86 +1583,1820 @@ country_event = {
 }
 ###########RETURN TO THE ISLES#############
 #IF DONE BEFORE 1851 - BRILLIANT RECONQUEST AND A BUNCH OF PRESTIGE - NO TECH REQUIREMENT TO INCORPORATE
+country_event = {
+    id = 66700
+    title = "EVTNAME66700"
+    desc = "EVTDESC66700"
+    picture = "british_victory_france"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		owns = 300
+		NOT = { year = 1851 }
+		}
+	option = {
+		name = "EVTOPTA66700"
+		prestige = 50
+		badboy = -10
+		country_event = 66701
+		}
+}
 #THE CAPITAL MOVED BACK TO LONDON 
-#THE TRIUMPHANT PROCESSION OF ERNEST AUGUSTUS
+country_event = {
+    id = 66701
+    title = "EVTNAME66701"
+    desc = "EVTDESC66701"
+    picture = "british_victory_france"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = "EVTOPTA66701"
+		capital = 300
+		any_pop = { 
+			limit = { OR = { has_pop_culture = anglo_canadian has_pop_culture = british } } 
+			ideology = { value = conservative factor = 0.4 }
+			ideology = { value = reactionary factor = 0.1 }
+			}
+		country_event = 66702
+		country_event = 66703
+		}
+}
+#THE TRIUMPHANT PROCESSION OF ERNEST AUGUSTUS - FATE OF THE REVOLUTIONARIES
+country_event = {
+    id = 66702
+    title = "EVTNAME66702"
+    desc = "EVTDESC66702"
+    picture = "british_victory_france"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	#PURGE THEM
+	option = {
+		name = "EVTOPTA66702"
+		any_pop = { 
+			limit = { OR = { has_pop_culture = anglo_canadian has_pop_culture = british } } 
+			ideology = { value = conservative factor = 0.4 }
+			ideology = { value = reactionary factor = 0.1 }
+			}
+		any_pop = { limit = { pop_majority_ideology = liberal } reduce_pop = 0.65 }
+		any_pop = { limit = { pop_majority_ideology = anarcho_liberal } reduce_pop = 0.1 }
+		country_event = 66730
+		}
+	#MERCY TO THEM
+	option = {
+		name = "EVTOPTA66702"
+		any_pop = { 
+			limit = { OR = { has_pop_culture = anglo_canadian has_pop_culture = british } } 
+			ideology = { value = conservative factor = 0.05 }
+			ideology = { value = reactionary factor = 0.01 }
+			}
+		country_event = 66729
+		}
+}
 #THE UNION JACK OVER LONDON
+country_event = {
+    id = 66703
+    title = "EVTNAME66703"
+    desc = "EVTDESC66703"
+    picture = "british_victory_france"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	#PURGE THEM
+	option = {
+		name = "EVTOPTA66703"
+		add_accepted_culture = british
+		set_country_flag = united_britain
+		}
+}
 ##########LATE RETURN TO THE ISLES###########
 #THE FAILED PROMISE - WHEN THE MODIFIER TO RETURN HOME ENDS, THE BRITISH CULTURE WILL BE LOST AS ACCEPTED
+country_event = {
+    id = 66704
+    title = "EVTNAME66704"
+    desc = "EVTDESC66704"
+    picture = "british_victory_france"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		NOT = { owns = 300 }
+		NOT = { has_country_flag = united_britain }
+		year = 1851
+		}
+	option = {
+		name = "EVTOPTA66704"
+		remove_accepted_culture = british
+		}
+}
 #IF DONE AFTER STILL GOOD PRESTIGE BUT NOT AS MUCH - BRITISH PEOPLE WILL STRUGGLE TO BE INCORPORATED
+country_event = {
+    id = 66705
+    title = "EVTNAME66705"
+    desc = "EVTDESC66705"
+    picture = "british_victory_france"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		owns = 300 
+		NOT = { has_country_flag = united_britain }
+		year = 1851
+		}
+	option = {
+		name = "EVTOPTA66705"
+		prestige = 25
+		badboy = 5
+		any_owned = { limit = { is_core = BRI } add_province_modifier = { name = nationalist_agitation duration = 1825 } }
+		country_event = 66706
+		}
+}
 #THE LESS TRIUMPHANT PROCESSION OF GEORGE IV - THERE ARE FEW TO NO ROYALISTS PRESENT IN BRITAIN - ABNORMALLY QUIET
+country_event = {
+    id = 66706
+    title = "EVTNAME66706"
+    desc = "EVTDESC66706"
+    picture = "british_victory_france"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = "EVTOPTA66706"
+		any_pop = { limit = { OR = { has_pop_culture = anglo_canadian has_pop_culture = british } } 
+			ideology = { value = conservative factor = 0.05 }
+			ideology = { value = reactionary factor = 0.01 }
+			}
+		any_pop = { limit = { has_pop_culture = british pop_majority_ideology = liberal } militancy = 8 }
+		country_event = 66707
+		}
+}
 #THE CAPITAL IS NOT MOVED BACK FOR FEAR OF RETALIATION
+country_event = {
+    id = 66707
+    title = "EVTNAME66707"
+    desc = "EVTDESC66707"
+    picture = "british_victory_france"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = "EVTOPTA66707"
+		prestige = -10
+		any_pop = { limit = { has_pop_culture = anglo_canadian } 
+			ideology = { value = conservative factor = 0.05 }
+			ideology = { value = reactionary factor = 0.01 }
+			}
+		country_event = 66708
+		}
+}
 #THE EMPIRE RESTORED? 
-##########THE BRITISH EMPIRE AND THE WORLD
+country_event = {
+    id = 66708
+    title = "EVTNAME66708"
+    desc = "EVTDESC66708"
+    picture = "british_victory_france"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = "EVTOPTA66708"
+		prestige = -5
+		set_country_flag = united_britain
+		}
+}
+##########THE BRITISH EMPIRE AND THE WORLD - TRIGGERED BY UNITED BRITAIN FLAG
+country_event = {
+    id = 66709
+    title = "EVTNAME66709"
+    desc = "EVTDESC66709"
+    picture = "british_victory_france"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		owns = 300 
+		has_country_flag = united_britain
+		}
+	option = {
+		name = "EVTOPTA66709"
+		517 = { add_core = CAN }
+		relation = { who = RUS value = 100 }
+		relation = { who = FRA value = -400 }
+		relation = { who = KOI value = -400 }
+		relation = { who = NSA value = -400 }
+		relation = { who = NET value = -400 }
+		relation = { who = PRU value = 100 }
+		relation = { who = AUS value = 100 }
+		country_event = 66710
+		}
+}
 #INSTANT REVOCATION OF LOGISTICAL DEBUFF FROM ALL LANDS AND ALL EXPANSIONIST FLAVOR IS NOW AVAILABLE
-#COALITION OPPORTUNITY AGAINST FRANCE OPENED
+country_event = {
+    id = 66710
+    title = "EVTNAME66710"
+    desc = "EVTDESC66710"
+    picture = "british_victory_france"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = "EVTOPTA66710"
+		prestige = 5
+		any_owned = { remove_province_modifier = loose_control remove_province_modifier = loose_control_1 }
+		}
+}
+#COALITION OPPORTUNITY AGAINST FRANCE OPENED - EVENT UPON STARTING THE WAR - WAR CAN ONLY BE WON SCRIPT-WISE BY OCCUPYING PARIS AND GETTING FRANCE DOWN TO HEAVY WAR EXHAUSTION
+country_event = {
+    id = 66711
+    title = "EVTNAME66711"
+    desc = "EVTDESC66711"
+    picture = "british_victory_france"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = "EVTOPTA66711"
+		casus_belli = { target = FRA type = cut_down_to_size months = 1 }
+		FRA = { casus_belli = { target = CAN type = dismantle_cb months = 1 } }
+		war = { target = FRA
+			attacker_goal = { casus_belli = cut_down_to_size }
+			defender_goal = { casus_belli = dismantle }
+			}
+		}
+}
 #IMPACT OF COALITION WAR IF WON - FRANCE IS DEMOLISHED AND ENGLAND GETS SOME COASTAL LANDS
+country_event = {
+    id = 66712
+    title = "EVTNAME66712"
+    desc = "EVTDESC66712"
+    picture = "british_victory_france"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = "EVTOPTA66712"
+		all_core = { limit = { is_core = RHI } remove_core = FRA } release = RHI 
+				release_vassal = NET NET_379 = { add_core = NET remove_core = FRA } BEL_387 = { add_core = NET remove_core = FRA } BEL_394 = { add_core = NET remove_core = FRA }
+				any_owned = { limit = { is_core = NET } secede_province = NET }
+		release_vassal = NSA
+		any_owned = { limit = { is_core = NSA } secede_province = NSA }
+		any_owned = { limit = { is_core = CAT } secede_province = NSA }
+		any_country = { limit = { tag = SPA owns = 487 } inherit = NSA }
+		any_country = { limit = { primary_culture = north_german is_greater_power = yes } inherit = RHI add_accepted_culture = rhenish }
+		any_country = { limit = { primary_culture = south_german is_greater_power = yes } inherit = RHI add_accepted_culture = rhenish }
+		any_country = { limit = { primary_culture = north_german is_secondary_power = yes } inherit = RHI add_accepted_culture = rhenish }
+		any_country = { limit = { primary_culture = south_german is_secondary_power = yes } inherit = RHI add_accepted_culture = rhenish }
+		any_owned = { limit = { OR = { is_core = SAR is_core = ITA is_core = ITS is_core = KOI is_core = ITM is_core = ITN is_core = ITL } } remove_core = FRA add_core = AFA }
+		release = AFA
+		any_country = { limit = { primary_culture = north_italian is_greater_power = yes } inherit = AFA any_owned = { limit = { is_core = AFA } remove_core = AFA } }
+		any_country = { limit = { primary_culture = south_italian is_secondary_power = yes } inherit = AFA any_owned = { limit = { is_core = AFA } remove_core = AFA } }
+		any_country = { limit = { exists = yes primary_culture = north_italian  } inherit = AFA any_owned = { limit = { is_core = AFA } remove_core = AFA } }
+		any_country = { limit = { exists = yes primary_culture = south_italian  } inherit = AFA any_owned = { limit = { is_core = AFA } remove_core = AFA } }
+		FRA_418 = { add_core = CAN }
+		FRA_420 = { add_core = CAN }
+		FRA_458 = { add_core = CAN }
+		any_owned = { limit = { is_core = CAN } secede_province = CAN }
+		any_owned = { limit = { is_core = SWI } secede_province = SWI }
+		release_vassal = FED
+		release_vassal = ITL
+		release_vassal = PLC
+		all_core = { remove_core = FRA add_core = BOR }
+		change_tag = BOR
+		government = hms_government
+		NSA = { any_owned = { limit = { is_core = CAN } add_core = AFA } release = AFA }
+		CAN = { inherit = AFA }
+		}
+}
 #CONTESTING THE LANDS OF HANOVER?
+country_event = {
+    id = 66713
+    title = "EVTNAME66713"
+    desc = "EVTDESC66713"
+    picture = "british_victory_france"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		owns = 300 
+		has_country_flag = united_britain
+		year = 1840
+		NOT = { year = 1870 }
+		}
+	option = {
+		name = "EVTOPTA66713"
+		badboy = 7
+		HAN_528 = { add_core = CAN }
+		HAN_534 = { add_core = CAN }
+		HAN_540 = { add_core = CAN }
+		}
+	option = {
+		name = "EVTOPTB66713"
+		}
+}
 #ABSOLUTE MONARCHY ONLY - CLAIMS ON FRANCE
+country_event = {
+    id = 66714
+    title = "EVTNAME66714"
+    desc = "EVTDESC66714"
+    picture = "british_victory_france"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		government = absolute_monarchy
+		owns = 300 
+		owns = 418
+		owns = 420
+		owns = 458
+		has_country_flag = united_britain
+		year = 1840
+		NOT = { year = 1900 }
+		}
+	#You wont get cores, because that'd be ridiculous, but you are reopening the dialogue
+	option = {
+		name = "EVTOPTA66714"
+		badboy = 5
+		set_country_flag = dual_monarchy_aspirations
+		}
+	option = {
+		name = "EVTOPTB66714"
+		}
+}
 #ABSOLUTE MONARCHY ONLY - THE DUAL MONARCHY RETURNS??????
-
+country_event = {
+    id = 66715
+    title = "EVTNAME66715"
+    desc = "EVTDESC66715"
+    picture = "british_victory_france"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	#NOW you get cores, but you'd be foolish if you thought youd get French accepted
+	option = {
+		name = "EVTOPTA66715"
+		badboy = 5
+		FRA = { all_core = { add_core = CAN } }
+		}
+}
 ###########FIRST POLITICAL ERA - THE RULE OF EXILES - 1836-1851##############
 #PROMINENT DONATIONS OF MONEY AND MATERIAL FROM HOUSE OF LORDS IN 1841
+country_event = {
+    id = 66716
+    title = "EVTNAME66716"
+    desc = "EVTDESC66716"
+    picture = "british_victory_france"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		OR = {
+		government = absolute_monarchy
+		government = prussian_constitutionalism
+		government = hms_government
+		}
+		year = 1840
+		month = 7
+		}
+	#Free money
+	option = {
+		name = "EVTOPTA66716"
+		treasury = 100000
+		}
+}
 #INSURRECTION ACT OF 1838 - PASSED DURING STATE OF EMERGENCY
+country_event = {
+    id = 66717
+    title = "EVTNAME66717"
+    desc = "EVTDESC66717"
+    picture = "british_victory_france"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		OR = {
+		government = absolute_monarchy
+		government = prussian_constitutionalism
+		government = hms_government
+		}
+		year = 1838
+		month = 6
+		has_country_modifier = state_of_emergency_modifier
+		}
+	#Free anti-militancy
+	option = {
+		name = "EVTOPTA66717"
+		any_pop = { limit = { has_pop_culture = anglo_canadian } militancy = 1 consciousness = -2 }
+		}
+}
 #AUSTRALIAN SETTLEMENT ACT OF 1848
+country_event = {
+    id = 66718
+    title = "EVTNAME66718"
+    desc = "EVTDESC66718"
+    picture = "british_victory_france"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		OR = {
+		government = absolute_monarchy
+		government = prussian_constitutionalism
+		government = hms_government
+		}
+		year = 1848
+		month = 9
+		}
+	#Free pop boom
+	option = {
+		name = "EVTOPTA66718"
+		any_owned = { limit = { is_core = AST } add_province_modifier = { name = baby_boom duration = 3650 } }
+		}
+	#weaker but more useful pop boom
+	option = {
+		name = "EVTOPTB66718"
+		any_owned = { limit = { is_core = CAN } add_province_modifier = { name = small_baby_boom duration = 3650 } }
+		}
+}
 #REVOCATION OF VICTORIA'S ENNOBLED STATUS IN 1848
+country_event = {
+    id = 66719
+    title = "EVTNAME66719"
+    desc = "EVTDESC66719"
+    picture = "british_victory_france"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		OR = {
+		government = absolute_monarchy
+		government = prussian_constitutionalism
+		government = hms_government
+		}
+		year = 1848
+		month = 2
+		}
+	#Victoria is no longer a member of the royal family
+	option = {
+		name = "EVTOPTA66719"
+		prestige = -5
+		}
+}
 #JAILING OF PROMINENT PAN-AMERICAN ACTIVIST IN 1839
+country_event = {
+    id = 66720
+    title = "EVTNAME66720"
+    desc = "EVTDESC66720"
+    picture = "british_victory_france"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		OR = {
+		government = absolute_monarchy
+		government = prussian_constitutionalism
+		government = hms_government
+		}
+		year = 1839
+		month = 11
+		}
+	#No pan-Americanism here (yet)
+	option = {
+		name = "EVTOPTA66720"
+		prestige = 1
+		}
+}
 
 ###########SECOND POLITICAL ERA - DEBATE AS TO CANADIAN AND AUSTRALIAN IDENTITY - 1851-1872############
 #EXPLORATION OF THE YUKON - SMALL AMOUNT OF RESEARCH AND PRESTIGE - 1856
+country_event = {
+    id = 66721
+    title = "EVTNAME66721"
+    desc = "EVTDESC66721"
+    picture = "british_victory_france"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		OR = {
+		government = absolute_monarchy
+		government = prussian_constitutionalism
+		government = hms_government
+		}
+		year = 1845
+		month = 11
+		}
+	#prestige and research
+	option = {
+		name = "EVTOPTA66721"
+		prestige = 5
+		years_of_research = 0.5
+		}
+}
 #CREATION OF A "BRITISH" NATIONAL SYMBOL - THE MOOSE - 1859
+country_event = {
+    id = 66722
+    title = "EVTNAME66722"
+    desc = "EVTDESC66722"
+    picture = "british_victory_france"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		OR = {
+		government = absolute_monarchy
+		government = prussian_constitutionalism
+		government = hms_government
+		}
+		year = 1859
+		month = 6
+		}
+	#prestige and research
+	option = {
+		name = "EVTOPTA66722"
+		prestige = 5
+		}
+}
 #CALLS FOR AUSTRALIAN DOMINIONHOOD - 1860
+country_event = {
+    id = 66723
+    title = "EVTNAME66723"
+    desc = "EVTDESC66723"
+    picture = "british_victory_france"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		OR = {
+		government = absolute_monarchy
+		government = prussian_constitutionalism
+		government = hms_government
+		}
+		year = 1860
+		month = 12
+		}
+	#prestige
+	option = {
+		name = "EVTOPTA66723"
+		prestige = 5
+		}
+}
 #"ARE THE BRITISH ISLES BRITISH?" - INCENDIARY PAPER - ONLY IF THE ISLES HAVE NOT BEEN TAKEN - 1862
+country_event = {
+    id = 66724
+    title = "EVTNAME66724"
+    desc = "EVTDESC66724"
+    picture = "british_victory_france"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		OR = {
+		government = absolute_monarchy
+		government = prussian_constitutionalism
+		government = hms_government
+		}
+		year = 1862
+		month = 12
+		NOT = { owns = 300 }
+		}
+	#prestige
+	option = {
+		name = "EVTOPTA66724"
+		prestige = -5
+		}
+}
 #FIRST THEORETICAL PAPER AS TO PAN-AMERICANISM - RECEIVES ONLY A LITTLE ATTENTION, WRITTEN BY PROMINENT LIBERAL - 1861
-
+country_event = {
+    id = 66725
+    title = "EVTNAME66725"
+    desc = "EVTDESC66725"
+    picture = "british_victory_france"
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		OR = {
+		government = absolute_monarchy
+		government = prussian_constitutionalism
+		government = hms_government
+		}
+		year = 1861
+		month = 3
+		}
+	#prestige
+	option = {
+		name = "EVTOPTA66725"
+		prestige = -5
+		}
+}
 ###########ALTERNATE SECOND ERA UPON SUCCESSFUL CONQUEST - THE NATIONAL RECONCILIATION - 1851-1872############
 #RESTORATION OF BRITISH CULTURAL PRIMACY - IMMEDIATELY
-#ABSOLUTE MONARCH IS NOT ACCEPTABLE TO THE BRITISH PEOPLE WHO REMEMBER REVOLUTION - ABSOLUTE MONARCHY ONLY - 1851
+country_event = {
+    id = 66726
+    title = "EVTNAME66726"
+    desc = "EVTDESC66726"
+    picture = "british_victory_france"
+	mean_time_to_happen = { months = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		OR = {
+		government = absolute_monarchy
+		government = prussian_constitutionalism
+		government = hms_government
+		}
+		owns = 300
+		NOT = { year = 1851 }
+		}
+	#prestige
+	option = {
+		name = "EVTOPTA66726"
+		prestige = 15
+		primary_culture = british
+		add_accepted_culture = australian
+		add_accepted_culture = anglo_canadian
+		}
+}
+#ABSOLUTE MONARCH IS NOT ACCEPTABLE TO THE BRITISH PEOPLE WHO REMEMBER REVOLUTION - ABSOLUTE MONARCHY ONLY - 1851 - DEMONSTRATION IN LONDON
+country_event = {
+    id = 66727
+    title = "EVTNAME66727"
+    desc = "EVTDESC66727"
+    picture = "british_victory_france"
+	mean_time_to_happen = { months = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		government = absolute_monarchy
+		owns = 300
+		year = 1851
+		capital = 300
+		primary_culture = british
+		month = 11
+		}
+	#prestige
+	option = {
+		name = "EVTOPTA66727"
+		scaled_militancy = { ideology = liberal factor = 5 } 
+		}
+}
 #RESTITUTION OF THE HOUSE OF LORDS' NOBLE HOLDINGS - 1853
-#THE AMNESTY ACT OF 1855
+country_event = {
+    id = 66728
+    title = "EVTNAME66728"
+    desc = "EVTDESC66728"
+    picture = "british_victory_france"
+	mean_time_to_happen = { months = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		OR = {
+		government = absolute_monarchy
+		government = prussian_constitutionalism
+		}
+		owns = 300
+		year = 1853
+		capital = 300
+		primary_culture = british
+		month = 11
+		}
+	#prestige
+	option = {
+		name = "EVTOPTA66728"
+		scaled_militancy = { ideology = liberal factor = 2 } 
+		add_country_modifier = { name = noble_land_rights duration = -1 }
+		}
+}
+#THE AMNESTY ACT
+country_event = {
+    id = 66729
+    title = "EVTNAME66729"
+    desc = "EVTDESC66729"
+    picture = "british_victory_france"
+	mean_time_to_happen = { months = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	#prestige
+	option = {
+		name = "EVTOPTA66729"
+		scaled_militancy = { ideology = liberal factor = -2 } 
+		add_country_modifier = { name = failed_crackdown duration = 3650 }
+		}
+}
 #VICTORIA'S ADVOCATES - 1851-1858 MILITANCY
-#THE EXILE OF CITIZEN VICTORIA - 1858
-#THE NEW ACT OF UNION OF ENGLAND AND SCOTLAND - 1866
+country_event = {
+    id = 66730
+    title = "EVTNAME66730"
+    desc = "EVTDESC66730"
+    picture = "british_victory_france"
+	mean_time_to_happen = { months = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	#prestige
+	option = {
+		name = "EVTOPTA66730"
+		scaled_militancy = { ideology = liberal factor = -2 } 
+		add_country_modifier = { name = victoria_advocates duration = 3650 }
+		}
+}
+#THE NEW ACT OF UNION OF ENGLAND AND SCOTLAND - 1866 - prevents the scottish culture
+country_event = {
+    id = 66731
+    title = "EVTNAME66731"
+    desc = "EVTDESC66731"
+    picture = "british_victory_france"
+	mean_time_to_happen = { months = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	#prestige
+	option = {
+		name = "EVTOPTA66731"
+		prestige = 10
+		any_pop = { 
+			limit = { has_pop_culture = british } 
+			ideology = { value = reactionary factor = 0.1 }
+			}
+		release_vassal = SCO 
+		SCO { any_owned = { limit = { is_core = SCO } assimilate = yes } }
+		inherit = SCO
+		add_accepted_culture = scottish
+		add_accepted_culture = irish
+		}
+}
 #GO BACK ON IRISH AUTONOMY? - ONLY IF DOMINIONHOOD WAS GRANTED - 1865
-#THE RESTORATION OF THE PARLIAMENT BUILDING - 1860
+country_event = {
+    id = 66732
+    title = "EVTNAME66732"
+    desc = "EVTDESC66732"
+    picture = "british_victory_france"
+	mean_time_to_happen = { months = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		OR = {
+		government = absolute_monarchy
+		government = prussian_constitutionalism
+		government = hms_government
+		}
+		owns = 300
+		capital = 300
+		primary_culture = british
+		IRE = { vassal_of = THIS }
+		}
+	#honor the agreement
+	option = {
+		name = "EVTOPTA66732"
+		prestige = 10
+		}
+	#go back on the agreement
+	option = {
+		name = "EVTOPTB66732"
+		badboy = 5
+		release_vassal = IRE
+		IRE = { all_core = { add_core = THIS } }
+		war = {
+			target = IRE 
+			attacker_goal = { casus_belli = civil_war }
+			defender_goal = { casus_belli = humiliate }
+			}
+		}
+}
+#THE RESTORATION OF SAINT JAMES PALACE - 1860
+country_event = {
+    id = 66733
+    title = "EVTNAME66733"
+    desc = "EVTDESC66733"
+    picture = "british_victory_france"
+	mean_time_to_happen = { months = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		OR = {
+		government = absolute_monarchy
+		government = prussian_constitutionalism
+		government = hms_government
+		}
+		owns = 300
+		capital = 300
+		primary_culture = british
+		year = 1860
+		month = 4
+		}
+	#prestige
+	option = {
+		name = "EVTOPTA66733"
+		prestige = 10
+		}
+}
 #A NEW PAX BRITANNIA - #1 GP
+country_event = {
+    id = 66734
+    title = "EVTNAME66734"
+    desc = "EVTDESC66734"
+    picture = "british_victory_france"
+	mean_time_to_happen = { months = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		rank = 1
+		OR = {
+		government = absolute_monarchy
+		government = prussian_constitutionalism
+		government = hms_government
+		}
+		owns = 300
+		capital = 300
+		USA = { exists = no }
+		FRA = { exists = no }
+		CSA = { exists = no }
+		}
+	#prestige
+	option = {
+		name = "EVTOPTA66734"
+		prestige = 55
+		add_country_modifier = { name = pax_britannia duration = -1 }
+		country_event = 66735
+		}
+}
 #RENEWED SENSE OF PAN-ENGLISH IDENTITY ACROSS THE EMPIRE
+country_event = {
+    id = 66735
+    title = "EVTNAME66735"
+    desc = "EVTDESC66735"
+    picture = "british_victory_france"
+	mean_time_to_happen = { months = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	#prestige
+	option = {
+		name = "EVTOPTA66735"
+		prestige = 5
+		add_accepted_culture = scottish
+		add_accepted_culture = irish
+		add_accepted_culture = yankee
+		add_accepted_culture = dixie
+		add_accepted_culture = texan
+		country_event = 66736
+		}
+}
 #THE HAVEN FOR THE WORLD'S BLIGHTED - IMMIGRATION BUFFS
-
+country_event = {
+    id = 66736
+    title = "EVTNAME66736"
+    desc = "EVTDESC66736"
+    picture = "british_victory_france"
+	mean_time_to_happen = { months = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	#prestige
+	option = {
+		name = "EVTOPTA66736"
+		prestige = 5
+		add_country_modifier = { name = broken_immigration_buff duration = -1 }
+		}
+}
 ###########THIRD POLITICAL ERA - THE NATIONAL RENDING - 1872-1900###############
 #THE KING OF CANADA AND AUSTRALIA - 1873 - ONLY NO CONQUEST
+country_event = {
+    id = 66737
+    title = "EVTNAME66737"
+    desc = "EVTDESC66737"
+    picture = "british_victory_france"
+	mean_time_to_happen = { months = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		OR = {
+		government = absolute_monarchy
+		government = prussian_constitutionalism
+		government = hms_government
+		}
+		NOT = { owns = 300 }
+		year = 1873
+		month = 8
+		}
+	#prestige - but it demonstrates shifting identity
+	option = {
+		name = "EVTOPTA66737"
+		prestige = 5
+		}
+}
 #PAN-AMERICANISM IN THE CANADIAN WORLD - 1880 - IF CONQUERING AMERICA
+country_event = {
+    id = 66738
+    title = "EVTNAME66738"
+    desc = "EVTDESC66738"
+    picture = "british_victory_france"
+	mean_time_to_happen = { months = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		OR = {
+		government = absolute_monarchy
+		government = prussian_constitutionalism
+		government = hms_government
+		}
+		NOT = { owns = 300 }
+		owns = 232
+		year = 1880
+		}
+	#prestige - but it demonstrates shifting identity
+	option = {
+		name = "EVTOPTA66738"
+		prestige = 5
+		any_pop = { 
+			limit = { has_pop_culture = anglo_canadian } 
+			ideology = { value = liberal factor = 0.1 }
+			}
+		}
+}
 #THE SUNSET EMPIRE OF THE WEST - 1876
+country_event = {
+    id = 66739
+    title = "EVTNAME66739"
+    desc = "EVTDESC66739"
+    picture = "british_victory_france"
+	mean_time_to_happen = { months = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		OR = {
+		government = absolute_monarchy
+		government = prussian_constitutionalism
+		government = hms_government
+		}
+		year = 1876
+		}
+	#cultural work about the beauty of the canadian sunset - irrespective of reconquest or not
+	option = {
+		name = "EVTOPTA66739"
+		prestige = 5
+		any_pop = { 
+			limit = { has_pop_culture = anglo_canadian } 
+			consciousness = 0.05
+			}
+		}
+}
 #AUSTRALIAN MANIFEST DESTINY - 1880 - IF CONQUERING PACIFIC
+country_event = {
+    id = 66740
+    title = "EVTNAME66740"
+    desc = "EVTDESC66740"
+    picture = "british_victory_france"
+	mean_time_to_happen = { months = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		OR = {
+		government = absolute_monarchy
+		government = prussian_constitutionalism
+		government = hms_government
+		}
+		year = 1880
+		}
+	#cultural work about the australian side of the empire - irrespective of reconquest
+	option = {
+		name = "EVTOPTA66740"
+		prestige = 5
+		any_pop = { 
+			limit = { has_pop_culture = australian } 
+			consciousness = 0.05
+			}
+		}
+}
 #A UNION OF DOMINIONS - 1885
+country_event = {
+    id = 66741
+    title = "EVTNAME66741"
+    desc = "EVTDESC66741"
+    picture = "british_victory_france"
+	mean_time_to_happen = { months = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		OR = {
+		government = absolute_monarchy
+		government = prussian_constitutionalism
+		government = hms_government
+		}
+		year = 1885
+		NOT = { owns = 300 }
+		}
+	#officially making the two crowns coequal with the british crown
+	option = {
+		name = "EVTOPTA66741"
+		prestige = 5
+		any_pop = { 
+			limit = { OR = { has_pop_culture = australian has_pop_culture = anglo_canadian } } 
+			consciousness = 0.05
+			}
+		}
+}
 #TO BE ENGLISH IS TO BE CANADIAN - 1883
+country_event = {
+    id = 66742
+    title = "EVTNAME66742"
+    desc = "EVTDESC66742"
+    picture = "british_victory_france"
+	mean_time_to_happen = { months = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		OR = {
+		government = absolute_monarchy
+		government = prussian_constitutionalism
+		government = hms_government
+		}
+		year = 1883
+		capital = 57
+		NOT = { owns = 300 }
+		}
+	#Intellectual work about canadian identity
+	option = {
+		name = "EVTOPTA66742"
+		prestige = 5
+		any_pop = { 
+			limit = { has_pop_culture = anglo_canadian } 
+			consciousness = 0.05
+			}
+		}
+}
 #TO BE ENGLISH IS TO BE AUSTRALIAN - 1885
-#THE LAW OF EXILE? - 1872
-#OPENING ACCEPTANCE TO BRITISH MIGRANTS? - 1875
+country_event = {
+    id = 66743
+    title = "EVTNAME66743"
+    desc = "EVTDESC66743"
+    picture = "british_victory_france"
+	mean_time_to_happen = { months = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		OR = {
+		government = absolute_monarchy
+		government = prussian_constitutionalism
+		government = hms_government
+		}
+		year = 1885
+		capital = 2468
+		NOT = { owns = 300 }
+		}
+	#Intellectual work about australian identity
+	option = {
+		name = "EVTOPTA66743"
+		prestige = 5
+		any_pop = { 
+			limit = { has_pop_culture = australian } 
+			consciousness = 0.05
+			}
+		}
+}
+#END THE LAW OF EXILE? - 1872
+country_event = {
+    id = 66744
+    title = "EVTNAME66744"
+    desc = "EVTDESC66744"
+    picture = "british_victory_france"
+	mean_time_to_happen = { months = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		OR = {
+		government = absolute_monarchy
+		government = prussian_constitutionalism
+		government = hms_government
+		}
+		year = 1872
+		NOT = { owns = 300 }
+		}
+	#closing the door to English political refugees
+	option = {
+		name = "EVTOPTA66744"
+		remove_accepted_culture = british
+		}
+}
 #IS IRELAND WORTH WAR? - 1878
+country_event = {
+    id = 66745
+    title = "EVTNAME66745"
+    desc = "EVTDESC66745"
+    picture = "british_victory_france"
+	mean_time_to_happen = { months = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		OR = {
+		government = absolute_monarchy
+		government = prussian_constitutionalism
+		government = hms_government
+		}
+		year = 1878
+		NOT = { owns = 300 }
+		IRE = { vassal_of = THIS }
+		}
+	#losing the irish vassal
+	option = {
+		name = "EVTOPTA66745"
+		release_vassal = IRE
+		}
+	#waaah
+	option = {
+		name = "EVTOPTB66745"
+		release_vassal = IRE
+		IRE = { all_core = { add_core = THIS } }
+		war = {
+			target = IRE
+			attacker_goal = { casus_belli = civil_war }
+			defender_goal = { casus_belli = humiliate }
+			}
+		}
+}
 #INFORMAL RECOGNITION OF THE BRITISH UNION  - 1877
+country_event = {
+    id = 66746
+    title = "EVTNAME66746"
+    desc = "EVTDESC66746"
+    picture = "british_victory_france"
+	mean_time_to_happen = { months = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		OR = {
+		government = absolute_monarchy
+		government = prussian_constitutionalism
+		government = hms_government
+		}
+		year = 1877
+		NOT = { owns = 300 }
+		BRI = { exists = yes }
+		}
+	#informal recognition
+	option = {
+		name = "EVTOPTA66746"
+		relation = { who = BRI value = 100 }
+		}
+}
 #FORMAL RECOGNITION OF THE BRITISH UNION??? - 1880 - WILL REVOKE CORES - TO REFUSE WILL GARNER MILITANCY
+country_event = {
+    id = 66747
+    title = "EVTNAME66747"
+    desc = "EVTDESC66747"
+    picture = "british_victory_france"
+	mean_time_to_happen = { months = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		OR = {
+		government = absolute_monarchy
+		government = prussian_constitutionalism
+		government = hms_government
+		}
+		year = 1880
+		NOT = { owns = 300 }
+		BRI = { exists = yes }
+		}
+	#formal recognition removes all canadian cores
+	option = {
+		name = "EVTOPTA66747"
+		relation = { who = BRI value = 200 }
+		any_owned = { limit = { is_core = BRI } remove_core = BRI } 
+		BRI = { any_owned = { limit = { is_core = CAN } remove_core = CAN } }
+		}
+	#refusing leads to huge militancy and infamy
+	option = {
+		name = "EVTOPTB66747"
+		badboy = 10
+		prestige = -25
+		militancy = 5
+		}
+}
 #NORMALIZATION OF RELATIONS WITH THE BRITISH UNION - 1885
+country_event = {
+    id = 66748
+    title = "EVTNAME66748"
+    desc = "EVTDESC66748"
+    picture = "british_victory_france"
+	mean_time_to_happen = { months = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		OR = {
+		government = absolute_monarchy
+		government = prussian_constitutionalism
+		government = hms_government
+		}
+		year = 1885
+		NOT = { owns = 300 }
+		BRI = { exists = yes }
+		}
+	#normalization has its benefits
+	option = {
+		name = "EVTOPTA66748"
+		prestige = 25
+		relation = { who = BRI value = 200 }
+		}
+}
 #A NEW CONSTITUTIONAL PUSH - ABSOLUTE MONARCHY OR PRUSSIAN - 1885
+country_event = {
+    id = 66749
+    title = "EVTNAME66749"
+    desc = "EVTDESC66749"
+    picture = "british_victory_france"
+	mean_time_to_happen = { months = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		OR = {
+		government = absolute_monarchy
+		government = prussian_constitutionalism
+		}
+		year = 1885
+		}
+	#accepting the change - house of commons returns
+	option = {
+		name = "EVTOPTA66749"
+		prestige = 10
+		government = hms_government
+		vote_franschise = universal_weighted_voting
+		upper_house_composition = state_equal_weight
+		public_meetings = yes_meeting
+		trade_unions = non_socialist
+		press_rights = free_press
+		political_parties = non_secret_ballots
+		conscription = no_draft
+		citizens_rights = culture_voting_only
+		}
+	option = {
+		name = "EVTOPTB66749"
+		any_owned = { add_province_modifier = { name = liberal_agitation duration = 1825 } }
+		badboy = 5
+		}
+}
 #THE CONVENTION OF 1890 - CONSTITUTIONAL DEMAND
+country_event = {
+    id = 66750
+    title = "EVTNAME66750"
+    desc = "EVTDESC66750"
+    picture = "british_victory_france"
+	mean_time_to_happen = { months = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		OR = {
+		government = absolute_monarchy
+		government = prussian_constitutionalism
+		}
+		year = 1890
+		}
+	#accepting the change - house of commons returns
+	option = {
+		name = "EVTOPTA66750"
+		prestige = 10
+		government = hms_government
+		vote_franschise = universal_weighted_voting
+		upper_house_composition = state_equal_weight
+		public_meetings = yes_meeting
+		trade_unions = non_socialist
+		press_rights = free_press
+		political_parties = non_secret_ballots
+		conscription = no_draft
+		citizens_rights = culture_voting_only
+		}
+	option = {
+		name = "EVTOPTB66748"
+		add_country_modifier = { name = global_liberal_agitation duration = 3650 }
+		}
+}
 #DAWNING OF QUEBECOIS NATIONALISM - 1875
-
+country_event = {
+    id = 66751
+    title = "EVTNAME66751"
+    desc = "EVTDESC66751"
+    picture = "british_victory_france"
+	mean_time_to_happen = { months = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		OR = {
+		government = absolute_monarchy
+		government = prussian_constitutionalism
+		}
+		year = 1890
+		}
+	#quebecois nationalism spurred on by political suppression
+	option = {
+		name = "EVTOPTA66751"
+		remove_accepted_culture = french_canadian
+		any_pop = { limit = { has_pop_culture = french_canadian } militancy = 10 }
+		any_owned = { limit = { is_core = QUE } add_province_modifier = { name = nationalist_agitation duration = 3650 } }
+		}
+}
 ###########ALTERNATE THIRD POLITICAL ERA - THE BRITISH WITHOUT BRITAIN WITH A LATE RETURN - 1872-1900#############
 #AFTER A LONG QUIET THE NATIONALISM GETS TOO MUCH TO BEAR - 1872
+country_event = {
+    id = 66752
+    title = "EVTNAME66752"
+    desc = "EVTDESC66752"
+    picture = "british_victory_france"
+	mean_time_to_happen = { months = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		OR = {
+		government = absolute_monarchy
+		government = prussian_constitutionalism
+		government = hms_government
+		}
+		year = 1872
+		NOT = { primary_culture = british }
+		NOT = { accepted_culture = british }
+		}
+	#England becomes a painful sore
+	option = {
+		name = "EVTOPTA66752"
+		ENG_277 = { add_province_modifier = { name = nationalist_agitation duration = 3650 } }
+		ENG_280 = { add_province_modifier = { name = nationalist_agitation duration = 3650 } }
+		ENG_284 = { add_province_modifier = { name = nationalist_agitation duration = 3650 } }
+		ENG_291 = { add_province_modifier = { name = nationalist_agitation duration = 3650 } }
+		ENG_296 = { add_province_modifier = { name = nationalist_agitation duration = 3650 } }
+		ENG_300 = { add_province_modifier = { name = nationalist_agitation duration = 3650 } }
+		}
+}
 #THE FOREIGNER-KING - 1873
+country_event = {
+    id = 66753
+    title = "EVTNAME66753"
+    desc = "EVTDESC66753"
+    picture = "british_victory_france"
+	mean_time_to_happen = { months = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		OR = {
+		government = absolute_monarchy
+		government = prussian_constitutionalism
+		government = hms_government
+		}
+		year = 1873
+		NOT = { primary_culture = british }
+		NOT = { accepted_culture = british }
+		}
+	#England becomes a painful sore
+	option = {
+		name = "EVTOPTA66753"
+		prestige = -15
+		badboy = 5
+		any_pop = { limit = { has_pop_culture = british } militancy = 10 }
+		}
+}
 #THE MANCHESTER INDEPENDENCE RIOTS - IF CULTURE NOT ACCEPTED - 1878
+country_event = {
+    id = 66754
+    title = "EVTNAME66754"
+    desc = "EVTDESC66754"
+    picture = "british_victory_france"
+	mean_time_to_happen = { months = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		OR = {
+		government = absolute_monarchy
+		government = prussian_constitutionalism
+		government = hms_government
+		}
+		year = 1878
+		NOT = { primary_culture = british }
+		NOT = { accepted_culture = british }
+		}
+	#England becomes a painful sore
+	option = {
+		name = "EVTOPTA66754"
+		prestige = -15
+		badboy = 5
+		any_pop = { limit = { has_pop_culture = british } militancy = 10 }
+		}
+}
 #THE SCOTTISH PROMISE - IF PROMISED AUTONOMY, YOUD BETTER GIVE IT
+country_event = {
+    id = 66755
+    title = "EVTNAME66755"
+    desc = "EVTDESC66755"
+    picture = "british_victory_france"
+	mean_time_to_happen = { months = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		OR = {
+		government = absolute_monarchy
+		government = prussian_constitutionalism
+		government = hms_government
+		}
+		has_country_flag = promised_scottish_autonomy
+		}
+	#scotland rebels if you dont
+	option = {
+		name = "EVTOPTA66755"
+		prestige = -15
+		badboy = 5
+		release = SCO
+		war = {
+			target = SCO
+			attacker_goal = { casus_belli = civil_war }
+			defender_goal = { casus_belli = humiliate }
+			}
+		}
+	#Release them
+	option = {
+		name = "EVTOPTB66755"
+		prestige = 2
+		badboy = -2
+		release_vassal = SCO
+		SCO = { all_core = { remove_core = CAN } }
+		}
+}
 #SCOTTISH NATIONAL AWAKENING - WILL HAPPEN REGARDLESS OF AUTONOMY FROM ABOVE
+country_event = {
+    id = 66756
+    title = "EVTNAME66756"
+    desc = "EVTDESC66756"
+    picture = "british_victory_france"
+	mean_time_to_happen = { months = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = SCO
+		exists = yes
+		}
+	#the scottish culture revives
+	option = {
+		name = "EVTOPTA66756"
+		any_owned = { limit = { is_core = SCO } assimilate = yes }
+		}
+}
 #THE REPUBLICAN BANNER RAISED OVER PARLIAMENT DURING CESSION - 1885
+country_event = {
+    id = 66757
+    title = "EVTNAME66757"
+    desc = "EVTDESC66757"
+    picture = "british_victory_france"
+	mean_time_to_happen = { months = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		OR = {
+		government = absolute_monarchy
+		government = prussian_constitutionalism
+		government = hms_government
+		}
+		NOT = { primary_culture = british }
+		NOT = { accepted_culture = british }
+		year = 1885
+		month = 1
+		}
+	#England hates you
+	option = {
+		name = "EVTOPTA66757"
+		prestige = -15
+		badboy = 3
+		any_pop = { limit = { has_pop_culture = british } militancy = 10 }
+		country_event = 66756
+		}
+}
 #VICTORIA'S ADVOCATES - PERMANENT MODIFIER TO MAKE IT SUCK
+country_event = {
+    id = 66758
+    title = "EVTNAME66758"
+    desc = "EVTDESC66758"
+    picture = "british_victory_france"
+	mean_time_to_happen = { months = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	#England hates you
+	option = {
+		name = "EVTOPTA66758"
+		ENG_277 = { add_province_modifier = { name = victoria_advocates_worse duration = 3650 } }
+		ENG_280 = { add_province_modifier = { name = victoria_advocates_worse duration = 3650 } }
+		ENG_284 = { add_province_modifier = { name = victoria_advocates_worse duration = 3650 } }
+		ENG_291 = { add_province_modifier = { name = victoria_advocates_worse duration = 3650 } }
+		ENG_296 = { add_province_modifier = { name = victoria_advocates_worse duration = 3650 } }
+		ENG_300 = { add_province_modifier = { name = victoria_advocates_worse duration = 3650 } }
+		}
+}
 #A BRITAIN UNRECOGNIZABLE - 1899
+country_event = {
+    id = 66759
+    title = "EVTNAME66759"
+    desc = "EVTDESC66759"
+    picture = "british_victory_france"
+	mean_time_to_happen = { months = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		OR = {
+		government = absolute_monarchy
+		government = prussian_constitutionalism
+		government = hms_government
+		}
+		NOT = { primary_culture = british }
+		NOT = { accepted_culture = british }
+		year = 1899
+		month = 1
+		}
+	#Britain is a powder keg
+	option = {
+		name = "EVTOPTA66759"
+		set_country_flag = british_powderkeg
+		}
+}
 #SHOULD BRITAIN REMAIN IN THE UNION? - 1900
+country_event = {
+    id = 66760
+    title = "EVTNAME66760"
+    desc = "EVTDESC66760"
+    picture = "british_victory_france"
+	mean_time_to_happen = { months = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		OR = {
+		government = absolute_monarchy
+		government = prussian_constitutionalism
+		government = hms_government
+		}
+		NOT = { primary_culture = british }
+		NOT = { accepted_culture = british }
+		year = 1899
+		month = 1
+		}
+	#Keep it
+	option = {
+		name = "EVTOPTA66760"
+		prestige = 10
+		any_pop = { limit = { has_pop_culture = british } militancy = 10 }
+		}
+	option = {
+		name = "EVTOPTB66760"
+		ENG_277 = { add_core = BRI }
+		ENG_280 = { add_core = BRI }
+		ENG_284 = { add_core = BRI }
+		ENG_291 = { add_core = BRI }
+		ENG_296 = { add_core = BRI }
+		ENG_300 = { add_core = BRI }
+		release_vassal = BRI
+		}
+}
 #SECOND BRITISH REVOLUTION - 1915 IF WAR EXHAUSTION
-
+country_event = {
+    id = 66761
+    title = "EVTNAME66761"
+    desc = "EVTDESC66761"
+    picture = "british_victory_france"
+	mean_time_to_happen = { months = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		OR = {
+		government = absolute_monarchy
+		government = prussian_constitutionalism
+		government = hms_government
+		}
+		NOT = { primary_culture = british }
+		NOT = { accepted_culture = british }
+		has_country_flag = british_powderkeg
+		}
+	#waaar
+	option = {
+		name = "EVTOPTA66761"
+		ENG_277 = { add_core = BRI }
+		ENG_280 = { add_core = BRI }
+		ENG_284 = { add_core = BRI }
+		ENG_291 = { add_core = BRI }
+		ENG_296 = { add_core = BRI }
+		ENG_300 = { add_core = BRI }
+		release = BRI
+		war = { 
+			target = BRI
+			attacker_goal = { casus_belli = civil_war }
+			defender_goal = { casus_belli = civil_war }
+			}
+		}
+}
 ###########SECOND ALTERNATE THIRD POLITICAL ERA - PAX BRITANNIA WITH AN EARLY RETURN - 1872 -###################
 #CULTURAL SHUNNING OF REPUBLICANISM - 1872
+country_event = {
+    id = 66762
+    title = "EVTNAME66762"
+    desc = "EVTDESC66762"
+    picture = "british_victory_france"
+	mean_time_to_happen = { months = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		OR = {
+		government = absolute_monarchy
+		government = prussian_constitutionalism
+		government = hms_government
+		}
+		primary_culture = british 
+		has_country_modifier = pax_britannia
+		year = 1872
+		}
+	#waaar
+	option = {
+		name = "EVTOPTA66762"
+		any_pop = { 
+			limit = { OR = { has_pop_culture = anglo_canadian has_pop_culture = british } } 
+			ideology = { value = conservative factor = 0.7 }
+			ideology = { value = reactionary factor = 0.3 }
+			}
+		}
+}
 #LANCASTER CENTER - 1881
+country_event = {
+    id = 66763
+    title = "EVTNAME66763"
+    desc = "EVTDESC66763"
+    picture = "british_victory_france"
+	mean_time_to_happen = { months = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		OR = {
+		government = absolute_monarchy
+		government = prussian_constitutionalism
+		government = hms_government
+		}
+		primary_culture = british 
+		has_country_modifier = pax_britannia
+		year = 1881
+		}
+	#waaar
+	option = {
+		name = "EVTOPTA66763"
+		prestige = 25
+		years_of_research = 0.5
+		}
+}
 #THE HANOVERIAN SILVER AGE - 1890
+country_event = {
+    id = 66764
+    title = "EVTNAME66764"
+    desc = "EVTDESC66764"
+    picture = "british_victory_france"
+	mean_time_to_happen = { months = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		OR = {
+		government = absolute_monarchy
+		government = prussian_constitutionalism
+		government = hms_government
+		}
+		primary_culture = british 
+		has_country_modifier = pax_britannia
+		year = 1890
+		}
+	#waaar
+	option = {
+		name = "EVTOPTA66764"
+		prestige = 25
+		}
+}
 #IMPERIAL FEDERAL SENTIMENTS - 1895
-#WE ARE ALL TRULY BRITISH - 1900 REMOVAL OF SCOTTISH CORES
+country_event = {
+    id = 66765
+	title = "EVTNAME66765"
+    desc = "EVTDESC66765"
+    picture = "british_victory_france"
+	mean_time_to_happen = { months = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		OR = {
+		government = absolute_monarchy
+		government = prussian_constitutionalism
+		government = hms_government
+		}
+		primary_culture = british 
+		has_country_modifier = pax_britannia
+		year = 1895
+		}
+	#waaar
+	option = {
+		name = "EVTOPTA66765"
+		prestige = 25
+				any_pop = { 
+			limit = { OR = { has_pop_culture = anglo_canadian has_pop_culture = australian has_pop_culture = british } } 
+			ideology = { value = conservative factor = 0.7 }
+			ideology = { value = reactionary factor = 0.3 }
+			}
+		}
+}
+#WE ARE ALL TRULY BRITISH - 1900 FEDERAL PROPOSAL
+country_event = {
+    id = 66766
+    title = "EVTNAME66766"
+    desc = "EVTDESC66766"
+    picture = "british_victory_france"
+	mean_time_to_happen = { months = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		OR = {
+		government = absolute_monarchy
+		government = prussian_constitutionalism
+		government = hms_government
+		}
+		primary_culture = british 
+		has_country_modifier = pax_britannia
+		year = 1895
+		}
+	#waaar
+	option = {
+		name = "EVTOPTA66766"
+		prestige = 25
+				any_pop = { 
+			limit = { OR = { has_pop_culture = anglo_canadian has_pop_culture = australian has_pop_culture = british } } 
+			ideology = { value = conservative factor = 0.7 }
+			ideology = { value = reactionary factor = 0.3 }
+			}
+		}
+}
 #VICTORIA RECORDED AS A NATIONAL TRAITOR - 1905
+country_event = {
+    id = 66767
+    title = "EVTNAME66767"
+    desc = "EVTDESC66767"
+    picture = "british_victory_france"
+	mean_time_to_happen = { months = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		OR = {
+		government = absolute_monarchy
+		government = prussian_constitutionalism
+		government = hms_government
+		}
+		primary_culture = british 
+		has_country_modifier = pax_britannia
+		year = 1905
+		}
+	#waaar
+	option = {
+		name = "EVTOPTA66767"
+		prestige = 25
+				any_pop = { 
+			limit = { OR = { has_pop_culture = anglo_canadian has_pop_culture = australian has_pop_culture = british } } 
+			ideology = { value = conservative factor = 0.3 }
+			ideology = { value = reactionary factor = 0.7 }
+			}
+		}
+}
 #THE FEDERAL PROPOSAL PASSES - 1915 DISSOLUTION OF ALL NATIONAL CORES UNDER UNION
+country_event = {
+    id = 66768
+    title = "EVTNAME66768"
+    desc = "EVTDESC66768"
+    picture = "british_victory_france"
+	mean_time_to_happen = { months = 1 }
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = "EVTOPTA66768"
+		prestige = 25
+				any_pop = { 
+			limit = { OR = { has_pop_culture = anglo_canadian has_pop_culture = australian has_pop_culture = british } } 
+			ideology = { value = conservative factor = 0.3 }
+			ideology = { value = reactionary factor = 0.7 }
+			}
+			all_core = { remove_core = BRI remove_core = SCO remove_core = IRE remove_core = QUE remove_core = AST }
+		}
+}
+#BONUS
+#SPHERING MALTA WHILE IN EUROPE REANNEXES
+country_event = {
+    id = 66769
+    title = "EVTNAME66769"
+    desc = "EVTDESC66769"
+    picture = "british_victory_france"
+	mean_time_to_happen = { months = 1 }
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		OR = {
+		government = absolute_monarchy
+		government = prussian_constitutionalism
+		government = hms_government
+		}
+		primary_culture = british 
+		has_country_modifier = pax_britannia
+		capital = 300
+		MLT = { in_sphere = THIS }
+		}
+	#waaar
+	option = {
+		name = "EVTOPTA66769"
+		prestige = 5
+		inherit = MLT
+		}
+}

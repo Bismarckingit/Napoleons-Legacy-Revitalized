@@ -464,5 +464,160 @@ political_decisions = {
 		}
 	}
 #LONGER TERM REIGN IN OF INDIA IF CANADIAN
-#SHORTER TERM IF AUSTRALIAN
+	reign_in_eic = {
+		alert = yes
+	potential = {
+		tag = CAN
+		year = 1850
+		war = no
+		is_vassal = no
+		NOT = { has_country_flag = reign_in_eic }
+		is_greater_power = yes
+		EIC = { vassal_of = CAN }
+		}
+	allow = {
+		is_greater_power = yes
+		OR = {
+			#AUSTRALIA
+			AND = {
+				capital = 2468 
+				naval_statistics = 1
+				market_regulations = 1
+				}
+			#CANADA
+			AND = {
+				capital = 57
+				naval_logistics = 1
+				economic_responsibility = 1
+				}
+			#LONDON
+			AND = {
+				capital = 300
+				organized_factories = 1
+				scientific_management = 1
+				}
+			}
+		}
+	effect = {
+		set_country_flag = reign_in_eic
+		EIC = { civilized = no }
+		inherit = EIC
+		prestige = 10
+		}
+	}
+#COALITION WAR AGAINST FRANCE
+	coalition_war_can = {
+		alert = yes
+	potential = {
+		tag = CAN
+		year = 1850
+		has_country_flag = united_britain
+		NOT = { has_country_flag = coalition_war }
+		FRA = { exists = yes rank = 3 }
+		NOT = { war_with = FRA }
+		at_war = no
+		}
+	allow = {
+		is_greater_power = yes
+		FRA = { at_war = no }
+		NOT = { war_exhaustion = 1 }
+		relation = { who = FRA value = -100 }
+		military_score = 100
+		}
+	effect = {
+		set_country_flag = coalition_war
+		country_event = 66711
+		add_country_modifier = { name = coalition_war_timer duration = 1000 }
+		}
+	}
+#COALITION WAR VICTORY
+	win_coalition_war_can = {
+				alert = yes
+	potential = {
+		tag = CAN
+		has_country_flag = coalition_war
+		war_with = FRA
+		has_country_modifier = coalition_war_timer
+		}
+	allow = {
+		is_greater_power = yes
+		FRA = { exists = yes }
+		war_with = FRA
+		FRA = { war_exhaustion = 80 }
+		war_score = 75
+		}
+	effect = {
+		end_war = FRA 
+		FRA = { country_event = 66712 }
+		}
+	}
+	can_into_dual_monarchy = {
+		alert = yes
+	potential = {
+		tag = CAN
+		has_country_flag = united_britain
+		has_country_flag = dual_monarchy_aspirations
+		government = absolute_monarchy
+		NOT = { has_country_flag = can_into_dual_monarchy }
+		}
+	allow = {
+		is_greater_power = yes
+		OR = { owns = 425 FRA = { exists = yes vassal_of = THIS } BOR = { exists = yes vassal_of = THIS } }
+		at_war = no
+		NOT = { FRA = { is_greater_power = yes } }
+		NOT = { BOR = { is_greater_power = yes } }
+		owns = 300
+		owns = 418
+		owns = 420
+		owns = 458
+		}
+	effect = {
+		badboy = 20
+		prestige = 100
+		set_country_flag = can_into_dual_monarchy
+		country_event = 66715
+		}
+	}
+	accept_english_can = {
+		alert = yes
+	potential = {
+		tag = CAN
+		has_country_flag = united_britain
+		NOT = { has_country_flag = accept_english_can }
+		}
+	allow = {
+		is_greater_power = yes
+		owns = 300
+		mass_politics = 1
+		behaviorism = 1
+		}
+	effect = {
+		set_country_flag = accept_english_can
+		prestige = 15
+		capital = 300
+		add_accepted_culture = british
+		}
+	}
+	acknowledge_scots_irish = {
+		alert = yes
+	potential = {
+		tag = CAN
+		has_country_flag = united_britain
+		NOT = { has_country_flag = acknowledge_scots_irish }
+		}
+	allow = {
+		is_greater_power = yes
+		SCO = { exists = no }
+		IRE = { exists = no }
+		owns = 300
+		nationalism_n_imperialism = 1
+		phenomenalism = 1
+		}
+	effect = {
+		set_country_flag = acknowledge_scots_irish
+		country_event = 66731
+		badboy = -3
+		prestige = 15
+		}
+	}	
 }
