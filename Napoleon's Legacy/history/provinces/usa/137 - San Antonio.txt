@@ -1,7 +1,9 @@
-owner = TEX
-controller = TEX
+owner = VNS
+controller = VNS
 add_core = TEX
 add_core = MEX
 trade_goods = cattle
 life_rating = 35
 fort = 1 #Remember the Alamo!
+
+add_core = VNS

@@ -1,6 +1,8 @@
-owner = UCA
-controller = UCA
+owner = VNS
+controller = VNS
 add_core = UCA
 add_core = HON
 trade_goods = grain
 life_rating = 35
+
+add_core = VNS

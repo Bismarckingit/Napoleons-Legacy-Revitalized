@@ -7,8 +7,20 @@ TSA_democracy;Russia;;;;;;;;;x;;;;;;;;
 TSA_democracy_ADJ;Russian;;;;;;;;;x;;;;;;;;
 VNS;Nueva Espana;;;;;;;;;x;;;;;;;;
 VNS_ADJ;Hispanic;;;;;;;;;x;;;;;;;;
-VNS_proletarian_dictatorship;The Democratic People's Republic of Nueva Hispania;;;;;;;;;x;;;;;;;;
-VNS_democracy;Nueva Hispanian Republic;;;;;;;;;x;;;;;;;;
+VNS_proletarian_dictatorship;The Democratic People's Republic of New Spain;;;;;;;;;x;;;;;;;;
+VNS_democracy;Republic of New Spain;;;;;;;;;x;;;;;;;;
+CGC_colonial_company;Capitania General de Chile;;;;;;;;;;;;;x,
+CGC;Chile;;;;;;;;;;;;;x,
+CGC_ADJ;Spanish;;;;;;;;;;;;;;;;;;;;;;x;;;;;;
+VNG_colonial_company;Virreinato de la Nueva Granada;;;;;;;;;;;;;x,
+VNG;Nueva Granada;;;;;;;;;;;;;x,
+VNG_ADJ;Spanish;;;;;;;;;;;;;;;;;;;;;;x;;;;;;
+VLP_colonial_company;Virreinato del Río de la Plata;;;;;;;;;;;;;x,
+VLP;Río de la Plata;;;;;;;;;;;;;x,
+VLP_ADJ;Spanish;;;;;;;;;;;;;;;;;;;;;;x;;;;;;
+VOP_colonial_company;Virreinato del Peru;;;;;;;;;;;;;x,
+VOP;Peru;;;;;;;;;;;;;x,
+VOP_ADJ;Spanish;;;;;;;;;;;;;;;;;;;;;;x;;;;;;
 FED;Rheinbund;;;;;;;;;x;;;;
 FED_ADJ;German;;;;;;;;;;;;;x;;;;
 BRA;Berg;;;;;;;;;;;;;x;;;;
@@ -56,11 +68,6 @@ BRI;The British Commonwealth;;;;;;;;;;;;;x;;;;
 BRI_ADJ;English;;;;;;;;;x;;;;
 BRI_fascist_dictatorship;Republic of Britannia;;;;;;;;;;;;;x;;;;
 BRI_fascist_dictatorship_ADJ;British;;;;;;;;;;;;;x;;;;
-BRI_absolute_monarchy;Kingdom of England;;;;;;;;;;;;x;;;
-BRI_prussian_constitutionalism;Kingdom of England;;;;;;;;;;;;;x;;;
-BRI_hms_government;Kingdom of England;;;;;;;;;;;;;x;;;
-BRI_proletarian_dictatorship;Union of England;;;;;;;;;;;;;x;;;
-BRI_presidential_dictatorship;Protectorate of Britannia;;;;;;;;;;;;;x;;;
 FRA;The French Empire;;;;;;;;;;;;;x;;;;
 BOR;The Kingdom of France;;;;;;;;;x;;;;;;;;
 BOR_ADJ;French;;;;;;;;;x;;;;;;;;

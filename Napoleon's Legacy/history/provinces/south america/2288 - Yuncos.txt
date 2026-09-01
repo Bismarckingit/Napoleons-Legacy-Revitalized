@@ -2,6 +2,6 @@ owner = SPA
 controller = SPA # Anything typed here will be added to all selected province history files
 add_core = ECU
 add_core = GCO
-add_core = PEU
 trade_goods = fruit
 life_rating = 31
+add_core = SPA

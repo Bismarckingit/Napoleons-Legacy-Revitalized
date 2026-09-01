@@ -5,3 +5,4 @@ add_core = GCO
 trade_goods = wool
 terrain = montane_forest
 life_rating = 33
+add_core = SPA

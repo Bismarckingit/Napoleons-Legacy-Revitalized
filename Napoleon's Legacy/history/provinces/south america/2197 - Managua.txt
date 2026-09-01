@@ -1,7 +1,9 @@
-owner = UCA
+owner = GCO
 
-controller = UCA
+controller = GCO
 add_core = UCA
 add_core = NIC
 trade_goods = coffee
 life_rating = 39
+
+add_core = GCO

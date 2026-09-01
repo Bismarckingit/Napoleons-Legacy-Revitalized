@@ -620,4 +620,15 @@ political_decisions = {
 		prestige = 15
 		}
 	}	
+	
+
+
+
+
+
+
+
+
+
+
 }

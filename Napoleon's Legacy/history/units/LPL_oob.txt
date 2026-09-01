@@ -1,9 +1,9 @@
 CAN = {
-    value = -100
+    value = -50
 }
 
 FRA = {
-    value = -150
+    value = 150
 }
 
 CHL = {
@@ -31,40 +31,140 @@ BRZ = {
 }
 
 USA = {
-    value = -50
+    value = 50
+}
+
+GCO = {
+    value = 200
 }
 
 
 army = {
-    name = "Ej�rcito de Buenos Aires"
+    name = "Ejercito de Buenos Aires"
     location = 2348
     regiment = {
-        name= "1. Divisi�n de Infanter�a"
+        name= "1. Division de Infanteria"
         type = infantry
         home = 2348
     }
 
     regiment = {
-        name= "2. Divisi�n de Infanter�a"
+        name= "2. Division de Infanteria"
         type = infantry
         home = 2348
     }
 
     regiment = {
-        name= "3. Divisi�n de Infanter�a"
+        name= "3. Division de Infanteria"
         type = infantry
         home = 2348
     }
+	
+	 regiment = {
+        name= "1. Division de artilleria"
+        type = artillery
+        home = 2348
+    }
     regiment = {
-        name= "1. Divisi�n de Infanter�a"
-        type = infantry
+        name= "2. Division de artilleria"
+        type = artillery
         home = 2379
     }
     regiment = {
-        name= "2. Divisi�n de Infanter�a"
-        type = infantry
+        name= "1.ra Division de Caballeria"
+        type = cavalry
         home = 2379
     }
+}
+
+army = {
+    name = "Ejercito del Paraguay"
+    location = 2339
+    regiment = {
+        name= "1.1ra Division de Infanteria"
+        type = infantry
+        home = 2339
+    }
+
+    regiment = {
+        name= "2.2ra Division de Infanteria"
+        type = infantry
+        home = 2339
+    }
+
+    regiment = {
+        name= "1.1ra Division de Caballeria"
+        type = cavalry
+        home = 2339
+    }
+	
+	 regiment = {
+        name= "3.1ra Division de Infanteria"
+        type = infantry
+        home = 2342
+    }
+
+    regiment = {
+        name= "4.2ra Division de Infanteria"
+        type = infantry
+        home = 2341
+    }
+
+    regiment = {
+        name= "2.1ra Division de Caballeria"
+        type = cavalry
+        home = 2339
+    }
+	
+	regiment = {
+        name= "1.1ra Division de artilleria"
+        type = artillery
+        home = 2339
+    }
+
+}
+
+army = {
+	name = "Ejercito de Entre Rios"
+	location = 2360
+	regiment = {
+		name= "1. División de Infantería"
+		type = infantry
+		home = 2360
+	}
+}
+leader = {
+   name = "Justo Jose de Urquiza"
+   type = land
+   date = 1836.1.1
+   background = school_of_the_bayonet
+   personality = implacable
+	}
+	
+	army = {
+	name = "Ejercito de Corrientes"
+	location = 2356
+	regiment = {
+		name= "1. División de Infantería"
+		type = infantry
+		home = 2356
+	}
+}
+
+leader = {
+   name = "Genaro Berón de Astrada"
+   type = land
+   date = 1835.12.12
+   background = drillmaster
+   personality = audacious
+	}
+	
+leader = {
+    name = "Domingo Francisco Sanchez"
+    type = land
+    date = 1836.1.1
+    background = school_of_the_bayonet
+    personality = impetuous
 }
 
 leader = {
@@ -73,4 +173,86 @@ leader = {
    date = 1836.1.1
    background = aristocrat
    personality = implacable
+}
+
+army = {
+	name = "Ejercito del Uruguay"
+	location = 2344
+	regiment = {
+		name= "1. Division de Infanteria"
+		type = infantry
+		home = 2344
+	}
+	
+	regiment = {
+		name= "2. Division de Infanteria"
+		type = infantry
+		home = 2346
+	}
+}
+
+army = {
+	name = "Reclutas Brasilenos"
+	location = 2464
+	regiment = {
+		name= "1. Division de Infanteria"
+		type = infantry
+		home = 2465
+	}
+	regiment = {
+		name= "2. Division de Infanteria"
+		type = infantry
+		home = 2467
+	}
+	regiment = {
+		name= "3. Division de Infanteria"
+		type = infantry
+		home = 2464
+	}
+	regiment = {
+		name= "1. Division de Caballeria"
+		type = cavalry
+		home = 2466
+	}
+}
+
+navy = {
+    name = "Platinean Navy"
+    location = 2348
+    ship = {
+        name = "Aquiles"
+        type = frigate
+    }
+
+    ship = {
+        name = "Voltaire"
+        type = frigate
+    }
+
+    ship = {
+        name = "Orbegoso"
+        type = frigate
+    }
+
+    ship = {
+        name = "Valparaiso"
+        type = frigate
+    }
+
+    ship = {
+        name = "Libertad"
+        type = frigate
+    }
+
+    ship = {
+        name = "1. Buque de transporte"
+        type = clipper_transport
+    }
+
+
+    ship = {
+        name = "2. Buque de transporte"
+        type = clipper_transport
+    }
+
 }

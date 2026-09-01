@@ -3,7 +3,7 @@
 #Buenos Aires (132000/33000 POPS)
 2348 = {
     aristocrats = {
-        culture = platinean
+        culture = spanish
         religion = catholic
         size = 1625
     }
@@ -37,11 +37,23 @@
         religion = catholic
         size = 6000
     }
+	
+	soldiers = {
+        culture = spanish
+        religion = catholic
+        size = 3000
+    }
 
     farmers = {
         culture = platinean
         religion = catholic
         size = 105825
+    }
+	
+	farmers = {
+        culture = spanish
+        religion = catholic
+        size = 20825
     }
 
     slaves = {

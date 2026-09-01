@@ -5,3 +5,4 @@ add_core = BOL
 trade_goods = wool
 terrain = savanna
 life_rating = 31
+add_core = SPA

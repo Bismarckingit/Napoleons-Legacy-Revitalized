@@ -3,7 +3,7 @@ political_decisions = {
         potential = {
             tag = MEX
             government = democracy
-            NOT = { has_country_flag = we_have_tried_this_once }
+            NOT = { has_country_flag = we_have_tried_this_once tag = SPA }
             FRA = {
                 OR = {
                     government = absolute_monarchy

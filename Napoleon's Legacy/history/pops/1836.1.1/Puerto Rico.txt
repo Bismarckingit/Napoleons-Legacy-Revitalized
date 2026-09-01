@@ -3,19 +3,19 @@
 #Puerto Rico (356000/89000 POPS)
 2222 = {
     aristocrats = {
-        culture = caribeno
+        culture = spanish
         religion = catholic
         size = 1535
     }
 
     bureaucrats = {
-        culture = caribeno
+        culture = spanish
         religion = catholic
         size = 25
     }
 
     clergymen = {
-        culture = caribeno
+        culture = spanish
         religion = catholic
         size = 200
     }
@@ -24,6 +24,12 @@
         culture = caribeno
         religion = catholic
         size = 3000
+    }
+	
+	 artisans = {
+        culture = spanish
+        religion = catholic
+        size = 1000
     }
 
     soldiers = {
@@ -36,6 +42,12 @@
         culture = caribeno
         religion = catholic
         size = 40850
+    }
+	
+	farmers = {
+        culture = spanish
+        religion = catholic
+        size = 10850
     }
 
     artisans = {

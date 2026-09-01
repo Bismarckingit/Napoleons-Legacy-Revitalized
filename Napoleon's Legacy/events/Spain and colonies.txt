@@ -1,0 +1,1471 @@
+### For the real Spain ###
+
+
+#Initial War 
+
+country_event = {
+
+    id = 2000
+    news = yes
+    news_desc_long = "EVTDESC37706_NEWS_LONG"
+    news_desc_medium = "EVTDESC37706_NEWS_MEDIUM"
+    news_desc_short = "EVTDESC37706_NEWS_SHORT"
+
+   major = yes
+
+    trigger = {
+        tag = SPA
+        year = 1838
+		war = no
+        NOT = {
+           GCO = {  ai = no
+		            exists = no }
+		   LPL = {  ai = no
+		            exists = no }
+        }
+    }
+
+    fire_only_once = yes
+
+    mean_time_to_happen =  {
+        months = 1
+    }
+
+    title = "EVTNAME2000"
+    desc = "EVTDESC2000"
+    picture = "picaso"
+
+    option = {
+        name = "EVTOPTA2200"
+		GCO = { country_event = 2004 } 
+		LPL = { country_event = 2004 } 
+		
+		 SPA = {
+        war = {
+	       target = GCO
+	       attacker_goal = { casus_belli = colonial_reconquest_cb }
+	       
+		   defender_goal = { casus_belli = acquire_all_cores }
+	       defender_goal = { casus_belli = liberate_country 
+		                     country = PEU         
+               							    }
+		   
+        }
+		
+		war = {
+	       target = LPL
+	       attacker_goal = { casus_belli = colonial_reconquest_cb }
+	       
+		   defender_goal = { casus_belli = acquire_all_cores }
+	       defender_goal = { casus_belli = liberate_country 
+		                     country = CHL         
+               							    }
+		   
+         }
+		}
+		
+		add_country_modifier = {
+	        name = andine_reconquest
+	        duration = 1825
+          }
+    }
+
+}
+
+#Reorganizing the Vice Royalties
+
+country_event = {
+
+    id = 2001
+
+    trigger = {
+        tag = SPA
+        owns = 2247
+		owns = 2348
+		NOT = {
+          exists = GCO 
+		  exists = LPL
+		}
+    }
+
+    fire_only_once = yes
+
+    mean_time_to_happen =  {
+        days = 1
+
+    }
+
+    title = "EVTNAME2001"
+    desc = "EVTDESC2001"
+    picture = "picaso"
+    
+	
+	#Reorganization
+    option = {
+        name = "EVTOPTA2001"
+        prestige = 20
+		badboy = -5
+		add_country_modifier = {
+	        name = mending_andine_relations
+	        duration = 1825
+          }
+		  create_vassal = VNG
+		  create_vassal = VLP
+		  
+		  any_owned = {
+			limit = { is_core = GCO
+                  NOT = { 
+				     is_core = PNM
+				     is_core = COS
+					 is_core = ECU
+					 is_core = NIC
+					 province_id = 2259
+					 province_id = 2258
+					 province_id = 2257
+					 province_id = 2256
+					 province_id = 2253
+					 province_id = 2254
+					 province_id = 2255
+					 province_id = 2368
+					 province_id = 2286
+					 province_id = 2369
+					 province_id = 2371
+				  }
+			}
+			secede_province = VNG
+			add_core = VNG
+			militancy = 4
+		}
+		
+		any_owned = {
+			limit = { is_core = LPL
+                  NOT = { 
+				     is_core = BOL
+				     is_core = PEU
+					 is_core = CHL
+					 province_id = 2370
+					 province_id = 2269
+					 province_id = 2271
+					 province_id = 2268
+					 province_id = 1714
+					 province_id = 2375
+					 province_id = 2374
+					 province_id = 2385
+					 province_id = 2386
+					 province_id = 2387
+					 province_id = 2388
+					 province_id = 2389
+					 province_id = 2373
+					 province_id = 2376
+					 province_id = 2378
+					 province_id = 2379
+					 province_id = 2380
+					 province_id = 2383
+					 province_id = 2381
+				  }
+			}
+			secede_province = VLP
+			add_core = VLP
+			militancy = 4
+		}
+		
+		ai_chance = {
+            factor = 70
+        }
+    }
+	
+	#Direct ownership
+      option = {
+        name = "EVTOPTA20022"
+        prestige = 30
+		add_country_modifier = {
+	        name = andine_grudges
+	        duration = 3652
+          }
+		  ai_chance = {
+            factor = 30
+        }
+    }
+}
+
+#Punishing the traitors
+
+country_event = {
+
+    id = 2002
+    
+
+    trigger = {
+        tag = SPA
+		 OR = { 
+   AND = { owns = 2247 owns = 2348 }
+   
+   AND = { VNG = { vassal_of = THIS }
+           VLP = { vassal_of = THIS } }
+   }
+      
+    }
+
+    fire_only_once = yes
+
+    mean_time_to_happen =  {
+        months = 3
+    }
+
+    title = "EVTNAME2002"
+    desc = "EVTDESC2002"
+    picture = "picaso"
+    
+	#the death of bolivar
+    option = {
+        name = "EVTOPTA2002"
+		prestige = -5
+		add_country_modifier = {
+	        name = dead_andine_heroes
+	        duration = 1082
+          }
+      
+    }
+
+}
+
+
+#Revitalizing the Armada
+
+#this is going to be costly
+
+country_event = {
+
+    id = 2003
+    
+
+    trigger = {
+        tag = SPA
+		 OR = { 
+       AND = { owns = 2247 owns = 2348 }
+   
+       AND = { VNG = { vassal_of = THIS }
+               VLP = { vassal_of = THIS }
+			   }
+      }
+       
+    }
+
+    fire_only_once = yes
+
+    mean_time_to_happen =  {
+       months = 5
+    }
+
+    title = "EVTNAME2003"
+    desc = "EVTDESC2003"
+    picture = "picaso"
+
+ #invest in the navy
+    option = {
+        name = "EVTOPTA2003"
+        prestige = 30
+		money = -50000
+		add_country_modifier = {
+	        name = rebuilding_the_armada
+	        duration = 4852
+          }
+		
+    }
+	
+	#nah
+	option = {
+        name = "EVTOPTA20044"
+        
+		
+    }
+
+}
+
+#war for survival
+
+country_event = {
+
+    id = 2004
+    
+
+    is_triggered_only = yes
+      
+    
+
+    fire_only_once = yes
+
+
+    title = "EVTNAME2004"
+    desc = "EVTDESC2004"
+    picture = "picaso"
+    
+	#to war!
+    option = {
+        name = "EVTOPTA2004"
+		
+		add_country_modifier = {
+	        name = war_for_survival_against_spain
+	        duration = 1082
+          }
+      
+    }
+
+}
+
+#loss in the war
+
+country_event = {
+
+    id = 2005
+    
+
+    trigger = { 
+	 tag = SPA 
+	 has_recently_lost_war = yes
+	  war = no
+	  exists = PEU 
+	  exists = CHL
+	}
+      
+    
+
+    fire_only_once = yes
+	
+	 mean_time_to_happen =  {
+        days = 1
+    }
+
+
+    title = "EVTNAME2005"
+    desc = "EVTDESC2005"
+    picture = "picaso"
+    
+	#shame
+    option = {
+        name = "EVTOPTA2005"
+		prestige = -50
+		any_owned = {
+		  limit = { 
+		   is_core = GCO  
+		  } 
+		  secede_province = GCO
+	   }
+	   
+	   any_owned = {
+		  limit = { 
+		   is_core = LPL  
+		  } 
+		  secede_province = LPL
+	   }
+       set_global_flag = spain_loses_the_americas
+    }
+
+}
+
+#the royal family escapes to cuba
+
+country_event = {
+
+    id = 2006
+    
+   news = yes
+   
+    trigger = { 
+	 tag = SPA 
+	 has_recently_lost_war = yes
+	  war = no
+	  exists = PEU 
+	  exists = CHL
+	  has_global_flag = spain_loses_the_americas
+	  owns = 2209
+	  NOT = { 2295 = { owned_by = THIS } }
+	}
+	
+	 mean_time_to_happen =  {
+       months = 3
+    }
+      
+    
+
+    fire_only_once = yes
+
+
+    title = "EVTNAME2006"
+    desc = "EVTDESC2006"
+    picture = "picaso"
+    
+	#shame
+    option = {
+        name = "EVTOPTA2006"
+		set_global_flag = spanish_royals_move_to_cuba
+    }
+
+}
+
+
+#Recovery of La Española
+
+country_event = {
+
+    id = 2010
+    
+
+    trigger = {
+        tag = SPA
+       HAI = { all_core = { owned_by = SPA } }
+    }
+
+    fire_only_once = yes
+
+    mean_time_to_happen =  {
+        days = 10
+    }
+
+    title = "EVTNAME20100"
+    desc = "EVTDESC20100"
+    picture = "picaso"
+
+    option = {
+        name = "EVTOPTA20100"
+        prestige = 10
+    }
+
+}
+
+#The caribbean is fully ours once again
+
+country_event = {
+
+    id = 2011
+    
+
+    trigger = {
+        tag = SPA
+       owns = 2237
+	   owns = 2230
+	   owns = 2217
+	   owns = 2235
+    }
+
+    fire_only_once = yes
+
+    mean_time_to_happen =  {
+        days = 10
+    }
+
+    title = "EVTNAME20110"
+    desc = "EVTDESC20110"
+    picture = "picaso"
+
+    option = {
+        name = "EVTOPTA20110"
+        prestige = 10
+    }
+
+}
+
+#The spaniards are back!
+
+country_event = {
+
+    id = 2012
+    
+   is_triggered_only = yes
+
+    fire_only_once = yes
+
+
+    title = "EVTNAME2012"
+    desc = "EVTDESC2012"
+    picture = "picaso"
+
+    option = {
+        name = "EVTOPTA2012"
+       add_country_modifier = {
+	        name = we_fight_for_our_lives_phl
+	        duration = 1082
+          }
+		  militancy = -5
+    }
+
+}
+
+### Gran Colombia ###
+
+#Recovery of the south
+
+country_event = {
+
+    id = 2030
+    
+	news = yes
+	
+	major = yes
+
+    trigger = {
+        tag = GCO
+       exists = PEU
+	   owns = 2279
+	   owns = 2288
+	    SPA = { has_recently_lost_war = yes }
+		NOT = { PEU = { vassal_of = SPA } }
+		war = no
+    }
+
+    fire_only_once = yes
+
+    mean_time_to_happen =  {
+        days = 10
+    }
+
+    title = "EVTNAME2030"
+    desc = "EVTDESC2030"
+    picture = "picaso"
+
+    option = {
+        name = "EVTOPTA2030"
+        prestige = 40
+		create_vassal = PEU
+		PEU = { country_event = 2031 }
+    }
+
+}
+
+#peru is gco's puppet
+country_event = {
+
+    id = 2031
+    
+
+    is_triggered_only = yes
+
+    fire_only_once = yes
+
+    mean_time_to_happen =  {
+        days = 10
+    }
+
+    title = "EVTNAME2031"
+    desc = "EVTDESC2031"
+    picture = "picaso"
+
+    option = {
+        name = "EVTOPTA2031"
+		GCO = { create_vassal = PEU }
+    }
+
+}
+
+#The Haitians join us
+
+
+country_event = {
+
+    id = 2032
+    
+
+  trigger = {
+     tag = GCO
+	 exists = HAI
+	 OR = { 
+	  is_secondary_power = yes
+	  is_greater_power = yes
+	 }
+	 year = 1842
+	 owns = 2279
+	 owns = 2288
+	 OR = { AND = { PEU = { vassal_of = THIS } }
+	        AND = {  owns = 2295  }
+			
+	 }
+  }
+
+    fire_only_once = yes
+
+    mean_time_to_happen =  {
+        months = 3
+    }
+
+    title = "EVTNAME2032"
+    desc = "EVTDESC2032"
+    picture = "picaso"
+
+    option = {
+        name = "EVTOPTA2032"
+		inherit = HAI
+		HAI = { all_core = { add_core = THIS } }
+		add_accepted_culture = afro_antillean
+		add_accepted_culture = caribeno
+		prestige = 20
+    }
+
+}
+
+#claim guyana
+country_event = {
+
+    id = 2033
+    
+
+     trigger = {
+        tag = GCO
+      owns = 2243
+	   war = no
+	   inorganic_chemistry = 1
+    }
+
+    fire_only_once = yes
+
+    mean_time_to_happen =  {
+        days = 1
+    }
+
+    title = "EVTNAME2033"
+    desc = "EVTDESC2033"
+    picture = "picaso"
+
+    option = {
+        name = "EVTOPTA2033"
+		2239 = { add_core = THIS }
+		1979 = { add_core = THIS }
+		2245 = { add_core = THIS }
+		2240 = { add_core = THIS }
+		2246 = { add_core = THIS }
+		2241 = { add_core = THIS }
+		
+		prestige = 10
+    }
+
+}
+
+## the central american border incident
+country_event = {
+
+    id = 2034
+    
+
+     trigger = {
+        tag = GCO
+		OR = { exists = VNS
+               exists = MEX    		}
+      owns = 2197
+	  OR = { VNS = { owns = 2193  } 
+	         MEX = { owns = 2193  } 
+	    }
+	   war = no
+	   relation = { who = VNS value = 0 }
+	   year = 1850
+    }
+
+    fire_only_once = yes
+
+    mean_time_to_happen =  {
+        months = 3
+    }
+
+    title = "EVTNAME2034"
+    desc = "EVTDESC2034"
+    picture = "picaso"
+   
+   #send complaint
+    option = {
+        name = "EVTOPTA2034"
+		2172 = { 
+		 owner = { 
+		 country_event = 2035  
+		 relation = {
+	     who = FROM
+	     value = -100
+             }
+		   } 
+		}
+		set_global_flag = the_leon_incident
+		
+		
+    }
+
+}
+
+#new spain gets gran colombian complaint
+country_event = {
+
+    id = 2035
+    
+
+    is_triggered_only = yes
+
+    fire_only_once = yes
+
+
+    title = "EVTNAME2035"
+    desc = "EVTDESC2035"
+    picture = "picaso"
+
+    #apologize and pay for the damages
+    option = {
+        name = "EVTOPTA2035"
+		money = -50000
+		prestige = -5
+		set_global_flag = the_mexicans_give_in
+		GCO = { country_event = 2036 }
+		 ai_chance = {
+            factor = 70
+        }
+    }
+	
+	#send back an insult
+	   option = {
+        name = "EVTOPTB2035"
+		GCO = { country_event = 2037 }
+		prestige = 10
+		 ai_chance = {
+            factor = 30
+        }
+    }
+
+}
+
+#mexico apologizes
+country_event = {
+
+    id = 2036
+    
+
+    is_triggered_only = yes
+
+    fire_only_once = yes
+
+
+    title = "EVTNAME2036"
+    desc = "EVTDESC2036"
+    picture = "picaso"
+
+    #how nice
+    option = {
+        name = "EVTOPTA2036"
+		money = 50000
+		prestige = 10
+		
+		
+    }
+	
+
+}
+
+#mexico insults gco
+country_event = {
+
+    id = 2037
+    
+
+    is_triggered_only = yes
+
+    fire_only_once = yes
+
+
+    title = "EVTNAME2037"
+    desc = "EVTDESC2037"
+    picture = "picaso"
+
+    #how nice
+    option = {
+        name = "EVTOPTA2037"
+		prestige = -5
+		set_global_flag = the_central_american_incident
+		
+    }
+	
+
+}
+
+## the central american war
+country_event = {
+
+    id = 2038
+	
+	major = yes
+    
+
+    trigger = { 
+	 OR = { 
+	    OR = { tag = GCO 
+		   AND = { owns = 2199 }
+		
+		}
+		OR = { owns = 2172 
+		       AND = { owns = 2195 }
+		}
+
+	}
+	
+	has_global_flag = the_central_american_incident
+	 war = no
+	 year = 1855
+	 NOT = { has_global_flag = the_mexicans_give_in }
+	}
+
+    fire_only_once = yes
+	
+	mean_time_to_happen =  {
+        months = 10
+    }
+
+
+    title = "EVTNAME2038"
+    desc = "EVTDESC2038"
+    picture = "picaso"
+
+    #war
+    option = {
+        name = "EVTOPTA2038"
+		random_country = {
+     		 
+		     limit = { OR = {  tag = MEX tag = GCO tag = VNS }
+		       NOT = { tag = THIS } 
+			   }
+		  add_casus_belli = {
+	      target = FROM
+	      type = liberate_country
+		  country = UCA
+	      months = 12
+           }
+		 }
+      
+	  ai_chance = {
+            factor = 80
+        }
+	}
+   
+   #nah
+    option = {
+        name = "EVTOPTB2038"
+		ai_chance = {
+            factor = 20
+        }
+	} 	
+	
+
+}
+
+#victory for gco central america
+ 
+ country_event = {
+
+    id = 2039
+ 
+    trigger = {
+      tag = GCO
+	  exists = UCA
+	  war = no
+	  owns = 2199
+	  VNS = { has_recently_lost_war = yes }
+  }
+
+  fire_only_once = yes
+
+ mean_time_to_happen =  {
+        days = 1
+    }
+
+
+    title = "EVTNAME2039"
+    desc = "EVTDESC2039"
+    picture = "picaso"
+ 
+ #all of central america is ours!
+    option = {
+        name = "EVTOPTA2039"
+		prestige = 30
+		UCA = { all_core = { add_core = THIS } }
+		inherit = UCA
+		badboy = 4
+		ai_chance = {
+            factor = 70
+        }
+    }
+	
+	
+	#keep central america as a puppet
+	option = {
+        name = "EVTOPTB2039"
+		any_owned = { 
+		   limit = {
+              is_core = UCA
+			  NOT = {
+                   province_id = 1723
+			  }
+		   }
+		   secede_province = UCA
+		   remove_core = THIS
+		}
+		remove_accepted_culture = central_american
+		militancy = -4
+		badboy = -7
+		prestige = 10
+		money = 100000
+		create_vassal = UCA
+		UCA = { country_event = 20401 }
+		ai_chance = {
+            factor = 30
+        }
+    }
+	
+	
+
+}
+
+
+#uca becomes a puppet
+ 
+ country_event = {
+
+    id = 20401
+ 
+   is_triggered_only = yes
+
+  fire_only_once = yes
+
+    title = "EVTNAME20401"
+    desc = "EVTDESC20401"
+    picture = "picaso"
+ 
+ #a puppet
+    option = {
+        name = "EVTOPTA20401"
+		 FROM = { create_vassal = THIS }
+    }
+	
+	
+}
+
+#victory for vns central america
+ 
+ country_event = {
+
+    id = 2040
+ 
+    trigger = {
+      tag = VNS
+	  exists = UCA
+	  war = no
+	  owns = 2193
+	  GCO = { has_recently_lost_war = yes }
+  }
+
+  fire_only_once = yes
+
+ mean_time_to_happen =  {
+        days = 1
+    }
+
+
+    title = "EVTNAME2040"
+    desc = "EVTDESC2040"
+    picture = "picaso"
+ 
+ #all of central america is ours!
+    option = {
+        name = "EVTOPTA2040"
+		prestige = 30
+		UCA = { all_core = { add_core = THIS } }
+		inherit = UCA
+		badboy = 4
+		ai_chance = {
+            factor = 70
+        }
+    }
+	
+	
+	#keep central america as a puppet
+	option = {
+        name = "EVTOPTB2040"
+		any_owned = { 
+		   limit = {
+              is_core = UCA
+			  NOT = {
+                   province_id = 1723
+			  }
+		   }
+		   secede_province = UCA
+		   remove_core = THIS
+		}
+		remove_accepted_culture = central_american
+		militancy = -4
+		badboy = -7
+		prestige = 10
+		money = 100000
+		create_vassal = UCA
+		UCA = { country_event = 20401 }
+		ai_chance = {
+            factor = 30
+        }
+		
+    }
+	
+	
+
+}
+
+#soldiers kill the spanish king
+ 
+ country_event = {
+
+    id = 20402
+ 
+    trigger = {
+      tag = GCO
+	  2209 = { controller = THIS }
+	  war = yes
+	  has_global_flag = spanish_royals_move_to_cuba
+  }
+
+  fire_only_once = yes
+
+ mean_time_to_happen =  {
+        days = 10
+    }
+
+
+    title = "EVTNAME20402"
+    desc = "EVTDESC20402"
+    picture = "picaso"
+ 
+ #this is an international disaster
+    option = {
+        name = "EVTOPTA20402"
+		prestige = -20
+		badboy = 6
+		set_global_flag = dead_spanish_royalty
+		relation = { who = CAN value = -50 }
+		relation = { who = DEN value = -50 }
+		relation = { who = RUS value = -50 }
+		relation = { who = PRU value = -50 }
+		relation = { who = AUS value = -50 }
+    }
+	
+	
+	
+	
+	
+
+}
+
+### La Plata 
+
+#The southern cone is free
+
+country_event = {
+
+    id = 2041
+    
+	news = yes
+
+    trigger = {
+        tag = LPL
+       exists = CHL
+	   SPA = { has_recently_lost_war = yes }
+	   NOT = { CHL = { vassal_of = SPA } }
+	   war = no
+    }
+
+    fire_only_once = yes
+
+    mean_time_to_happen =  {
+        days = 10
+    }
+
+    title = "EVTNAME2041"
+    desc = "EVTDESC2041"
+    picture = "picaso"
+
+    option = {
+        name = "EVTOPTA2041"
+        prestige = 40
+		create_vassal = CHL
+		CHL = { country_event = 2041 }
+    }
+
+}
+
+#Chile is lpl's puppet
+country_event = {
+
+    id = 2042
+    
+
+    is_triggered_only = yes
+
+    fire_only_once = yes
+
+    mean_time_to_happen =  {
+        days = 10
+    }
+
+    title = "EVTNAME2042"
+    desc = "EVTDESC2042"
+    picture = "picaso"
+
+    option = {
+        name = "EVTOPTA2042"
+		LPL = { create_vassal = CHL }
+    }
+
+}
+
+
+#portuguese expelled from el rio grande del sur
+
+country_event = {
+
+    id = 2043
+    
+
+     trigger = {
+        tag = LPL
+      owns = 2463  
+	   war = no
+    }
+
+    fire_only_once = yes
+
+    mean_time_to_happen =  {
+        days = 1
+    }
+
+    title = "EVTNAME2043"
+    desc = "EVTDESC2043"
+    picture = "picaso"
+
+    option = {
+        name = "EVTOPTA2043"
+		2463 = { add_core = THIS }
+		2461 = { add_core = THIS }
+		2462 = { add_core = THIS }
+		2459 = { add_core = THIS }
+		prestige = 10
+    }
+
+}
+
+
+
+
+
+### Mexico/Nueva España ###
+ 
+ #aproached by real spain
+ 
+ country_event = {
+
+    id = 2050
+ 
+ is_triggered_only = yes
+
+
+    title = "EVTNAME20500"
+    desc = "EVTDESC20500"
+    picture = "picaso"
+ 
+ #send them our demands
+    option = {
+        name = "EVTOPTA20500"
+		SPA = { country_event = 2051 }
+		
+        ai_chance = {
+            factor = 90
+        }
+    }
+	
+	#refuse to reconnect
+    option = {
+        name = "EVTOPTA205110"
+		SPA = { country_event = 2052 }
+		
+        ai_chance = {
+            factor = 10
+        }
+    }
+
+}
+
+ #new spain gives us their demands
+ 
+ country_event = {
+
+    id = 2051
+ 
+ is_triggered_only = yes
+
+
+    title = "EVTNAME2051"
+    desc = "EVTDESC2051"
+    picture = "picaso"
+ 
+  #accept their demands
+    option = {
+        name = "EVTOPTA2051"
+		VNS = { country_event = 2053 }
+		
+        ai_chance = {
+            factor = 90
+        }
+    }
+	
+	#refuse them and invade
+    option = {
+        name = "EVTOPTA20522"
+		VNS = { country_event = 20511 }
+		SPA = { war = {
+                target = VNS
+                
+				attacker_goal = {
+                    casus_belli = colonial_reconquest_cb
+                  
+                }
+               
+                defender_goal = { 
+				    casus_belli = humiliate
+                    }
+					
+					
+            
+			
+                   }
+		}
+		
+        ai_chance = {
+            factor = 10
+        }
+    }
+
+}
+
+
+ 
+ #Refused by new spain
+ 
+ country_event = {
+
+    id = 2052
+	
+	major = yes
+ 
+ is_triggered_only = yes
+
+
+    title = "EVTNAME2052"
+    desc = "EVTDESC2052"
+    picture = "picaso"
+ 
+ #give up on new spain
+    option = {
+        name = "EVTOPTA2052"
+		prestige = -30
+		
+        ai_chance = {
+            factor = 30
+        }
+    }
+	
+	#invade new spain
+    option = {
+        name = "EVTOPTA20533"
+		set_country_flag = spain_invasion_mexico
+		VNS = { country_event = 20511 }
+		SPA = {
+        war = {
+	       target = VNS
+	       attacker_goal = { casus_belli = colonial_reconquest_cb }
+	       
+		   defender_goal = { casus_belli = acquire_all_cores }
+	       defender_goal = { casus_belli = humiliate  }
+		   
+          }
+		}
+		
+        ai_chance = {
+            factor = 70
+        }
+    }
+
+}
+
+#spain invades!
+ 
+ country_event = {
+
+    id = 20511
+ 
+ major = yes
+ 
+ is_triggered_only = yes
+
+
+    title = "EVTNAME20511"
+    desc = "EVTDESC20511"
+    picture = "picaso"
+ 
+ #may god help us
+    option = {
+        name = "EVTOPTA205111"
+		
+	
+    }
+	
+	
+
+}
+
+#spain accepts our demands
+ 
+ country_event = {
+
+    id = 2053
+ 
+ is_triggered_only = yes
+
+
+    title = "EVTNAME2053"
+    desc = "EVTDESC2053"
+    picture = "picaso"
+ 
+ #back to the fatherland
+    option = {
+        name = "EVTOPTA2053"
+		SPA = { country_event = 20503 }
+		add_country_modifier = {
+	        name = concessions_from_spain_vns
+	        duration = 15652
+          }
+		  
+	SPA = {
+	create_vassal = VNS
+	        }
+    }
+	
+	
+
+}
+
+#new spain back into the fold
+ 
+ country_event = {
+
+    id = 20503
+	
+	major = yes
+ 
+ is_triggered_only = yes
+
+
+    title = "EVTNAME20503"
+    desc = "EVTDESC20503"
+    picture = "picaso"
+ 
+ #back to the motherland
+    option = {
+        name = "EVTOPTA20503"
+		create_vassal = VNS
+		prestige = 20
+		add_country_modifier = {
+	        name = concessions_from_spain_spa
+	        duration = 15652
+          }
+		
+    }
+	
+	
+
+}
+
+#the conquest of new spain
+ 
+ country_event = {
+
+    id = 2054
+	
+	major = yes 
+ 
+    trigger = {
+      tag = SPA
+   has_country_flag = spain_invasion_mexico
+   owns = 2172
+   NOT = { exists = VNS
+           exists = MEX
+   }
+}
+
+
+    title = "EVTNAME2054"
+    desc = "EVTDESC2054"
+    picture = "picaso"
+ 
+ #and thus the mexicans hate us
+    option = {
+        name = "EVTOPTA2054"
+		add_country_modifier = {
+	        name = new_spain_grudges
+	        duration = 5652
+          }
+		  prestige = 40
+    }
+	
+	
+
+}
+
+#new spain becomes mexico
+ 
+ country_event = {
+
+    id = 2055
+	
+	major = yes
+ 
+    trigger = {
+      tag = VNS
+	  is_vassal = no
+	  year = 1855
+	  war = no
+  }
+
+  fire_only_once = yes
+
+ mean_time_to_happen =  {
+        months = 1
+    }
+
+
+    title = "EVTNAME2055"
+    desc = "EVTDESC2055"
+    picture = "picaso"
+ 
+ #the end
+    option = {
+        name = "EVTOPTA2055"
+		change_tag = MEX 
+		VNS = { all_core = { add_core = THIS } }
+		MEX = { all_core = { add_core = THIS } }
+		GUA = { all_core = { add_core = THIS } }
+		HON = { all_core = { add_core = THIS } }
+		prestige = 10
+		ai_chance = {
+            factor = 90
+        }
+    }
+	
+	
+	#we are loyal to spain
+	option = {
+        name = "EVTOPTB2055"
+		militancy = 5
+		prestige = -10
+		ai_chance = {
+            factor = 10
+        }
+    }
+	
+	
+
+}

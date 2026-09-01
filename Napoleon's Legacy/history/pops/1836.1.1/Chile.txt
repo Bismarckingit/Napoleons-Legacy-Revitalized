@@ -320,7 +320,7 @@
 #Santiago (420000/105000 POPS)
 2324 = {
     aristocrats = {
-        culture = south_andean
+        culture = spanish
         religion = catholic
         size = 2200
     }
@@ -360,11 +360,23 @@
         religion = catholic
         size = 7000
     }
+	
+	soldiers = {
+        culture = spanish
+        religion = catholic
+        size = 3000
+    }
 
     farmers = {
         culture = south_andean
         religion = catholic
-        size = 89775
+        size = 69775
+    }
+	
+	 farmers = {
+        culture = spanish
+        religion = catholic
+        size = 29775
     }
 }
 #Valparaiso (128000/32000 POPS)

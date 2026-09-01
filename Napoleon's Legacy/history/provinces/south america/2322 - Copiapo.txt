@@ -4,3 +4,4 @@ add_core = CHL
 trade_goods = iron
 terrain = dryhills
 life_rating = 35
+add_core = SPA

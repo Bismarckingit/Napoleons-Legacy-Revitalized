@@ -37,11 +37,23 @@
         religion = catholic
         size = 1100
     }
+	
+	soldiers = {
+        culture = spanish
+        religion = catholic
+        size = 1100
+    }
 
     farmers = {
         culture = north_andean
         religion = catholic
-        size = 20600
+        size = 10600
+    }
+	
+	 farmers = {
+        culture = spanish
+        religion = catholic
+        size = 10600
     }
 
     clergymen = {

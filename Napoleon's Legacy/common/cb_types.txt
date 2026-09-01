@@ -551,6 +551,7 @@ colonial_reconquest_cb = {
         OR = {
             AND = {
                 THIS = {
+				year = 1840
                     tag = SPA
                     NOT = { has_global_flag = spanish_american_war }
                 }
