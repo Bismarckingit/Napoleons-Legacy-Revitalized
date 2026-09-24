@@ -3,3 +3,5 @@ controller = LPL # Anything typed here will be added to all selected province hi
 add_core = PRG
 trade_goods = fruit
 life_rating = 31
+
+add_core = LPL

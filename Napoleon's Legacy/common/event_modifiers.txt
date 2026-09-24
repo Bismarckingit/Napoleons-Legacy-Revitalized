@@ -1262,6 +1262,90 @@ local_economic_downturn = {
     icon = 12
 }
 
+### Spain and colonies ###
+
+andine_grudges = {
+    non_accepted_pop_militancy_modifier = 0.05
+    icon = 6
+}
+
+mending_andine_relations = {
+    administrative_efficiency_modifier = -0.01
+	tax_efficiency = -0.02
+    icon = 6
+}
+
+new_spain_grudges = {
+    non_accepted_pop_militancy_modifier = 0.05
+    icon = 6
+}
+
+
+
+andine_reconquest = {
+    supply_consumption = 0.2
+	administrative_efficiency_modifier = -0.1
+	land_organisation = -0.05
+    icon = 16
+}
+
+war_for_survival_against_spain = {
+    supply_consumption = -0.2
+	administrative_efficiency_modifier = 0.1
+	land_organisation = 0.05
+    icon = 16
+}
+
+we_fight_for_our_lives_phl = {
+    supply_consumption = -0.2
+	administrative_efficiency_modifier = 0.1
+	land_organisation = 0.05
+	mobilization_impact = -0.50
+	mobilisation_size = 0.20
+	tax_efficiency = 0.1
+    icon = 16
+}
+
+dead_andine_heroes = {
+    mobilisation_size = -0.10
+	political_reform_desire = 0.01
+    icon = 16
+}
+
+rebuilding_the_armada = {
+    naval_organisation = 0.2
+	naval_unit_start_experience = 40
+	2295 = { 
+	 local_ship_build = 0.2
+	}
+	2325 = { 
+	 local_ship_build = 0.2
+	}
+	2281 = { 
+	 local_ship_build = 0.2
+	}
+    icon = 15
+}
+
+concessions_from_spain_vns = {
+    naval_organisation = 0.2
+	naval_unit_start_experience = 10
+	tax_efficiency = 0.02
+	supply_consumption = -0.1
+	import_cost = -0.1
+	land_organisation = 0.1
+    icon = 15
+}
+
+concessions_from_spain_spa = {
+    administrative_efficiency_modifier = -0.05
+	tax_efficiency = -0.02
+	mobilization_impact = -0.05
+    icon = 15
+}
+
+
+
 ##### AMERICAN CIVIL WAR #####
 emigrant_aid_company = {
     pop_consciousness_modifier = 0.05
@@ -2704,6 +2788,7 @@ resource_colony = {
 	core_pop_consciousness_modifier = 0.3
 	core_pop_militancy_modifier = 0.1
 }
+
 coalition_war_timer = {
 }
 noble_land_rights = {

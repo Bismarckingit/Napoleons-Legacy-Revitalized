@@ -1,8 +1,10 @@
-owner = UCA
+owner = VNS
 
-controller = UCA
+controller = VNS
 
 add_core = UCA
 add_core = GUA
 trade_goods = coffee
 life_rating = 39
+
+add_core = VNS

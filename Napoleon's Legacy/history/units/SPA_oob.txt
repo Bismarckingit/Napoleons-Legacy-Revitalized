@@ -3,37 +3,37 @@ MEX = {
     value = 75
 }
 ECU = {
-    value = 100
+    value = -100
 }
 PEU = {
-    value = 100
+    value = -100
 }
 BOL = {
-    value = 100
+    value = -100
 }
 CHL = {
-    value = 100
+    value = -100
 }
 PRG = {
-    value = 100
+    value = -100
 }
 UCA = {
-    value = 100
+    value = -100
 }
 CAN = {
     value = 100
 }
 BRZ = {
-    value = 100
+    value = -100
 }
 URU = {
-    value = 75
+    value = -75
 }
 REI = {
-    value = 100
+    value = -130
 }
 POR = {
-    value = 100
+    value = 30
 }
 NSA = {
     value = -200
@@ -50,10 +50,46 @@ leader = {
     background = old_school
 }
 
+
+
+leader = {
+    name = "José Joaquín Prieto"
+    type = land
+    date = 1820.8.20
+    background = rising_star
+    personality = bold
+    prestige = 0.01
+    }
+
+leader = {
+    name = "Robert Winthrop Simpson"
+    type = sea
+    date = 1820.12.14
+    background = school_of_defense
+    personality = au_fait
+    }
+
 navy = {
-    name = "Marina de Guerra del Peru"
+    name = "Armada Real Espanola"
     location = 2295
-    ship = {
+	
+	ship = {
+		name = "Alerta"
+		type = manowar
+	}
+	
+	ship = {
+		name = "San Fernando"
+		type = manowar
+	}
+	
+	ship = {
+		name = "Legazpi"
+		type = manowar
+	}
+	
+	
+	 ship = {
         name= "Monteagudo"
         type = frigate
     }
@@ -62,51 +98,163 @@ navy = {
         name= "Santa Cruz"
         type = frigate
     }
+	
+    ship = {
+        name = "Aquiles"
+        type = frigate
+    }
+
+    ship = {
+        name = "Voltaire"
+        type = frigate
+    }
+
+    ship = {
+        name = "Orbegoso"
+        type = frigate
+    }
+
+    ship = {
+        name = "Valparaiso"
+        type = frigate
+    }
+
+    ship = {
+        name = "Libertad"
+        type = frigate
+    }
+
+    ship = {
+        name = "1. Buque de transporte"
+        type = clipper_transport
+    }
+
+
+    ship = {
+        name = "2. Buque de transporte"
+        type = clipper_transport
+    }
 
 }
 
+navy = {
+	name = "Armada de Cuba"
+	location = 2212
+	
+	ship = {
+		name = "Santiago"
+		type = manowar
+	}
+	
+	ship = {
+		name = "Hespérides"
+		type = manowar
+	}
+	
+	ship = {
+		name = "Centinela"
+		type = manowar
+	}
+	
+	ship = {
+		name = "Isla de Cuba"
+		type = frigate
+	}
+	
+	ship = {
+		name = "Cristóbal Colón"
+		type = frigate
+	}
+	
+	ship = {
+		name= "1a Flotilla de Transporte"
+		type = clipper_transport
+	}
+
+	ship = {
+		name= "2a Flotilla de Transporte"
+		type = clipper_transport
+	}
+
+	ship = {
+		name= "3a Flotilla de Transporte"
+		type = clipper_transport
+	}
+}
+
+navy = {
+	name = "Armada de Filipinas"
+	location = 2518
+	
+	
+	ship = {
+		name = "Victoria"
+		type = frigate
+	}
+	
+	ship = {
+		name = "Nuestra Señora del Patrocinio"
+		type = frigate
+	}
+	
+	ship = {
+		name= "1a Flotilla de Transporte"
+		type = clipper_transport
+	}
+
+	ship = {
+		name= "2a Flotilla de Transporte"
+		type = clipper_transport
+	}
+
+	ship = {
+		name= "3a Flotilla de Transporte"
+		type = clipper_transport
+	}
+}
+
 army = {
-    name = "Ej�rcito del Per�"
+    name = "Ejercito del Peru"
     location = 2295
     regiment = {
-        name = "1. Brigada de Infanter�a"
+        name = "1. Brigada de Infanteria"
         type = infantry
         home = 2295
     }
 
     regiment = {
-        name = "2. Brigada de Infanter�a"
+        name = "2. Brigada de Infanteria"
         type = infantry
         home = 2295
     }
 
     regiment = {
-        name = "3. Brigada de Infanter�a"
+        name = "3. Brigada de Infanteria"
         type = infantry
         home = 2302
     }
     regiment = {
-	name = "1. Brigada de Artillerie"
+	name = "1. Brigada de Artillería"
 	type = artillery
 	home = 2302
     }
     regiment = {
-	name = "2. Brigada de Artillerie"
+	name = "2. Brigada de Artillería"
 	type = artillery
 	home = 2302
     }
     regiment = {
-	name = "3. Brigada de Artillerie"
+	name = "3. Brigada de Artillería"
 	type = artillery
 	home = 2302
     }
     regiment = {
-	name = "1. Brigada de Cavallerie"
+	name = "1. Brigada de Caballeria"
 	type = cuirassier
 	home = 2302
     }
     regiment = {
-	name = "2. Brigada de Cavallerie"
+	name = "2. Brigada de Caballeria"
 	type = cuirassier
 	home = 2302
     }
@@ -121,14 +269,14 @@ army = {
 	home = 2295
     }
     regiment = {
-	name = "4. Brigada de Artillerie"
+	name = "4. Brigada de Artillería"
 	type = artillery
 	home = 2295
     }
 }
 
 army = {
-    name = "Ejercito del La Plata"
+    name = "Ejercito de La Plata"
     location = 2304
     regiment = {
 	name = "Honor Guard"
@@ -171,13 +319,75 @@ army = {
 	home = 2304
     }
     regiment = {
-	name = "Brigada de Cavallarie"
+	name = "Brigada de Caballeria"
 	type = cuirassier
 	home = 2304
     }
     regiment = {
-	name = "Brigada de Cavallarie"
+	name = "Brigada de Caballeria"
 	type = cuirassier
 	home = 2304
     }
+}
+
+army = {
+    name = "Ejercito de Nueva Granada"
+    location = 2279
+    regiment = {
+        name= "1. Brigada de Infantería"
+        type = infantry
+        home = 2279
+    }
+
+    regiment = {
+        name= "2. Brigada de Infantería"
+        type = infantry
+        home = 2279
+    }
+
+    regiment = {
+        name= "3. Brigada de Infantería"
+        type = infantry
+        home = 2283
+    }
+
+}
+
+army = {
+	name = "Ejercito de Cuba"
+	location = 2209
+	
+	regiment = {
+		name = "1. Brigada Colonial"
+		type = infantry
+		home = 2324
+	}
+	
+	regiment = {
+		name = "2. Brigada Colonial"
+		type = infantry
+		home = 2322
+	}
+}
+
+army = {
+	name = "Ejército de Puerto Rico"
+	location = 2222
+	
+	regiment = {
+		name = "3. Brigada Colonial"
+		type = infantry
+		home = 2310
+	}
+}
+
+army = {
+	name = "Ejercito de Filipinas"
+	location = 2518
+	
+	regiment = {
+		name = "4. Brigada Colonial"
+		type = infantry
+		home = 2330
+	}
 }

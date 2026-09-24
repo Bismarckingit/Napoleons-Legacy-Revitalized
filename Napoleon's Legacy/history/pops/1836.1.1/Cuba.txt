@@ -3,19 +3,19 @@
 #Havana (388000/97000 POPS)
 2209 = {
     aristocrats = {
-        culture = caribeno
+        culture = spanish
         religion = catholic
         size = 3103
     }
 
     bureaucrats = {
-        culture = caribeno
+        culture = spanish
         religion = catholic
         size = 50
     }
 
     clergymen = {
-        culture = caribeno
+        culture = spanish
         religion = catholic
         size = 175
     }
@@ -27,7 +27,7 @@
     }
 
     artisans = {
-        culture = caribeno
+        culture = spanish
         religion = catholic
         size = 4000
     }
@@ -41,8 +41,15 @@
     farmers = {
         culture = caribeno
         religion = catholic
-        size = 28625
+        size = 18625
     }
+	
+	farmers = {
+        culture = spanish
+        religion = catholic
+        size = 18625
+    }
+
 
     artisans = {
         culture = afro_caribeno

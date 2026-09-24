@@ -543,6 +543,10 @@ UTI        ="countries/Utility Tag.txt"
 
 #Colonial Spain
 VNS		= "countries/Colonial Spain.txt"
+CGC 	= "countries/Colonial Chile.txt"
+VNG		= "countries/Colonial Colombia.txt"
+VLP		= "countries/Colonial La Plata.txt"
+VOP		= "countries/Colonial Peru.txt"
 
 ##HoD Dominions
 dynamic_tags  = yes # any tags after this is considered dynamic dominions

@@ -1545,13 +1545,13 @@
     artisans = {
         culture = mexican
         religion = catholic
-        size = 3150
+        size = 13150
     }
 
     soldiers = {
         culture = mexican
         religion = catholic
-        size = 2000
+        size = 6000
 
         militancy = 9
     }
@@ -1559,7 +1559,7 @@
     farmers = {
         culture = mexican
         religion = catholic
-        size = 56250
+        size = 106250
         militancy = 9
     }
 
@@ -1607,7 +1607,7 @@
     artisans = {
         culture = mexican
         religion = catholic
-        size = 1200
+        size = 11200
     }
 
     soldiers = {
@@ -1621,7 +1621,7 @@
     farmers = {
         culture = mexican
         religion = catholic
-        size = 20500
+        size = 60500
         militancy = 9
     }
 
@@ -1850,7 +1850,7 @@
     farmers = {
         culture = mexican
         religion = catholic
-        size = 600
+        size = 26000
     }
 
     clergymen = {
@@ -2295,13 +2295,13 @@
     artisans = {
         culture = mexican
         religion = catholic
-        size = 10000
+        size = 20000
     }
 
     artisans = {
         culture = mexican
         religion = catholic
-        size = 7000
+        size = 17000
     }
 
     soldiers = {
@@ -2313,7 +2313,7 @@
     farmers = {
         culture = mexican
         religion = catholic
-        size = 47250
+        size = 77250
     }
 
     clergymen = {
@@ -2559,7 +2559,7 @@
     artisans = {
         culture = mexican
         religion = catholic
-        size = 1750
+        size = 11750
     }
 
     soldiers = {
@@ -2571,7 +2571,7 @@
     farmers = {
         culture = mexican
         religion = catholic
-        size = 15875
+        size = 35875
     }
 
     clergymen = {
@@ -2685,7 +2685,7 @@
     artisans = {
         culture = mexican
         religion = catholic
-        size = 1150
+        size = 11150
     }
 
     soldiers = {
@@ -2697,7 +2697,7 @@
     farmers = {
         culture = mexican
         religion = catholic
-        size = 23250
+        size = 53250
     }
 
     clergymen = {
@@ -2958,7 +2958,7 @@
     artisans = {
         culture = mexican
         religion = catholic
-        size = 1050
+        size = 11050
         militancy = 9
     }
 
@@ -2973,7 +2973,7 @@
     farmers = {
         culture = mexican
         religion = catholic
-        size = 12950
+        size = 52950
         militancy = 9
     }
 

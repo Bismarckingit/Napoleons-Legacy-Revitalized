@@ -1,5 +1,6 @@
 capital = 2247
 primary_culture = north_andean
+culture = central_american
 religion = catholic
 government = democracy
 plurality = 0.0
@@ -73,4 +74,4 @@ basic_chemistry = 1
 #Inventions
 #corvettes = yes
 
-oob = "CLM_oob.txt"
+oob = "GCO_oob.txt"

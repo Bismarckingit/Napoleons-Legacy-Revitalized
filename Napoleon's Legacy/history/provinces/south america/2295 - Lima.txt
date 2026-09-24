@@ -4,3 +4,5 @@ add_core = PEU
 trade_goods = sulphur
 life_rating = 39
 naval_base = 1
+
+add_core = SPA

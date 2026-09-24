@@ -1,6 +1,7 @@
-owner = UCA
-controller = UCA
+owner = VNS
+controller = VNS
 add_core = UCA
 add_core = GUA
+add_core = VNS
 trade_goods = fish
 life_rating = 35

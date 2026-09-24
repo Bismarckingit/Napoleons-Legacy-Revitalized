@@ -159,38 +159,7 @@ country_event = {
     }
 }
 
-#SPA became Peru
-country_event = {
-    id = 600033
-    title = "EVTNAME600033"
-    desc = "EVTDESC600033"
-    picture = "Monarchy"
-    is_triggered_only = yes
 
-    option = {
-        name = "EVTOPTA600033"
-        SPA = {
-            all_core = {
-                limit = {
-                    NOT = {
-                        OR = {
-                            is_core = PEU
-                            is_core = CAT
-                        }
-                    }
-                }
-
-                add_core = NSA
-            }
-        }
-
-        SPA = { all_core = { remove_core = SPA } }
-
-        SPA_498 = {
-            add_core = FRA
-        }
-    }
-}
 
 #NSA gets the news
 country_event = {

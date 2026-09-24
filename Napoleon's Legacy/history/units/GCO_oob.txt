@@ -1,44 +1,147 @@
-army = {
-    name = "Ejército de Colombia"
-    location = 2253
-    regiment = {
-        name= "1. Brigada de Infantería"
-        type = infantry
-        home = 2247
-    }
+SPA = {
+    value = -125
+}
 
-    regiment = {
-        name= "2. Brigada de Infantería"
-        type = infantry
-        home = 2252
-    }
+VNS = {
+    value = -100
+}
 
-    regiment = {
-        name= "1. Brigada de Caballería"
-        type = cavalry
-        home = 2250
-    }
 
+FRA = {
+    value = 100
+}
+
+USA = {
+    value = 50
+}
+
+CAN = {
+    value = -50
+}
+
+LPL = {
+    value = 200
 }
 
 army = {
     name = "Ejército de Venezuela"
     location = 2264
     regiment = {
+        name= "1. Division de Infanteria"
+        type = infantry
+        home = 2264
+    }
+
+    regiment = {
+        name= "2. División de Infantería"
+        type = infantry
+        home = 2264
+    }
+
+    regiment = {
+        name= "3. División de Infantería"
+        type = infantry
+        home = 2267
+    }
+
+    regiment = {
         name= "1. División de Caballería"
         type = cavalry
         home = 2268
     }
 
-}
-
-army = {
-    name = "Ejército de Ecuador"
-    location = 2279
     regiment = {
-        name= "1. Brigada de Infantería"
-        type = infantry
-        home = 2279
+        name= "2. División de Caballería"
+        type = cavalry
+        home = 2269
+    }
+
+    regiment = {
+        name= "3. División de Caballería"
+        type = cavalry
+        home = 2271
     }
 
 }
+
+
+army = {
+	name = "Ejército de Colombia"
+	location = 2247
+	regiment = {
+		name= "1. Brigada de Infantería"
+		type = infantry
+		home = 2247
+	}
+
+	regiment = {
+		name= "2. Brigada de Infantería"
+		type = infantry
+		home = 2252
+	}
+
+	regiment = {
+		name= "3. Brigada de Infantería"
+		type = infantry
+		home = 2254
+	}
+
+	regiment = {
+		name= "1. Brigada de Caballería"
+		type = cuirassier
+		home = 2250
+	}
+	
+	regiment = {
+		name= "2. Brigada de Caballería"
+		type = cavalry
+		home = 2271
+	}
+	
+	regiment = {
+		name= "3. Brigada de Caballería"
+		type = cavalry
+		home = 2256
+	}
+	
+	 regiment = {
+        name= "1. Brigada de Artilleria"
+        type = artillery
+        home = 2255
+    }
+
+}
+
+leader = {
+    name = "Francisco Morazán"
+    type = land
+    date = 1836.1.1
+    personality = stout
+    background = generals_aide
+}
+
+army = {
+    name = "Ejercito de Panama"
+    location = 2198
+    regiment = {
+        name= "1. División de Infantería"
+        type = infantry
+        home = 2197
+    }
+
+    regiment = {
+        name= "2. División de Infantería"
+        type = infantry
+        home = 2204
+    }
+
+    regiment = {
+        name= "3. División de Infantería"
+        type = infantry
+        home = 2247
+    }
+
+}
+
+
+

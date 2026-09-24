@@ -152,17 +152,17 @@ EVTOPTB4662001;We can't risk war.;;;;;;;;;;;;x
 EVTNAME4662002;Panama is Ours!;;;;;;;;;;;;x
 EVTDESC4662002;We have defeated the Gran Colombians and seized Panama for our country. The Colombians will now be more careful when deciding who's borders to fire upon.;;;;;;;;;;;;x
 EVTOPTA4662002;We welcome the people of Panama into our republic.;;;;;;;;;;;;x
-EVTNAME4662003;Our Claim to Pastaza;;;;;;;;;;;;x
-EVTDESC4662003;We have claimed Pastaza since our independence, and the time to regain lost land is now! We have a chance to bring down Gran Colombia and show our strength and ability to be a regional power;;;;;;;;;;;;x
-EVTNAME4662004;Spanish Victory!;;;;;;;;;;;;x
-EVTDESC4662004;We have defeated the Gran Colombians and shown them the strength of Spain. The terms for peace were the secession of Pastaza from Ecuador and the limiting of Colombia to build an army.;;;;;;;;;;;;x
-EVTOPTA4662004;Pastaza is ours!;;;;;;;;;;;;x
-EVTNAME4662005;Collapse of Gran Colombia;;;;;;;;;;;;x
-EVTDESC4662005;We are no longer able to lead Gran Colombia. Ecuador and Venezuela no longer have faith in our unity, having already left the federation. It is time to reinvent ourselves as Colombia. Maybe one day we can reignite the flame of Gran Colombia.;;;;;;;;;;;;x
-EVTOPTA4662005;Viva Colombia!;;;;;;;;;;;;x
-EVTNAME4662006;Unification of Gran Colombia;;;;;;;;;;;;x
-EVTDESC4662006;The Central Americans and Peruvians were not able to defeat Gran Colombia in their imperialist wars to kill the federation. Due to these wars, the respective governments of Ecuador and Venezuela have agreed to centralize the federation in hopes of strengthening our position in South America.;;;;;;;;;;;;x
-EVTOPTA4662006;The flame of Gran Colombia burns bright!;;;;;;;;;;;;x
+EVTNAME4662003; .;;;;;;;;;;;;x
+EVTDESC4662003; .;;;;;;;;;;;;x
+EVTNAME4662004; .;;;;;;;;;;;;x
+EVTDESC4662004; .;;;;;;;;;;;;x
+EVTOPTA4662004; .;;;;;;;;;;;;x
+EVTNAME4662005; .;;;;;;;;;;;;x
+EVTDESC4662005; .;;;;;;;;;;;;x
+EVTOPTA4662005; .;;;;;;;;;;;;x
+EVTNAME4662006; .;;;;;;;;;;;;x
+EVTDESC4662006; .;;;;;;;;;;;;x
+EVTOPTA4662006; .;;;;;;;;;;;;x
 EVTOPTA99033;We accept those who come.;;;;;;;;;;;;x
 EVTNAME4662008;Liquidate the Hudson's Bay Company.;;;;;;;;;;;;x
 EVTDESC4662008;The Hudson's Bay Company has been troubled with severe losses throughout the early 19th Century. With shrinking demand for furs and the Hudson's Bay Company's failures to enter other markets, they have finally defaulted on their debts. The British Empire must take over all of their assets and debts in order to defend Canada from foreign militaries.;;;;;;;;;;;;x
@@ -1793,7 +1793,7 @@ EVTDESC7880765;Demands have been sent from $FROMCOUNTRY$ demanding for a transfe
 EVT7880765OPTA;Transfer the land;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 EVT7880765OPTB;It will remain ours!;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 EVTNAME7880766;The $FROMCOUNTRY_ADJ$ Transfer of Lugano;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
-EVTDESC7880766;Demands have been sent to $FROMCOUNTRY$ demanding for a transfer of French minorities from their direct control. It has been noted that the transfer of land populated by Italians has been guaranteed to $COUNTRY$ as well, all that is necessary is to accept this guarantee to move forward in the transfer of the land to $COUTNRY$ control.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
+EVTDESC7880766;Demands have been sent to $FROMCOUNTRY$ demanding for a transfer of French minorities from their direct control. It has been noted that the transfer of land populated by Italians has been guaranteed to $COUNTRY$ as well, all that is necessary is to accept this guarantee to move forward in the transfer of the land to $COUNTRY$ control.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 EVT7880766OPTA;Accept the guarantee;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 EVT7880766OPTB;We don't want this;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 EVTNAME7880767;Spain Revolts!;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
