@@ -2319,7 +2319,7 @@ country_event = {
 			ideology = { value = reactionary factor = 0.1 }
 			}
 		release_vassal = SCO 
-		SCO { any_owned = { limit = { is_core = SCO } assimilate = yes } }
+		SCO = { any_owned = { limit = { is_core = SCO } assimilate = yes } }
 		inherit = SCO
 		add_accepted_culture = scottish
 		add_accepted_culture = irish

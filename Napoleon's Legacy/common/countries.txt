@@ -31,6 +31,7 @@ LTN	   ="countries/LatinEmpire.txt"
 ARN	   ="countries/Aragon.txt"
 WRE	   ="countries/WRE.txt"
 HLR	   ="countries/Holy Roman Empire.txt"
+RME	   ="countries/Roman Empire.txt"
 ##HPM
 PNK        ="countries/Pontianak.txt"
 GHN        ="countries/Ghana.txt"
